@@ -190,9 +190,9 @@ Specify `-DENABLE_WINDOWS_TOOLS_CHECK=ON` when building the SDK to install autom
 3. Or open a Command line with Visual Studio `Developer Command Prompt for VS 2022` and call qtenv2.bat that is in your qt binaries eg: `C:\Qt\<version>\msvc2019\bin\qtenv2.bat`
 
 4. Build as usual with adding `-A x64` to `cmake ..` (General Steps) :
-  - `cmake .. -DCMAKE_BUILD_PARALLEL_LEVEL=10 -DCMAKE_BUILD_TYPE=RelWithDebInfo -A x64`
-The default build is very long. It is prefered to use the Ninja generator `-G "Ninja"`
+  - `cmake .. -DCMAKE_BUILD_PARALLEL_LEVEL=10 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_WINDOWS_TOOLS_CHECK=ON -DENABLE_GPL_THIRD_PARTIES=OFF -DENABLE_FFMPEG=OFF -DENABLE_VPX=OFF -DENABLE_LIBYUV=OFF -DENABLE_JPEG=OFF -DENABLE_BV16=OFF -DENABLE_GSM=OFF -DENABLE_SRTP=OFF -DENABLE_LDAP=OFF -DQt6_DIR="C:/Qt/6.5.3/msvc2019_64/lib/cmake/Qt6" -A x64`
   - `cmake --build . --target ALL_BUILD --parallel 10 --config RelWithDebInfo`
+  - `cmake --install . --config RelWithDebInfo`
 
 5. The project folder will be in the build directory and binaries should be in the OUTPUT folder.
 

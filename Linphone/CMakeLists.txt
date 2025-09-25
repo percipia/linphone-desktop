@@ -132,16 +132,13 @@ set(LANGUAGES en fr_FR de)
 # Add languages support.
 add_subdirectory("${LANGUAGES_DIRECTORY}" "data/languages")
 
-qt_standard_project_setup(I18N_TRANSLATED_LANGUAGES ${LANGUAGES})
+# qt_standard_project_setup(I18N_TRANSLATED_LANGUAGES ${LANGUAGES})
+qt_standard_project_setup()
 
 set(TS_FILES)
 foreach (lang ${LANGUAGES})
   list(APPEND TS_FILES "${CMAKE_CURRENT_SOURCE_DIR}/${LANGUAGES_DIRECTORY}/${lang}.ts")
 endforeach()
-
-qt_add_translations(${TARGET_NAME}
-TS_FILES ${TS_FILES}
-RESOURCE_PREFIX ${LANGUAGES_DIRECTORY})
 
 # set application details
 if(WIN32)
@@ -163,6 +160,11 @@ qt6_add_executable(Linphone
 	${_LINPHONEAPP_FONTS_FILES}
 	${_APPDETAILS_RC_FILE}
 )
+
+# Add translations after the target is created
+qt_add_translations(${TARGET_NAME}
+TS_FILES ${TS_FILES}
+RESOURCE_PREFIX ${LANGUAGES_DIRECTORY})
 
 set_source_files_properties(${_LINPHONEAPP_QML_SINGLETONS} PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
