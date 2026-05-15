@@ -206,7 +206,6 @@ Control.Control {
                     bottomPadding: Utils.getSizeWithScreenRatio(6)
                     leftPadding: Utils.getSizeWithScreenRatio(18)
                     rightPadding: Utils.getSizeWithScreenRatio(18)
-                    width: Math.min(implicitWidth, mainItem.maxWidth - avatar.implicitWidth)
 
                     MouseArea { // Default mouse area. Each sub bubble can control the mouse and pass on to the main mouse handler. Child bubble mouse area must cover the entire bubble.
                         id: defaultMouseArea
@@ -257,6 +256,7 @@ Control.Control {
                     }
                     contentItem: ColumnLayout {
                         spacing: Utils.getSizeWithScreenRatio(5)
+                        width: Math.min(implicitWidth, mainItem.maxWidth - chatBubble.leftPadding - chatBubble.rightPadding)
                         Text {
                             id: retractedId
                             visible: mainItem.chatMessage.core.isRetracted
@@ -270,12 +270,14 @@ Control.Control {
                         ChatMessageContent {
                             id: chatBubbleContent
                             Layout.fillWidth: true
-                            Layout.fillHeight: true
+                            // Layout.fillHeight: true
+                            // Layout.preferredWidth: 50//bubbleContainer.width - bubbleContainer.leftPadding - bubbleContainer.rightPadding
                             chatGui: mainItem.chat
                             visible: !mainItem.chatMessage.core.isRetracted
                             searchedTextPart: mainItem.searchedTextPart
                             chatMessageGui: mainItem.chatMessage
                             maxWidth: mainItem.maxWidth
+                            // RectangleTest{anchors.fill: parent}
                             onMouseEvent: (event) => {
                                 mainItem.handleDefaultMouseEvent(event)
                             }
