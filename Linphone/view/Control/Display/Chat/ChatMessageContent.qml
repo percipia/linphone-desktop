@@ -156,14 +156,13 @@ ColumnLayout {
 	Repeater {
 		id: messagesTextsList
 		visible: count > 0
+		// width: mainItem.maxWidth
 		model: ChatMessageContentProxy {
 			filterType: ChatMessageContentProxy.FilterContentType.Text
 			chatMessageGui: mainItem.chatMessageGui
 		}
 		delegate: ChatTextContent {
-			Layout.fillWidth: true
-			horizontalAlignment: TextEdit.AlignLeft
-			// height: implicitHeight
+			Layout.preferredWidth: Math.min(maxWidth, contentWidth)
 			contentGui: modelData
 			chatGui: mainItem.chatGui
 			searchedTextPart: mainItem.searchedTextPart
