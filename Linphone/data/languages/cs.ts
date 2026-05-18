@@ -2040,6 +2040,11 @@
         <extracomment>&quot;Stocker ici les contacts nouvellement crées&quot;</extracomment>
         <translation>Nově vytvořené kontakty ukládejte zde</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="32"/>
+        <source>save</source>
+        <translation>Uložit</translation>
+    </message>
 </context>
 <context>
     <name>ChangeLayoutForm</name>
@@ -2170,6 +2175,21 @@
         <source>chat_list_delete_chat_popup_message</source>
         <extracomment>This conversation and all its messages will be deleted. Do You want to continue ?</extracomment>
         <translation>Tato konverzace a všechny její zprávy budou smazány. Chcete pokračovat?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="472"/>
+        <source>unread_messages_accessible_label</source>
+        <translation>: %1 nepřečtených zpráv</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="332"/>
+        <source>chat</source>
+        <translation>%1 chat</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="470"/>
+        <source>focused_chat_accessible_label</source>
+        <translation>%1 chat %2</translation>
     </message>
 </context>
 <context>
@@ -2720,7 +2740,7 @@ proto nezveřejňujte žádné citlivé informace!</translation>
     <message>
         <location filename="../../model/cli/CliModel.cpp" line="443"/>
         <source>info_popup_cli_unsupported_scheme_message</source>
-        <translation type="unfinished">Žádný token nenalezen</translation>
+        <translation>Neplatné URI: `%1` Nepodporované schéma: `%2`.</translation>
     </message>
 </context>
 <context>
@@ -4500,6 +4520,26 @@ Expirace : %1</translation>
         <source>searchbar_suggestions_accessible_name</source>
         <translation>Návrhy ve vyhledávacím poli</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="96"/>
+        <source>contact_editor_dialog_abort_confirmation_save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="79"/>
+        <source>contact_editor_popup_abort_confirmation_title</source>
+        <translation>Neuložené změny</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="81"/>
+        <source>contact_editor_popup_abort_confirmation_message</source>
+        <translation>Máte neuložené změny. Pokud opustíte tuto stránku, vaše změny budou ztraceny. Chcete své změny před pokračováním uložit?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="94"/>
+        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
+        <translation>Neukládat</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -5861,6 +5901,11 @@ Chcete-li je povolit v komerčním projektu, kontaktujte nás.</translation>
         <extracomment>&quot;Clear text input&quot;</extracomment>
         <translation>Vymazat text</translation>
     </message>
+    <message>
+        <location filename="../../view/Control/Input/SearchBar.qml" line="79"/>
+        <source>search_bar_accessible_name</source>
+        <translation>Vyhledávací pole: %1</translation>
+    </message>
 </context>
 <context>
     <name>SecurityModePage</name>
@@ -6023,30 +6068,6 @@ Chcete-li je povolit v komerčním projektu, kontaktujte nás.</translation>
         <source>settings_advanced_title</source>
         <extracomment>&quot;Paramètres avancés&quot;</extracomment>
         <translation>Rozšířené parametry</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="36"/>
-        <source>contact_editor_popup_abort_confirmation_title</source>
-        <extracomment>Modifications non enregistrées</extracomment>
-        <translation>Neuložené změny</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="38"/>
-        <source>contact_editor_popup_abort_confirmation_message</source>
-        <extracomment>Vous avez des modifications non enregistrées. Si vous quittez cette page, vos changements seront perdus. Voulez-vous enregistrer vos modifications avant de continuer ?</extracomment>
-        <translation>Máte neuložené změny. Pokud opustíte tuto stránku, vaše změny budou ztraceny. Chcete své změny před pokračováním uložit?</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="48"/>
-        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
-        <extracomment>&quot;Ne pas enregistrer&quot;</extracomment>
-        <translation>Neukládat</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="50"/>
-        <source>contact_editor_dialog_abort_confirmation_save</source>
-        <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation>Uložit</translation>
     </message>
 </context>
 <context>
@@ -8117,7 +8138,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../view/Control/Button/ComboBox.qml" line="48"/>
         <source>combobox_with_value_accessible_name</source>
-        <translation type="unfinished">%1 aktuální hodnota %2</translation>
+        <translation>%1 aktuální hodnota %2</translation>
     </message>
 </context>
 <context>
@@ -8126,6 +8147,11 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="19"/>
         <source>unread</source>
         <translation>Žádný token nenalezen</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/UnreadNotification.qml" line="21"/>
+        <source>unread_notification_accessible_name</source>
+        <translation>Oznámení o nepřečtených zprávách: %1 nepřečtených</translation>
     </message>
 </context>
 </TS>

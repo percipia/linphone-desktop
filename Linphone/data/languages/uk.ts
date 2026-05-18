@@ -1999,6 +1999,11 @@
         <extracomment>&quot;Stocker ici les contacts nouvellement crées&quot;</extracomment>
         <translation>Зберігати тут щойно створені контакти</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="32"/>
+        <source>save</source>
+        <translation>Зберегти</translation>
+    </message>
 </context>
 <context>
     <name>ChangeLayoutForm</name>
@@ -4286,6 +4291,26 @@ Error</extracomment>
         <extracomment>&quot;Ajouter un compte&quot;</extracomment>
         <translation>Додати обліковий запис</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="79"/>
+        <source>contact_editor_popup_abort_confirmation_title</source>
+        <translation>Незбережені зміни</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="81"/>
+        <source>contact_editor_popup_abort_confirmation_message</source>
+        <translation>У вас є незбережені зміни. Якщо ви залишите цю сторінку, ваші зміни будуть втрачені. Бажаєте зберегти зміни, перш ніж продовжити?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="94"/>
+        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
+        <translation>Не зберігати</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="96"/>
+        <source>contact_editor_dialog_abort_confirmation_save</source>
+        <translation>Зберегти</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -5724,30 +5749,6 @@ Pour les activer dans un projet commercial, merci de nous contacter.</source>
         <source>settings_advanced_title</source>
         <extracomment>&quot;Paramètres avancés&quot;</extracomment>
         <translation>Додаткові налаштування</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="36"/>
-        <source>contact_editor_popup_abort_confirmation_title</source>
-        <extracomment>Modifications non enregistrées</extracomment>
-        <translation>Незбережені зміни</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="38"/>
-        <source>contact_editor_popup_abort_confirmation_message</source>
-        <extracomment>Vous avez des modifications non enregistrées. Si vous quittez cette page, vos changements seront perdus. Voulez-vous enregistrer vos modifications avant de continuer ?</extracomment>
-        <translation>У вас є незбережені зміни. Якщо ви залишите цю сторінку, ваші зміни будуть втрачені. Бажаєте зберегти зміни, перш ніж продовжити?</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="48"/>
-        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
-        <extracomment>&quot;Ne pas enregistrer&quot;</extracomment>
-        <translation>Не зберігати</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="50"/>
-        <source>contact_editor_dialog_abort_confirmation_save</source>
-        <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation>Зберегти</translation>
     </message>
 </context>
 <context>
