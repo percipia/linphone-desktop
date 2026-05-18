@@ -5574,30 +5574,6 @@ Pour les activer dans un projet commercial, merci de nous contacter.</source>
         <extracomment>&quot;Paramètres avancés&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="36"/>
-        <source>contact_editor_popup_abort_confirmation_title</source>
-        <extracomment>Modifications non enregistrées</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="38"/>
-        <source>contact_editor_popup_abort_confirmation_message</source>
-        <extracomment>Vous avez des modifications non enregistrées. Si vous quittez cette page, vos changements seront perdus. Voulez-vous enregistrer vos modifications avant de continuer ?</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="48"/>
-        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
-        <extracomment>&quot;Ne pas enregistrer&quot;</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="50"/>
-        <source>contact_editor_dialog_abort_confirmation_save</source>
-        <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Sticker</name>

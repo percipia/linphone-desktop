@@ -2050,7 +2050,7 @@
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="32"/>
         <source>save</source>
         <extracomment>&quot;Save&quot;</extracomment>
-        <translation type="unfinished">Speichern</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="53"/>
@@ -2218,7 +2218,7 @@
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="332"/>
         <source>chat</source>
         <extracomment>%1 chat</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Chat</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="373"/>
@@ -2266,13 +2266,13 @@
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="470"/>
         <source>focused_chat_accessible_label</source>
         <extracomment>%1 chat %2</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Chat %2</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="472"/>
         <source>unread_messages_accessible_label</source>
         <extracomment>: %1 unread messages</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>: %1 ungelesene Nachrichten</translation>
     </message>
 </context>
 <context>
@@ -2882,7 +2882,7 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <location filename="../../model/cli/CliModel.cpp" line="463"/>
         <source>info_popup_cli_unsupported_scheme_message</source>
         <extracomment>&quot;Not a valid URI: `%1` Unsupported scheme: `%2`.&quot;</extracomment>
-        <translation type="unfinished">Kein Token gefunden</translation>
+        <translation>Ungültige URI: `%1` Nicht unterstütztes Schema: `%2`.</translation>
     </message>
 </context>
 <context>
@@ -2891,7 +2891,7 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <location filename="../../view/Control/Button/ComboBox.qml" line="48"/>
         <source>combobox_with_value_accessible_name</source>
         <extracomment>%1 current value %2</extracomment>
-        <translation type="unfinished">%1 aktueller Wert %2</translation>
+        <translation>%1 aktueller Wert %2</translation>
     </message>
 </context>
 <context>
@@ -4649,25 +4649,25 @@ Ablauf: %1</translation>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="79"/>
         <source>contact_editor_popup_abort_confirmation_title</source>
         <extracomment>Modifications non enregistrées</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nicht gespeicherte Änderungen</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="81"/>
         <source>contact_editor_popup_abort_confirmation_message</source>
         <extracomment>Vous avez des modifications non enregistrées. Si vous quittez cette page, vos changements seront perdus. Voulez-vous enregistrer vos modifications avant de continuer ?</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben ungespeicherte Änderungen. Wenn Sie diese Seite verlassen, gehen Ihre Änderungen verloren. Möchten Sie Ihre Änderungen speichern, bevor Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="94"/>
         <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
         <extracomment>&quot;Ne pas enregistrer&quot;</extracomment>
-        <translation type="unfinished">Nicht speichern</translation>
+        <translation>Nicht speichern</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="96"/>
         <source>contact_editor_dialog_abort_confirmation_save</source>
         <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation type="unfinished">Speichern</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="167"/>
@@ -6480,7 +6480,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <location filename="../../view/Control/Input/SearchBar.qml" line="79"/>
         <source>search_bar_accessible_name</source>
         <extracomment>Search bar : %1</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Suchleiste: %1</translation>
     </message>
     <message>
         <location filename="../../view/Control/Input/SearchBar.qml" line="133"/>
@@ -6832,7 +6832,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="21"/>
         <source>unread_notification_accessible_name</source>
         <extracomment>%1 notification badge : %2 unread</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Anzeige für ungelesene Benachrichtigungen: %1 ungelesen</translation>
     </message>
 </context>
 <context>

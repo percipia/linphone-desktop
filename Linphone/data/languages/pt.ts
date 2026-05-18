@@ -1932,6 +1932,11 @@
         <extracomment>&quot;Stocker ici les contacts nouvellement crées&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="32"/>
+        <source>save</source>
+        <translation>Gravar</translation>
+    </message>
 </context>
 <context>
     <name>ChangeLayoutForm</name>
@@ -4202,6 +4207,26 @@ Error</extracomment>
         <extracomment>&quot;Ajouter un compte&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="79"/>
+        <source>contact_editor_popup_abort_confirmation_title</source>
+        <translation>Modificações não salvas</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="81"/>
+        <source>contact_editor_popup_abort_confirmation_message</source>
+        <translation>Você tem modificações que não foram salvas. Se você deixar esta página, suas modificações serão perdidas. Você gostaria de salvar suas modificações antes de continuar?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="94"/>
+        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
+        <translation>Não gravar</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="96"/>
+        <source>contact_editor_dialog_abort_confirmation_save</source>
+        <translation>Gravar</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -5630,30 +5655,6 @@ Pour les activer dans un projet commercial, merci de nous contacter.</source>
         <source>settings_advanced_title</source>
         <extracomment>&quot;Paramètres avancés&quot;</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="36"/>
-        <source>contact_editor_popup_abort_confirmation_title</source>
-        <extracomment>Modifications non enregistrées</extracomment>
-        <translation>Modificações não salvas</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="38"/>
-        <source>contact_editor_popup_abort_confirmation_message</source>
-        <extracomment>Vous avez des modifications non enregistrées. Si vous quittez cette page, vos changements seront perdus. Voulez-vous enregistrer vos modifications avant de continuer ?</extracomment>
-        <translation>Você tem modificações que não foram salvas. Se você deixar esta página, suas modificações serão perdidas. Você gostaria de salvar suas modificações antes de continuar?</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="48"/>
-        <source>contact_editor_dialog_abort_confirmation_do_not_save</source>
-        <extracomment>&quot;Ne pas enregistrer&quot;</extracomment>
-        <translation>Não gravar</translation>
-    </message>
-    <message>
-        <location filename="../../view/Page/Form/Settings/SettingsPage.qml" line="50"/>
-        <source>contact_editor_dialog_abort_confirmation_save</source>
-        <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation>Gravar</translation>
     </message>
 </context>
 <context>
