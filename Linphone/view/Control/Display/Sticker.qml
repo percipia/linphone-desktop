@@ -28,6 +28,7 @@ Item {
 	property alias secured: avatar.secured
 	property color color: DefaultStyle.grey_600
     property real radius: Utils.getSizeWithScreenRatio(15)
+	property var securityLevel: avatar.securityLevel
 	property bool remoteIsPaused: participantDevice
 		? participantDevice.core.isPaused
 		: previewEnabled

@@ -58,9 +58,8 @@ Control.Page {
 				icon.source: AppIcons.closeX
 				onClicked: mainItem.visible = false
 				anchors.right: parent.right
-				anchors.top: parent.top
+				anchors.verticalCenter: parent.verticalCenter
 				anchors.rightMargin: Utils.getSizeWithScreenRatio(5)
-				anchors.topMargin: Utils.getSizeWithScreenRatio(5)
 				//: Close %1 panel
 				Accessible.name: qsTr("close_name_panel_accessible_button").arg(mainItem.headerTitleText)
 				KeyNavigation.tab : firstContentFocusableItem ?? nextItemInFocusChain()
@@ -88,6 +87,7 @@ Control.Page {
 				}
 				RowLayout {
 					id: customButtonLayout
+					Layout.rightMargin: closeButton.width
 				}
 			}
 			RowLayout {

@@ -217,6 +217,7 @@ Control.Control {
                     
                     background: Item {
                         anchors.fill: parent
+                        visible: !chatBubbleContent.isOnlyEmojis
                         Rectangle {
                             anchors.fill: parent
                             color: mainItem.backgroundColor

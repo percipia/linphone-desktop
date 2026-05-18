@@ -46,6 +46,13 @@ QtObject {
         weight: Font.ExtraBold
 	})
 
+	// Title/H1 -  Large bloc title
+	property font emoji: Qt.font( {
+		family: DefaultStyle.defaultFont,
+        pixelSize: Utils.getSizeWithScreenRatio(60),
+        weight: Font.ExtraBold
+	})
+
 	// Text/P4 - Xsmall paragraph text
     property font p4: Qt.font( {
         family: DefaultStyle.defaultFont,
