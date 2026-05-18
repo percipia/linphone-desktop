@@ -16,6 +16,9 @@ ColumnLayout {
 	property ChatMessageGui chatMessageGui: null
     property bool isRemoteMessage: chatMessageGui? chatMessageGui.core.isRemoteMessage : false
 	property ChatGui chatGui: null
+	property bool isOnlyEmojis: messagesTextsList.isOnlyEmojis && messagesVoicesList.count === 0
+	&& conferenceList.count === 0 && !singleImageFile.visible && !singleAnimatedImageFile.visible
+	&& !singleVideoFile.visible && !messageFilesList.visible
 	
 	signal isFileHoveringChanged(bool isFileHovering)
 	signal lastSelectedTextChanged(string selectedText)
@@ -157,6 +160,7 @@ ColumnLayout {
 		id: messagesTextsList
 		visible: count > 0
 		// width: mainItem.maxWidth
+		property bool isOnlyEmojis: count === 1 && itemAt(0).isOnlyEmojis
 		model: ChatMessageContentProxy {
 			filterType: ChatMessageContentProxy.FilterContentType.Text
 			chatMessageGui: mainItem.chatMessageGui

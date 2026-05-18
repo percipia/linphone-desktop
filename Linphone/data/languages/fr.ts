@@ -2585,7 +2585,7 @@ en bout. Seul votre correspondant peut les déchiffrer.</translation>
         <extracomment>Messages are not end to end encrypted, 
  may sure you don&apos;t share any sensitive information !</extracomment>
         <translation>Les messages ne sont pas chiffrés de bout en bout,
-        assurez-vous de ne pas partager d’informations sensibles !</translation>
+assurez-vous de ne pas partager d’informations sensibles !</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="251"/>

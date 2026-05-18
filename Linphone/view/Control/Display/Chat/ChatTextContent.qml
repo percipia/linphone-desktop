@@ -18,8 +18,9 @@ TextEdit {
 	// force restoring cursor in case we click on a mention, otherwise
 	// the cursor stays IBeam
 	onVisibleChanged: if (!visible) UtilsCpp.restoreGlobalCursor()
+	property bool isOnlyEmojis: UtilsCpp.isOnlyEmojis(contentGui.core.utf8Text)
 	font {
-		pixelSize: (contentGui && UtilsCpp.isOnlyEmojis(contentGui.core.utf8Text)) ? Typography.h1.pixelSize : Typography.p1.pixelSize
+		pixelSize: (contentGui && isOnlyEmojis) ? Typography.emoji.pixelSize : Typography.p1.pixelSize
 		weight: Typography.p1.weight
 	}	
 	// property int removeWarningFromBindingLoop : implicitWidth	// Just a dummy variable to remove meaningless binding loop on implicitWidth

@@ -131,14 +131,13 @@ Control.Control {
 						}
 					}
 					contentItem: RowLayout {
+						width: sendingControl.width - sendingControl.leftPadding - sendingControl.rightPadding
 						Flickable {
 							id: sendingAreaFlickable
 							Layout.fillHeight: true
-							width: sendingControl.width - sendingControl.leftPadding - sendingControl.rightPadding
 							Layout.fillWidth: true
 							Layout.alignment: Qt.AlignCenter
 							contentHeight: sendingTextArea.contentHeight
-							contentWidth: width
 
 							onContentHeightChanged: {
 								if (sendingTextArea.contentHeight > mainItem.height - (mainItem.topPadding + mainItem.bottomPadding + sendingControl.topPadding + sendingControl.bottomPadding)
@@ -210,6 +209,7 @@ Control.Control {
 							BigButton {
 								id: recordButton
 								ToolTip.visible: !enabled && hovered
+								Layout.preferredWidth: width
 								//: Cannot record a message while a call is ongoing
 								ToolTip.text: qsTr("cannot_record_while_in_call_tooltip")
 								enabled: !mainItem.callOngoing
@@ -220,15 +220,24 @@ Control.Control {
 								onClicked: {
 									sendingAreaStackView.push(voiceMessageRecordComp)
 								}
+								Binding on width {
+									when: !recordButton.visible
+									value: 0
+								}
 							}
 							BigButton {
 								id: sendMessageButton
+								Layout.preferredWidth: width
 								Layout.preferredHeight: height
 								visible: sendingTextArea.text.length !== 0 || mainItem.selectedFilesCount > 0
 								style: ButtonStyle.noBackgroundOrange
 								icon.source: mainItem.isEditing ? AppIcons.pencil : AppIcons.paperPlaneRight
 								onClicked: {
 									mainItem.sendMessage()
+								}
+								Binding on width {
+									when: !sendMessageButton.visible
+									value: 0
 								}
 							}
 						}

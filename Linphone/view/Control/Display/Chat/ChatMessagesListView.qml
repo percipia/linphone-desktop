@@ -171,15 +171,16 @@ ListView {
             Layout.topMargin: topMargin
             Layout.bottomMargin: bottomMargin
             Layout.alignment: Qt.AlignTop
+            Layout.maximumWidth: mainItem.width - (sideMargin*2)
             padding: Utils.getSizeWithScreenRatio(10)
             background: Rectangle {
+                anchors.fill: parent
                 color: "transparent"
                 border.color: DefaultStyle.main2_200
                 border.width: Utils.getSizeWithScreenRatio(2)
                 radius: Utils.getSizeWithScreenRatio(10)
             }
             contentItem: RowLayout {
-                Layout.maximumWidth: mainItem.width - (headerMessage.sideMargin*2)
                 EffectImage {
                     Layout.preferredWidth: Utils.getSizeWithScreenRatio(23)
                     Layout.preferredHeight: Utils.getSizeWithScreenRatio(23)
@@ -188,7 +189,6 @@ ListView {
                 }
                 ColumnLayout {
                     spacing: Utils.getSizeWithScreenRatio(2)
-                    Layout.maximumWidth: mainItem.width
                     Text {
                         text: mainItem.isEncrypted
                             //: End to end encrypted chat
@@ -206,7 +206,7 @@ ListView {
                         text: mainItem.isEncrypted
                             //: Messages in this conversation are e2e encrypted. \n Only your correspondent can decrypt them.
                             ? qsTr("chat_message_list_encrypted_header_message")
-                            //: Messages are not end to end encrypted, \n may sure you don't share any sensitive information !
+                            //: Messages are not end to end encrypted, \n make sure you don't share any sensitive information !
                             : qsTr("chat_message_list_not_encrypted_header_message")
                         Layout.fillWidth: true
                         color: DefaultStyle.grey_400
