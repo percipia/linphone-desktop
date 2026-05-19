@@ -250,6 +250,8 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 	if (!textPartToBold.isEmpty()) {
 		finalText = boldTextPart(finalText, textPartToBold);
 	}
+	finalText.prepend("<p style='white-space: pre-wrap;'>");
+	finalText.append("</p>");
 	return finalText;
 }
 

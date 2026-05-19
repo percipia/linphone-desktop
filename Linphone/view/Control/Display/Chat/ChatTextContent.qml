@@ -32,7 +32,7 @@ TextEdit {
 	height: visible ? contentHeight: 0
 	clip: false
 
-	text: "<span style='white-space: pre-wrap;'>" + contentGui.core.richFormatText + "</span>"
+	text: contentGui.core.richFormatText
 	onSearchedTextPartChanged: {
 		contentGui.core.setSearchedTextPart(searchedTextPart)
 	}
