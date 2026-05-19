@@ -29,12 +29,10 @@ TextEdit {
 	textMargin: 0
 	readOnly: true
 	selectByMouse: true
-	// width: 50//parent && parent.width || 1
 	height: visible ? contentHeight: 0
 	clip: false
 
-	text: contentGui.core.richFormatText
-	// text: "glouglouglouglouglouglouglouglouglouglouglouglou il fait soif glouglouglouglou? glouglouglou! glouuuuuuuuuuuuuuuuuuuug ?!? Ha que <p> TOTO </p>'"
+	text: "<span style='white-space: pre-wrap;'>" + contentGui.core.richFormatText + "</span>"
 	onSearchedTextPartChanged: {
 		contentGui.core.setSearchedTextPart(searchedTextPart)
 	}
@@ -52,9 +50,9 @@ TextEdit {
 		else
 			Qt.openUrlExternally(link)
 	}
-	onSelectedTextChanged:{
-		if(selectedText != '') lastTextSelected = selectedText
-	}
+	// onSelectedTextChanged:{
+	// 	if(selectedText != '') lastTextSelected = selectedText
+	// }
 	onLinkHovered: {
 		if (hoveredLink !== "") UtilsCpp.setGlobalCursor(Qt.PointingHandCursor)
 		else UtilsCpp.restoreGlobalCursor()
