@@ -167,7 +167,6 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 			                  .replace('"', "&quot;")
 			                  .replace('\'', "&#039;")
 			                  .replace('\n', "<br>");
-			//   .replace(' ', "&nbsp;");
 			if (!iriParsed[i].first) {
 				if (lastWasUrl) {
 					lastWasUrl = false;
@@ -199,14 +198,12 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 			}
 		}
 	}
-	qDebug() << "formatted 1" << formattedText;
 	if (lastWasUrl && formattedText.last().back() != ' ') {
 		formattedText.push_back(" ");
 	}
 	if (chatRoom) {
 		auto participants = chatRoom->getParticipants();
 		auto mentionsParsed = UriTools::parseMention(formattedText.join(""));
-		qDebug() << "formatted 2" << mentionsParsed;
 		formattedText.clear();
 
 		for (int i = 0; i < mentionsParsed.size(); ++i) {
@@ -249,9 +246,7 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 			}
 		}
 	}
-	qDebug() << "formatted 3" << formattedText;
 	QString finalText = formattedText.join("");
-	qDebug() << "formatted 4" << finalText;
 	if (!textPartToBold.isEmpty()) {
 		finalText = boldTextPart(finalText, textPartToBold);
 	}
