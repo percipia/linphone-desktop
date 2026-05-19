@@ -711,9 +711,13 @@ AbstractWindow {
                     property int currentIndex: 0
                     visible: false
                     onVisibleChanged: if(!visible) contentLoader.sourceComponent = null
-                    function replace(id) {
+                    function replace(id, properties) {
                         rightPanel.customHeaderButtons = null
+                        contentLoader.sourceComponent = null
                         contentLoader.sourceComponent = id
+                        for (var key in properties) {
+                            contentLoader.item[key] = properties[key]
+                        }
                     }
                     headerStack.currentIndex: 0
                     headerValidateButtonText: qsTr("add")
@@ -1295,7 +1299,7 @@ AbstractWindow {
                     onSettingsButtonCheckedChanged: {
                         if (settingsButtonChecked) {
                             rightPanel.visible = true
-                            rightPanel.replace(settingsPanel)
+                            rightPanel.replace(settingsPanel, {"forceUpdatingDeviceWithoutSaving": true})
                         } else {
                             rightPanel.visible = false
                         }
