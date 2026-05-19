@@ -8,6 +8,8 @@ import 'qrc:/qt/qml/Linphone/view/Control/Tool/Helper/utils.js' as Utils
 ColumnLayout {
 	id: mainItem
 	property CallGui call
+	// This property is used to change the devices automatically in the waiting room
+	property bool forceUpdatingDeviceWithoutSaving
 	property alias speakerVolume: speakerVolume.value
 	property string speakerDevice: outputAudioDeviceCBox.currentText
 	property alias micVolume: microVolume.value
@@ -92,7 +94,7 @@ ColumnLayout {
 					propertyOwner: SettingsCpp
 					textRole: 'display_name'
 					Connections {
-						enabled: mainItem.call
+						enabled: mainItem.call || mainItem.forceUpdatingDeviceWithoutSaving
 						target: outputAudioDeviceCBox
 						function onCurrentValueChanged() {
 							SettingsCpp.lSetPlaybackDevice(outputAudioDeviceCBox.currentValue)
@@ -107,7 +109,7 @@ ColumnLayout {
 					to: 1.0
 					value: SettingsCpp.playbackGain
 					onMoved: {
-						if (mainItem.call) SettingsCpp.lSetPlaybackGain(value)
+						if (mainItem.call || mainItem.forceUpdatingDeviceWithoutSaving) SettingsCpp.lSetPlaybackGain(value)
 						else SettingsCpp.playbackGain = value
 					}
 					//: %1 volume
@@ -143,7 +145,7 @@ ColumnLayout {
 					propertyOwner: SettingsCpp
 					textRole: 'display_name'
 					Connections {
-						enabled: mainItem.call
+						enabled: mainItem.call || mainItem.forceUpdatingDeviceWithoutSaving
 						target: inputAudioDeviceCBox
 						function onCurrentValueChanged() {
 							SettingsCpp.lSetCaptureDevice(inputAudioDeviceCBox.currentValue)
@@ -158,7 +160,7 @@ ColumnLayout {
 					to: 1.0
 					value: SettingsCpp.captureGain
 					onMoved: {
-						if (mainItem.call) SettingsCpp.lSetCaptureGain(value)
+						if (mainItem.call || mainItem.forceUpdatingDeviceWithoutSaving) SettingsCpp.lSetCaptureGain(value)
 						else SettingsCpp.captureGain = value
 					}
 					//: %1 volume
@@ -232,7 +234,7 @@ ColumnLayout {
 					propertyName: "videoDevice"
 					propertyOwner: SettingsCpp
 					Connections {
-						enabled: mainItem.call
+						enabled: mainItem.call || mainItem.forceUpdatingDeviceWithoutSaving
 						target: videoDevicesCbox
 						function onCurrentValueChanged() {
 							SettingsCpp.lSetVideoDevice(videoDevicesCbox.currentValue)
