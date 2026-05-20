@@ -403,8 +403,8 @@ void App::connectCoreModel() {
 			    if (gstate == linphone::GlobalState::Configuring) {
 				    if (mEngine) {
 					    // Force cleaning components when configuring for the buttons styles to be reset
-					    // mEngine->clearSingletons();
-					    // mEngine->clearComponentCache();
+					    mEngine->clearSingletons();
+					    mEngine->clearComponentCache();
 				    }
 			    }
 		    });
