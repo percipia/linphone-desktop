@@ -381,7 +381,23 @@ void ChatCore::setSelf(const QSharedPointer<ChatCore> &me) {
 	mChatModelConnection->makeConnectToModel(
 	    &ChatModel::subjectChanged, [this](const std::shared_ptr<linphone::ChatRoom> &chatRoom,
 	                                       const std::shared_ptr<const linphone::EventLog> &eventLog) {
-		    QString subject = Utils::coreStringToAppString(chatRoom->getSubject());
+		    QString subject;
+		    if (chatRoom->hasCapability((int)linphone::ChatRoom::Capabilities::Basic)) {
+			    auto chatRoomAddress = chatRoom->getPeerAddress();
+			    subject = ToolModel::getDisplayName(chatRoomAddress);
+		    } else {
+			    mIsBasic = false;
+			    auto participants = chatRoom->getParticipants();
+			    if (chatRoom->hasCapability((int)linphone::ChatRoom::Capabilities::OneToOne)) {
+				    if (participants.size() > 0) {
+					    auto peer = participants.front();
+					    auto peerAddress = peer->getAddress();
+					    if (peer) mTitle = ToolModel::getDisplayName(peerAddress);
+				    }
+			    } else if (chatRoom->hasCapability((int)linphone::ChatRoom::Capabilities::Conference)) {
+				    subject = Utils::coreStringToAppString(chatRoom->getSubject());
+			    }
+		    }
 		    mChatModelConnection->invokeToCore([this, subject]() { setTitle(subject); });
 	    });
 
