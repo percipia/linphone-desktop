@@ -91,8 +91,12 @@ Control.TabBar {
 		id: actionsRepeater
 		Control.TabButton {
 			id: tabButton
-			parent: visible ? mainItem: null
 			width: mainItem.width
+			Binding on height {
+				when: !tabButton.visible
+				value: 0
+			}
+    		anchors.topMargin: index === 0 ? Utils.getSizeWithScreenRatio(36) : 0
             bottomInset:  Utils.getSizeWithScreenRatio(32)
             topInset:  Utils.getSizeWithScreenRatio(32)
 			hoverEnabled: true
@@ -104,7 +108,7 @@ Control.TabBar {
 			activeFocusOnTab: true
 			UnreadNotification {
 				badgeType: modelData.label
-				unread: !defaultAccount 
+				unread: !defaultAccount
 				? -1
 				: index === 0 
 					? defaultAccount.core?.unreadCallNotifications || -1
@@ -120,7 +124,7 @@ Control.TabBar {
 				cursorShape: tabButton.hovered ? Qt.PointingHandCursor : Qt.ArrowCursor
 				acceptedButtons: Qt.NoButton				
 			}
-			background: Rectangle{
+			background: Rectangle {
 				// Black border for keyboard navigation
 				visible: tabButton.keyboardFocus
 				color: "transparent"
