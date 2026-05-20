@@ -215,7 +215,7 @@ void ConferenceModel::onParticipantDeviceRemoved(
 	         << participantDevice->isInConference() << "]";
 	lDebug() << "Me devices : " << conference->getMe()->getDevices().size();
 	if (participantDevice->screenSharingEnabled()) emit isScreenSharingEnabledChanged(false);
-	emit participantDeviceRemoved(conference, participantDevice);
+	emit participantDeviceRemoved(participantDevice);
 	emit participantDeviceCountChanged(conference, getParticipantDeviceCount());
 }
 void ConferenceModel::onParticipantDeviceStateChanged(const std::shared_ptr<linphone::Conference> &conference,

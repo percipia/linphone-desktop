@@ -36,7 +36,8 @@ DEFINE_ABSTRACT_OBJECT(ParticipantProxy)
 ParticipantProxy::ParticipantProxy(QObject *parent) : LimitProxy(parent) {
 	mParticipants = ParticipantList::create();
 	connect(this, &ParticipantProxy::chatRoomModelChanged, this, &ParticipantProxy::countChanged);
-	connect(this, &ParticipantProxy::conferenceModelChanged, this, &ParticipantProxy::countChanged);
+	connect(this, &ParticipantProxy::currentCallChanged, this, &ParticipantProxy::countChanged);
+	connect(mParticipants.get(), &ParticipantList::currentCallChanged, this, &ParticipantProxy::countChanged);
 	setSourceModels(new SortFilterList(mParticipants.get(), Qt::AscendingOrder));
 }
 
@@ -44,34 +45,12 @@ ParticipantProxy::~ParticipantProxy() {
 }
 
 CallGui *ParticipantProxy::getCurrentCall() const {
-	return mCurrentCall;
+	return mParticipants ? mParticipants->getCurrentCall() : nullptr;
 }
 
 void ParticipantProxy::setCurrentCall(CallGui *call) {
 	lDebug() << "[ParticipantProxy] set current call " << this << " => " << call;
-	if (mCurrentCall != call) {
-		CallCore *callCore = nullptr;
-		if (mCurrentCall) {
-			callCore = mCurrentCall->getCore();
-			if (callCore) callCore->disconnect(mParticipants.get());
-			callCore = nullptr;
-		}
-		mCurrentCall = call;
-		if (mCurrentCall) callCore = mCurrentCall->getCore();
-		if (callCore) {
-			connect(callCore, &CallCore::conferenceChanged, mParticipants.get(), [this]() {
-				auto conference = mCurrentCall->getCore()->getConferenceCore();
-				lDebug() << "[ParticipantDeviceProxy] set conference " << this << " => " << conference;
-				mParticipants->setConferenceModel(conference ? conference->getModel() : nullptr);
-				// mParticipants->lSetConferenceModel(conference ? conference->getModel() : nullptr);
-			});
-			auto conference = callCore->getConferenceCore();
-			lDebug() << "[ParticipantDeviceProxy] set conference " << this << " => " << conference;
-			mParticipants->setConferenceModel(conference ? conference->getModel() : nullptr);
-			// mParticipants->lSetConferenceModel(conference ? conference->getModel() : nullptr);
-		}
-		emit currentCallChanged();
-	}
+	if (mParticipants) mParticipants->setCurrentCall(call);
 }
 
 bool ParticipantProxy::getShowMe() const {

@@ -100,6 +100,7 @@ void ConferenceCore::setSelf(QSharedPointer<ConferenceCore> me) {
 				    }
 			    }
 		    }
+		    emit conferenceStateChanged(newState);
 	    });
 
 	mConferenceModelConnection->makeConnectToModel(
@@ -132,6 +133,24 @@ void ConferenceCore::setSelf(QSharedPointer<ConferenceCore> me) {
 	mConferenceModelConnection->makeConnectToCore(&ConferenceCore::lToggleScreenSharing, [this]() {
 		mConferenceModelConnection->invokeToModel([this]() { mConferenceModel->toggleScreenSharing(); });
 	});
+	mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantAdminStatusChanged, [this]() {
+		mConferenceModelConnection->invokeToCore([this]() { emit participantAdminStatusChanged(); });
+	});
+	mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantAdded, [this]() {
+		mConferenceModelConnection->invokeToCore([this]() { emit participantAdded(); });
+	});
+	mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantRemoved, [this]() {
+		mConferenceModelConnection->invokeToCore([this]() { emit participantRemoved(); });
+	});
+	mConferenceModelConnection->makeConnectToModel(
+	    &ConferenceModel::participantDeviceAdded, [this](const std::shared_ptr<linphone::ParticipantDevice> &device) {
+		    mConferenceModelConnection->invokeToCore([this, device]() { emit participantDeviceAdded(device); });
+	    });
+	mConferenceModelConnection->makeConnectToModel(
+	    &ConferenceModel::participantDeviceRemoved,
+	    [this](const std::shared_ptr<const linphone::ParticipantDevice> &device) {
+		    mConferenceModelConnection->invokeToCore([this, device]() { emit participantDeviceRemoved(device); });
+	    });
 }
 
 bool ConferenceCore::updateLocalParticipant() { // true if changed

@@ -22,10 +22,8 @@
 #define PARTICIPANT_LIST_H_
 
 #include "../proxy/ListProxy.hpp"
+#include "core/conference/ConferenceCore.hpp"
 #include "core/participant/ParticipantCore.hpp"
-#include "model/conference/ConferenceModel.hpp"
-
-class ConferenceModel;
 
 // =============================================================================
 
@@ -33,7 +31,6 @@ class ParticipantList : public ListProxy, public AbstractObject {
 	Q_OBJECT
 public:
 	static QSharedPointer<ParticipantList> create();
-	static QSharedPointer<ParticipantList> create(const std::shared_ptr<ConferenceModel> &conferenceModel);
 
 	// ParticipantList(ChatRoomModel *chatRoomModel, QObject *parent = Q_NULLPTR);
 	// ParticipantList(ConferenceModel *conferenceModel, QObject *parent = Q_NULLPTR);
@@ -53,7 +50,9 @@ public:
 
 	bool contains(const QString &address) const;
 
-	void setConferenceModel(const std::shared_ptr<ConferenceModel> &conferenceModel);
+	void setConferenceCore(const QSharedPointer<ConferenceCore> &conferenceCore);
+	void setCurrentCall(CallGui *call);
+	CallGui *getCurrentCall() const;
 
 	virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
@@ -65,9 +64,12 @@ signals:
 	void lUpdateParticipants();
 	void lSetParticipantAdminStatus(ParticipantCore *participant, bool status);
 
+	void currentCallChanged();
+
 private:
-	std::shared_ptr<ConferenceModel> mConferenceModel;
-	QSharedPointer<SafeConnection<ParticipantList, ConferenceModel>> mConferenceModelConnection;
+	CallGui *mCurrentCall = nullptr;
+	QSharedPointer<ConferenceCore> mConferenceCore;
+	QSharedPointer<SafeConnection<ParticipantList, CoreModel>> mCoreModelConnection;
 
 	// ChatRoomModel *mChatRoomModel = nullptr;
 	// ConferenceCore *mConferenceCore = nullptr;
