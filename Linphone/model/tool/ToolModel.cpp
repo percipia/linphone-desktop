@@ -38,12 +38,24 @@ ToolModel::ToolModel(QObject *parent) {
 ToolModel::~ToolModel() {
 }
 std::shared_ptr<linphone::Address> ToolModel::interpretUrl(const QString &address) {
+	if (address.isEmpty()) return nullptr;
 	bool usePrefix = false; // TODO
+	QString addrCopy = address;
+	QRegularExpression alphaNumRegExp = QRegularExpression("[A-Za-z0-9]", QRegularExpression::CaseInsensitiveOption);
 	// CoreManager::getInstance()->getAccountSettingsModel()->getUseInternationalPrefixForCallsAndChats();
+	auto lastChar = addrCopy.last(1);
+	auto match = alphaNumRegExp.match(lastChar);
+	if (!match.hasMatch()) {
+		do {
+			addrCopy.chop(1);
+			auto lastChar = addrCopy.last(1);
+			match = alphaNumRegExp.match(lastChar);
+		} while (!match.hasMatch());
+	}
 	auto interpretedAddress =
-	    CoreModel::getInstance()->getCore()->interpretUrl(Utils::appStringToCoreString(address), usePrefix);
+	    CoreModel::getInstance()->getCore()->interpretUrl(Utils::appStringToCoreString(addrCopy), usePrefix);
 	if (!interpretedAddress) { // Try by removing scheme.
-		QStringList splitted = address.split(":");
+		QStringList splitted = addrCopy.split(":");
 		if (splitted.size() > 0 && splitted[0] == "sip") {
 			splitted.removeFirst();
 			interpretedAddress = CoreModel::getInstance()->getCore()->interpretUrl(
