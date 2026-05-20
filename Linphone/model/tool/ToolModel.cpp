@@ -159,6 +159,11 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 		auto iriParsed = UriTools::parseIri(text);
 
 		for (int i = 0; i < iriParsed.size(); ++i) {
+			bool endsWithComma = false;
+			if (iriParsed[i].second.endsWith(",")) {
+				endsWithComma = true;
+				iriParsed[i].second.chop(1);
+			}
 			QString iri = iriParsed[i]
 			                  .second.replace('&', "&amp;")
 			                  .replace(' ', " ")
@@ -193,6 +198,7 @@ QString ToolModel::encodeTextToQmlRichFormat(const QString &text,
 	  */
 				formattedText.append("<a style=\"color:" + primaryColor.name() + ";\" href=\"" + uri + "\">" + iri +
 				                     "</a>");
+				if (endsWithComma) formattedText.append(",");
 				lastWasUrl = true;
 				/*}*/
 			}
