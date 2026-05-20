@@ -23,6 +23,7 @@
 
 #include "../proxy/ListProxy.hpp"
 #include "ParticipantDeviceCore.hpp"
+#include "core/conference/ConferenceCore.hpp"
 #include "model/conference/ConferenceModel.hpp"
 #include "tool/AbstractObject.hpp"
 #include "tool/thread/SafeConnection.hpp"
@@ -32,30 +33,33 @@ class ParticipantDeviceList : public ListProxy, public AbstractObject {
 
 public:
 	static QSharedPointer<ParticipantDeviceList> create();
-	static QSharedPointer<ParticipantDeviceList> create(const std::shared_ptr<ConferenceModel> &conferenceModel);
 
 	ParticipantDeviceList();
 	~ParticipantDeviceList();
 
-	QList<QSharedPointer<ParticipantDeviceCore>>
+	QList<QSharedPointer<ParticipantDeviceCore>> *
 	buildDevices(const std::shared_ptr<ConferenceModel> &conferenceModel) const;
 
 	QSharedPointer<ParticipantDeviceCore> getMe() const;
 
 	void setDevices(QList<QSharedPointer<ParticipantDeviceCore>> devices);
 	QSharedPointer<ParticipantDeviceCore> findDeviceByUniqueAddress(const QString &address);
-	void setConferenceModel(const std::shared_ptr<ConferenceModel> &conferenceModel);
+	void setConferenceCore(const QSharedPointer<ConferenceCore> &conference);
+	void setCurrentCall(CallGui *call);
+	CallGui *getCurrentCall() const;
 
 	void setSelf(QSharedPointer<ParticipantDeviceList> me);
 
 	virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 signals:
-	void lSetConferenceModel(const std::shared_ptr<ConferenceModel> &conferenceModel);
+	void currentCallChanged();
 
 private:
-	std::shared_ptr<ConferenceModel> mConferenceModel;
-	QSharedPointer<SafeConnection<ParticipantDeviceList, ConferenceModel>> mConferenceModelConnection;
+	CallGui *mCurrentCall = nullptr;
+	QSharedPointer<ConferenceCore> mConferenceCore;
+	// std::shared_ptr<ConferenceModel> mConferenceModel;
+	QSharedPointer<SafeConnection<ParticipantDeviceList, CoreModel>> mCoreModelConnection;
 
 	DECLARE_ABSTRACT_OBJECT
 };

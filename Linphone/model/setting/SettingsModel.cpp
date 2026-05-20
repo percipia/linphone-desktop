@@ -377,11 +377,12 @@ void SettingsModel::setCaptureDevice(const QVariantMap &device) {
 	auto audioDevice =
 	    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityRecord);
 	if (audioDevice) {
+		lInfo() << log().arg("Set cepture device") << device["id"];
 		CoreModel::getInstance()->getCore()->setDefaultInputAudioDevice(audioDevice);
 		CoreModel::getInstance()->getCore()->setInputAudioDevice(audioDevice);
 		emit captureDeviceChanged(device);
 		resetCaptureGraph();
-	} else qWarning() << "Cannot set Capture device. The ID cannot be matched with an existant device : " << device;
+	} else lWarning() << "Cannot set Capture device. The ID cannot be matched with an existant device : " << device;
 }
 
 linphone::Conference::Layout SettingsModel::getDefaultConferenceLayout() const {
@@ -446,7 +447,7 @@ void SettingsModel::setPlaybackDevice(const QVariantMap &device) {
 		CoreModel::getInstance()->getCore()->setOutputAudioDevice(audioDevice);
 		emit playbackDeviceChanged(device);
 		resetCaptureGraph();
-	} else qWarning() << "Cannot set Playback device. The ID cannot be matched with an existant device : " << device;
+	} else lWarning() << "Cannot set Playback device. The ID cannot be matched with an existant device : " << device;
 }
 
 // -----------------------------------------------------------------------------

@@ -36,12 +36,6 @@ QSharedPointer<ParticipantList> ParticipantList::create() {
 	return model;
 }
 
-QSharedPointer<ParticipantList> ParticipantList::create(const std::shared_ptr<ConferenceModel> &conferenceModel) {
-	auto model = create();
-	model->setConferenceModel(conferenceModel);
-	return model;
-}
-
 ParticipantList::ParticipantList(QObject *parent) : ListProxy(parent) {
 	App::getInstance()->mEngine->setObjectOwnership(this, QQmlEngine::CppOwnership);
 }
@@ -51,70 +45,97 @@ ParticipantList::~ParticipantList() {
 }
 
 void ParticipantList::setSelf(QSharedPointer<ParticipantList> me) {
-	if (mConferenceModelConnection) mConferenceModelConnection->disconnect();
-	mConferenceModelConnection = SafeConnection<ParticipantList, ConferenceModel>::create(me, mConferenceModel);
-	if (mConferenceModel) {
-		mConferenceModelConnection->makeConnectToCore(&ParticipantList::lUpdateParticipants, [this] {
-			mConferenceModelConnection->invokeToModel([this]() {
-				QList<QSharedPointer<ParticipantCore>> *participantList = new QList<QSharedPointer<ParticipantCore>>();
-				mustBeInLinphoneThread(getClassName());
-				std::list<std::shared_ptr<linphone::Participant>> participants;
-				participants = mConferenceModel->getMonitor()->getParticipantList();
-				for (auto it : participants) {
-					auto model = ParticipantCore::create(it);
-					participantList->push_back(model);
-				}
-				auto me = mConferenceModel->getMonitor()->getMe();
-				auto meModel = ParticipantCore::create(me);
-				participantList->push_back(meModel);
-				mConferenceModelConnection->invokeToCore([this, participantList]() {
-					mustBeInMainThread(getClassName());
-					resetData<ParticipantCore>(*participantList);
-					delete participantList;
-				});
+	if (mCoreModelConnection) mCoreModelConnection->disconnect();
+	mCoreModelConnection = SafeConnection<ParticipantList, CoreModel>::create(me, CoreModel::getInstance());
+	mCoreModelConnection->makeConnectToCore(&ParticipantList::lUpdateParticipants, [this] {
+		auto conferenceModel = mConferenceCore ? mConferenceCore->getModel() : nullptr;
+		if (!conferenceModel) return;
+		mCoreModelConnection->invokeToModel([this, conferenceModel]() {
+			QList<QSharedPointer<ParticipantCore>> *participantList = new QList<QSharedPointer<ParticipantCore>>();
+			mustBeInLinphoneThread(getClassName());
+			std::list<std::shared_ptr<linphone::Participant>> participants;
+			participants = conferenceModel->getMonitor()->getParticipantList();
+			for (auto it : participants) {
+				auto model = ParticipantCore::create(it);
+				participantList->push_back(model);
+			}
+			auto me = conferenceModel->getMonitor()->getMe();
+			auto meModel = ParticipantCore::create(me);
+			participantList->push_back(meModel);
+			mCoreModelConnection->invokeToCore([this, participantList]() {
+				mustBeInMainThread(getClassName());
+				resetData<ParticipantCore>(*participantList);
+				delete participantList;
 			});
 		});
+	});
 
-		mConferenceModelConnection->makeConnectToCore(
-		    &ParticipantList::lSetParticipantAdminStatus, [this](ParticipantCore *participant, bool status) {
-			    auto address = participant->getSipAddress();
-			    mConferenceModelConnection->invokeToModel([this, address, status] {
-				    auto participants = mConferenceModel->getMonitor()->getParticipantList();
-				    for (auto &participant : participants) {
-					    if (Utils::coreStringToAppString(participant->getAddress()->asStringUriOnly()) == address) {
-						    mConferenceModel->setParticipantAdminStatus(participant, status);
-						    return;
-					    }
+	mCoreModelConnection->makeConnectToCore(
+	    &ParticipantList::lSetParticipantAdminStatus, [this](ParticipantCore *participant, bool status) {
+		    auto address = participant->getSipAddress();
+		    auto conferenceModel = mConferenceCore ? mConferenceCore->getModel() : nullptr;
+		    if (!conferenceModel) return;
+		    mCoreModelConnection->invokeToModel([this, conferenceModel, address, status] {
+			    auto participants = conferenceModel->getMonitor()->getParticipantList();
+			    for (auto &participant : participants) {
+				    if (Utils::coreStringToAppString(participant->getAddress()->asStringUriOnly()) == address) {
+					    conferenceModel->setParticipantAdminStatus(participant, status);
+					    return;
 				    }
-			    });
+			    }
 		    });
-
-		mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantAdminStatusChanged,
-		                                               &ParticipantList::lUpdateParticipants);
-
-		mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantAdded,
-		                                               &ParticipantList::lUpdateParticipants);
-		mConferenceModelConnection->makeConnectToModel(&ConferenceModel::participantRemoved,
-		                                               &ParticipantList::lUpdateParticipants);
-	}
+	    });
 	emit lUpdateParticipants();
 }
 
-void ParticipantList::setConferenceModel(const std::shared_ptr<ConferenceModel> &conferenceModel) {
+void ParticipantList::setConferenceCore(const QSharedPointer<ConferenceCore> &conferenceCore) {
 	mustBeInMainThread(log().arg(Q_FUNC_INFO));
-	mConferenceModel = conferenceModel;
-	lDebug() << "[ParticipantList] : set Conference " << mConferenceModel.get();
-	if (mConferenceModelConnection && mConferenceModelConnection->mCore.lock()) { // Unsure to get myself
-		auto me = mConferenceModelConnection->mCore.mQData;                       // Save shared pointer before unlock
-		mConferenceModelConnection->mCore.unlock(); // Unlock before destroying old connection
-		setSelf(me);                                // reset connections
+	if (mConferenceCore) {
+		disconnect(mConferenceCore.get(), &ConferenceCore::participantAdminStatusChanged, this, nullptr);
+		disconnect(mConferenceCore.get(), &ConferenceCore::participantAdded, this, nullptr);
+		disconnect(mConferenceCore.get(), &ConferenceCore::participantRemoved, this, nullptr);
 	}
+	mConferenceCore = conferenceCore;
+	lDebug() << "[ParticipantList] : set Conference " << conferenceCore.get();
 	beginResetModel();
 	mList.clear();
 	endResetModel();
-	if (mConferenceModel) {
+	if (mConferenceCore) {
+		connect(mConferenceCore.get(), &ConferenceCore::participantAdminStatusChanged, this,
+		        &ParticipantList::lUpdateParticipants);
+		connect(mConferenceCore.get(), &ConferenceCore::participantAdded, this, &ParticipantList::lUpdateParticipants);
+		connect(mConferenceCore.get(), &ConferenceCore::participantRemoved, this,
+		        &ParticipantList::lUpdateParticipants);
 		emit lUpdateParticipants();
 	}
+}
+
+void ParticipantList::setCurrentCall(CallGui *call) {
+	if (mCurrentCall != call) {
+		CallCore *callCore = nullptr;
+		if (mCurrentCall) {
+			callCore = mCurrentCall->getCore();
+			if (callCore) disconnect(callCore, &CallCore::conferenceChanged, this, nullptr);
+			callCore = nullptr;
+		}
+		mCurrentCall = call;
+		if (mCurrentCall) callCore = mCurrentCall->getCore();
+		if (callCore) {
+			connect(callCore, &CallCore::conferenceChanged, this, [this]() {
+				auto conference = mCurrentCall->getCore()->getConferenceCore();
+				lDebug() << "[ParticipantDeviceProxy] set conference " << this << " => " << conference;
+				setConferenceCore(conference);
+			});
+			auto conference = callCore->getConferenceCore();
+			lDebug() << "[ParticipantDeviceProxy] set conference " << this << " => " << conference;
+			setConferenceCore(conference);
+		}
+		emit currentCallChanged();
+	}
+}
+
+CallGui *ParticipantList::getCurrentCall() const {
+	return mCurrentCall;
 }
 
 QVariant ParticipantList::data(const QModelIndex &index, int role) const {
@@ -159,7 +180,10 @@ void ParticipantList::remove(ParticipantCore *participant) {
 		}
 	}
 	if (found) {
-		mConferenceModel->removeParticipant(ToolModel::interpretUrl(address));
+		auto conferenceModel = mConferenceCore ? mConferenceCore->getModel() : nullptr;
+		if (!conferenceModel) return;
+		mCoreModelConnection->invokeToModel(
+		    [this, conferenceModel, address] { conferenceModel->removeParticipant(ToolModel::interpretUrl(address)); });
 	}
 }
 
@@ -170,18 +194,18 @@ void ParticipantList::addAddress(const QString &address) {
 		connect(participant.get(), &ParticipantCore::invitationTimeout, this, &ParticipantList::remove);
 		participant->setSipAddress(address);
 		add(participant);
-		if (mConferenceModel) {
+		auto conferenceModel = mConferenceCore ? mConferenceCore->getModel() : nullptr;
+		if (!conferenceModel) return;
+		mCoreModelConnection->invokeToModel([this, conferenceModel, address] {
 			std::list<std::shared_ptr<linphone::Call>> runningCallsToAdd;
-			mConferenceModelConnection->invokeToModel([this, address] {
-				auto addressToInvite = ToolModel::interpretUrl(address);
-				auto currentCalls = CoreModel::getInstance()->getCore()->getCalls();
-				auto haveCall = std::find_if(currentCalls.begin(), currentCalls.end(),
-				                             [addressToInvite](const std::shared_ptr<linphone::Call> &call) {
-					                             return call->getRemoteAddress()->weakEqual(addressToInvite);
-				                             });
-				if (haveCall == currentCalls.end()) mConferenceModel->addParticipant(addressToInvite);
-			});
-		}
+			auto addressToInvite = ToolModel::interpretUrl(address);
+			auto currentCalls = CoreModel::getInstance()->getCore()->getCalls();
+			auto haveCall = std::find_if(currentCalls.begin(), currentCalls.end(),
+			                             [addressToInvite](const std::shared_ptr<linphone::Call> &call) {
+				                             return call->getRemoteAddress()->weakEqual(addressToInvite);
+			                             });
+			if (haveCall == currentCalls.end()) conferenceModel->addParticipant(addressToInvite);
+		});
 		emit participant->lStartInvitation();
 		emit countChanged();
 	}

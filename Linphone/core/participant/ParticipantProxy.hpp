@@ -70,7 +70,6 @@ signals:
 	void currentCallChanged();
 
 private:
-	CallGui *mCurrentCall = nullptr;
 	QSharedPointer<ParticipantList> mParticipants;
 	DECLARE_ABSTRACT_OBJECT
 };

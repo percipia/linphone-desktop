@@ -97,6 +97,12 @@ signals:
 	void subjectChanged();
 	void isRecordingChanged();
 	void conferenceUriChanged();
+	void participantAdminStatusChanged();
+	void participantAdded();
+	void participantRemoved();
+	void participantDeviceAdded(const std::shared_ptr<linphone::ParticipantDevice> &device);
+	void participantDeviceRemoved(const std::shared_ptr<const linphone::ParticipantDevice> &device);
+	void conferenceStateChanged(linphone::Conference::State state);
 
 	void lToggleScreenSharing();
 

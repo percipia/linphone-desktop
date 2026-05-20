@@ -52,7 +52,6 @@ signals:
 	void meChanged();
 
 private:
-	CallGui *mCurrentCall = nullptr;
 	QSharedPointer<ParticipantDeviceList> mParticipants;
 	DECLARE_ABSTRACT_OBJECT
 };
