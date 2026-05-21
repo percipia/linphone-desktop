@@ -151,6 +151,13 @@ ColumnLayout {
 							SettingsCpp.lSetCaptureDevice(inputAudioDeviceCBox.currentValue)
 						}
 					}
+					Connections {
+						target: SettingsCpp
+						function onCaptureDeviceChanged() {
+							console.log("capture device changed in settings, force changing it in combobox")
+							inputAudioDeviceCBox.currentValue = SettingsCpp.captureDevice
+						}
+					}
 					accessibleLabel: qsTr("choose_something_accessible_name").arg(qsTr("multimedia_settings_microphone_title"))
 				}
 				Slider {

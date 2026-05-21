@@ -312,7 +312,8 @@ QVariantList SettingsModel::getCaptureDevices() const {
 	QVariantList list;
 
 	for (const auto &device : core->getExtendedAudioDevices()) {
-		if (device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityRecord)) {
+		if (device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityRecord) ||
+		    device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityAll)) {
 			list << ToolModel::createVariant(device);
 		}
 	}
@@ -367,15 +368,24 @@ QVariantMap SettingsModel::getCaptureDevice() const {
 
 void SettingsModel::setCaptureDevice(const QVariantMap &device) {
 	mustBeInLinphoneThread(log().arg(Q_FUNC_INFO));
+	lInfo() << log().arg("Trying to set capture device with id :") << device["id"];
 	auto audioDevice =
 	    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityRecord);
+	if (!audioDevice)
+		audioDevice =
+		    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityAll);
 	if (audioDevice) {
 		lInfo() << log().arg("Set cepture device") << device["id"];
 		CoreModel::getInstance()->getCore()->setDefaultInputAudioDevice(audioDevice);
 		CoreModel::getInstance()->getCore()->setInputAudioDevice(audioDevice);
 		emit captureDeviceChanged(device);
 		resetCaptureGraph();
-	} else lWarning() << "Cannot set Capture device. The ID cannot be matched with an existant device : " << device;
+	} else {
+		//: "Cannot set Capture device. The ID cannot be matched with an existant device : %1"
+		QString error = tr("set_capture_device_error").arg(device["id"].toString());
+		lWarning() << error << device;
+		emit setCaptureDeviceFailed(error);
+	}
 }
 
 linphone::Conference::Layout SettingsModel::getDefaultConferenceLayout() const {
@@ -433,6 +443,7 @@ QVariantMap SettingsModel::getPlaybackDevice() const {
 
 void SettingsModel::setPlaybackDevice(const QVariantMap &device) {
 	mustBeInLinphoneThread(log().arg(Q_FUNC_INFO));
+	lInfo() << log().arg("Trying to set capture device with id :") << device["id"];
 	auto audioDevice =
 	    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityPlay);
 	if (audioDevice) {

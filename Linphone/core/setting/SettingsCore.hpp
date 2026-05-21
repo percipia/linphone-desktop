@@ -199,7 +199,7 @@ public:
 	void setMediaEncryptions(QVariantList encryptions);
 
 	QVariantMap getCaptureDevice() const;
-	void setCaptureDevice(QVariantMap device);
+	void setCaptureDevice(QVariantMap device, bool force = false);
 	QVariantMap getPlaybackDevice() const;
 	void setPlaybackDevice(QVariantMap device);
 	QVariantMap getRingerDevice() const;

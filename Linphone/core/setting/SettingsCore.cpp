@@ -439,6 +439,16 @@ void SettingsCore::setSelf(QSharedPointer<SettingsCore> me) {
 		mSettingsModelConnection->invokeToCore([this, device]() { setCaptureDevice(device); });
 	});
 
+	mSettingsModelConnection->makeConnectToModel(&SettingsModel::setCaptureDeviceFailed, [this](const QString &error) {
+		auto currentDevice = SettingsModel::getInstance()->getCaptureDevice();
+		mSettingsModelConnection->invokeToCore([this, currentDevice, error]() {
+			mAutoSaved = true;
+			setCaptureDevice(currentDevice, true);
+			Utils::showInformationPopup(tr("info_popup_error_title"), error, false,
+			                            App::getInstance()->getLastActiveWindow());
+		});
+	});
+
 	mSettingsModelConnection->makeConnectToCore(&SettingsCore::lSetPlaybackDevice, [this](QVariantMap device) {
 		mSettingsModelConnection->invokeToModel([this, device]() {
 			mAutoSaved = true;
@@ -1038,8 +1048,8 @@ QVariantMap SettingsCore::getCaptureDevice() const {
 	return mCaptureDevice;
 }
 
-void SettingsCore::setCaptureDevice(QVariantMap device) {
-	if (mCaptureDevice["id"] != device["id"]) {
+void SettingsCore::setCaptureDevice(QVariantMap device, bool force) {
+	if (mCaptureDevice["id"] != device["id"] || force) {
 		mCaptureDevice = device;
 		emit captureDeviceChanged(device);
 		if (mAutoSaved) {
