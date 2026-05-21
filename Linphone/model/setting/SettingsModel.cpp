@@ -375,7 +375,7 @@ void SettingsModel::setCaptureDevice(const QVariantMap &device) {
 		audioDevice =
 		    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityAll);
 	if (audioDevice) {
-		lInfo() << log().arg("Set cepture device") << device["id"];
+		lInfo() << log().arg("Set capture device") << device["id"];
 		CoreModel::getInstance()->getCore()->setDefaultInputAudioDevice(audioDevice);
 		CoreModel::getInstance()->getCore()->setInputAudioDevice(audioDevice);
 		emit captureDeviceChanged(device);
@@ -443,10 +443,11 @@ QVariantMap SettingsModel::getPlaybackDevice() const {
 
 void SettingsModel::setPlaybackDevice(const QVariantMap &device) {
 	mustBeInLinphoneThread(log().arg(Q_FUNC_INFO));
-	lInfo() << log().arg("Trying to set capture device with id :") << device["id"];
+	lInfo() << log().arg("Trying to set playback device with id :") << device["id"];
 	auto audioDevice =
 	    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityPlay);
 	if (audioDevice) {
+		lInfo() << log().arg("Set playback device") << device["id"];
 		CoreModel::getInstance()->getCore()->setDefaultOutputAudioDevice(audioDevice);
 		CoreModel::getInstance()->getCore()->setOutputAudioDevice(audioDevice);
 		emit playbackDeviceChanged(device);

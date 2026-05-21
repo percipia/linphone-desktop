@@ -227,7 +227,7 @@ void ConferenceInfoList::updateHaveCurrentDate() {
 	auto confInfoList = getSharedList<ConferenceInfoCore>();
 	auto haveCurrent =
 	    std::find_if(confInfoList.begin(), confInfoList.end(), [today](const QSharedPointer<ConferenceInfoCore> &item) {
-		    return item && item->getDateTimeUtc().date() == today;
+		    return item && item->getDateTimeSystem().date() == today;
 	    });
 	setHaveCurrentDate(haveCurrent != confInfoList.end());
 }
@@ -239,7 +239,7 @@ int ConferenceInfoList::getCurrentDateIndex() {
 	if (mHaveCurrentDate) {
 		it = std::find_if(confInfoList.begin(), confInfoList.end(),
 		                  [today](const QSharedPointer<ConferenceInfoCore> &item) {
-			                  return item && item->getDateTimeUtc().date() == today;
+			                  return item && item->getDateTimeSystem().date() == today;
 		                  });
 	} else it = std::find(confInfoList.begin(), confInfoList.end(), nullptr);
 	return it == confInfoList.end() ? -1 : std::distance(confInfoList.begin(), it);
@@ -256,7 +256,7 @@ QSharedPointer<ConferenceInfoCore> ConferenceInfoList::getCurrentDateConfInfo(bo
 			                  if (!enableCancelledConference &&
 			                      item->getConferenceInfoState() == LinphoneEnums::ConferenceInfoState::Cancelled)
 				                  return false;
-			                  return item && item->getDateTimeUtc().date() == today;
+			                  return item && item->getDateTimeSystem().date() == today;
 		                  });
 	} else it = std::find(confInfoList.begin(), confInfoList.end(), nullptr);
 	return it != confInfoList.end() ? *it : nullptr;
@@ -313,7 +313,7 @@ QVariant ConferenceInfoList::data(const QModelIndex &index, int role) const {
 		if (role == Qt::DisplayRole) {
 			return QVariant::fromValue(new ConferenceInfoGui(mList[row].objectCast<ConferenceInfoCore>()));
 		} else if (role == Qt::DisplayRole + 1) {
-			auto date = mList[row].objectCast<ConferenceInfoCore>()->getDateTimeUtc();
+			auto date = mList[row].objectCast<ConferenceInfoCore>()->getDateTimeSystem();
 			if (date.date().year() != QDate::currentDate().year()) return Utils::toDateMonthAndYearString(date);
 			else return Utils::toDateMonthString(date);
 		}

@@ -62,6 +62,10 @@ AbstractMainPage {
     onRemoteChatChanged: {
         if (remoteChat && remoteChat.core.state === LinphoneEnums.ChatRoomState.Created) {
             openChatRequested(remoteChat)
+        } else if (remoteChat && remoteChat.core.state === LinphoneEnums.ChatRoomState.CreationFailed) {
+            UtilsCpp.showInformationPopup(qsTr("info_popup_error_title"),
+                                                    //: Chat room creation failed !
+                                                    qsTr("info_popup_chatroom_creation_failed"), false)
         }
     }
 
@@ -91,7 +95,8 @@ AbstractMainPage {
                      && listStackView.currentItem
                      && listStackView.currentItem.objectName == "chatListItem"
                      && listStackView.currentItem.listView.count === 0
-                     && !listStackView.currentItem.listView.loading || false
+                     && !listStackView.currentItem.listView.loading
+                     || false
 
 
     function goToNewChat() {
@@ -436,7 +441,7 @@ AbstractMainPage {
                 Binding {
                     target: mainItem
                     property: "showDefaultItem"
-                    when: selectedChatView.messagesLoading
+                    when: selectedChatView.chat && selectedChatView.messagesLoading
                     value: false
                 }
             }

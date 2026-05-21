@@ -493,8 +493,8 @@ ListView {
                 border.color: DefaultStyle.main2_900
                 border.width: Utils.getSizeWithScreenRatio(3)
             }
-            onClicked: {
-                if (pressedButtons & Qt.RightButton) {
+            onClicked: (mouse) => {
+                if (mouse.button === Qt.RightButton) {
                     chatroomPopup.open()
                 } else {
                     console.log("set current", index, modelData.core.title)

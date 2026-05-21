@@ -40,22 +40,10 @@ ToolModel::~ToolModel() {
 std::shared_ptr<linphone::Address> ToolModel::interpretUrl(const QString &address) {
 	if (address.isEmpty()) return nullptr;
 	bool usePrefix = false; // TODO
-	QString addrCopy = address;
-	QRegularExpression alphaNumRegExp = QRegularExpression("[A-Za-z0-9]", QRegularExpression::CaseInsensitiveOption);
-	// CoreManager::getInstance()->getAccountSettingsModel()->getUseInternationalPrefixForCallsAndChats();
-	auto lastChar = addrCopy.last(1);
-	auto match = alphaNumRegExp.match(lastChar);
-	if (!match.hasMatch()) {
-		do {
-			addrCopy.chop(1);
-			auto lastChar = addrCopy.last(1);
-			match = alphaNumRegExp.match(lastChar);
-		} while (!match.hasMatch());
-	}
 	auto interpretedAddress =
-	    CoreModel::getInstance()->getCore()->interpretUrl(Utils::appStringToCoreString(addrCopy), usePrefix);
+	    CoreModel::getInstance()->getCore()->interpretUrl(Utils::appStringToCoreString(address), usePrefix);
 	if (!interpretedAddress) { // Try by removing scheme.
-		QStringList splitted = addrCopy.split(":");
+		QStringList splitted = address.split(":");
 		if (splitted.size() > 0 && splitted[0] == "sip") {
 			splitted.removeFirst();
 			interpretedAddress = CoreModel::getInstance()->getCore()->interpretUrl(
@@ -132,15 +120,15 @@ QString ToolModel::getDisplayName(const std::shared_ptr<const linphone::Address>
 
 QString ToolModel::getDisplayName(QString address) {
 	mustBeInLinphoneThread(QString(gClassName) + " : " + Q_FUNC_INFO);
-
+	auto interpretAddress = interpretUrl(address);
 	QString displayName = getDisplayName(interpretUrl(address));
 	if (displayName.isEmpty()) return address;
-	QStringList nameSplitted = displayName.split(" ");
-	for (auto &part : nameSplitted) {
-		if (part.isEmpty()) continue;
-		part[0] = part[0].toUpper();
-	}
-	return nameSplitted.join(" ");
+	// QStringList nameSplitted = displayName.split(" ");
+	// for (auto &part : nameSplitted) {
+	// 	if (part.isEmpty()) continue;
+	// 	part[0] = part[0].toUpper();
+	// }
+	return displayName;
 }
 
 QString ToolModel::boldTextPart(const QString &text, const QString &regex) {
