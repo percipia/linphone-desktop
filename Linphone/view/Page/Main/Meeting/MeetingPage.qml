@@ -87,7 +87,7 @@ AbstractMainPage {
 		property bool cancel: false
 		signal cancelRequested()
         // width: Utils.getSizeWithScreenRatio(278)
-        //: "Souhaitez-vous annuler et supprimer cette réunion ?"
+        //: "Souhaitez-vous annuler cette réunion et envoyer une notification aux participants ?"
         text: cancel ? qsTr("meeting_schedule_cancel_dialog_message")
                        //: Souhaitez-vous supprimer cette réunion ?
                      : qsTr("meeting_schedule_delete_dialog_message")

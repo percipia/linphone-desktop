@@ -322,7 +322,6 @@ FocusScope {
 								property var displayNameObj: UtilsCpp.getDisplayName(modelData.address)
 								text: displayNameObj?.value || ""
                                 font.pixelSize: Utils.getSizeWithScreenRatio(14)
-								font.capitalization: Font.Capitalize
 							}
 							Item {
 								Layout.fillWidth: true
