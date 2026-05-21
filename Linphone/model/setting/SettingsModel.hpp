@@ -297,6 +297,8 @@ signals:
 	void checkForUpdateEnabledChanged();
 	void versionCheckUrlChanged();
 
+	void setCaptureDeviceFailed(const QString &error);
+
 	// Messages. --------------------------------------------------------------------
 	void autoDownloadReceivedFilesChanged(bool enabled);
 	void displayNotificationContentChanged(bool display);
