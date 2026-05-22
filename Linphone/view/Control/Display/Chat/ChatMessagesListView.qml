@@ -288,6 +288,7 @@ ListView {
 				}
 				MediumButton {
 					id: secondButtonId
+					visible: messageDeletionDialog.chatMessage.core.isOutgoing && messageDeletionDialog.chatMessage.core.isRetractable && !messageDeletionDialog.chatMessage.core.isRetracted
 					text: qsTr("conversation_dialog_delete_for_everyone_label")
 					style: ButtonStyle.main
 					onClicked: {
@@ -348,12 +349,8 @@ ListView {
                     : undefined
 
                 onMessageDeletionRequested: {
-					if (chatMessage.core.isOutgoing && chatMessage.core.isRetractable && !chatMessage.core.isRetracted) {
-						messageDeletionDialog.chatMessage = chatMessage
-						messageDeletionDialog.open()
-					} else {
-						chatMessage.core.lDelete()
-					}
+                    messageDeletionDialog.chatMessage = chatMessage
+                    messageDeletionDialog.open()
                 }
                 onMessageEditionRequested: mainItem.editMessageRequested(chatMessage)
                 onShowReactionsForMessageRequested: mainItem.showReactionsForMessageRequested(chatMessage)

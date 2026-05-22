@@ -544,7 +544,8 @@ QString ToolModel::getMessageFromContent(std::list<std::shared_ptr<linphone::Con
 	QString res;
 	for (auto &content : contents) {
 		if (content->isText()) {
-			return Utils::coreStringToAppString(content->getUtf8Text());
+			if (!content->getUtf8Text().empty()) return Utils::coreStringToAppString(content->getUtf8Text());
+			continue;
 		} else if (content->isVoiceRecording()) {
 			//: "Voice recording (%1)" : %1 is the duration formated in mm:ss
 			return tr("voice_recording_duration").arg(Utils::formatDuration(content->getFileDuration()));
