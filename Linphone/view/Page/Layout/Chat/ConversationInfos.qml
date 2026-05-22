@@ -390,7 +390,7 @@ ColumnLayout {
 				: [
 					{
 						icon: AppIcons.clockCountDown,
-						visible: !mainItem.chatGui.core.isReadOnly,
+						visible: !mainItem.chatGui.core.isReadOnly && !mainItem.chatGui.core.isBasic,
 						text: mainItem.chatGui.core.ephemeralEnabled ? qsTr("one_one_infos_ephemerals")+UtilsCpp.getEphemeralFormatedTime(mainItem.chatGui.core.ephemeralLifetime) : qsTr("one_one_infos_enable_ephemerals"),
 						color: DefaultStyle.main2_600,
 						showRightArrow: false,
