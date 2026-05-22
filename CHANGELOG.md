@@ -10,6 +10,49 @@ Group changes to describe their impact on the project, as follows:
     Fixed for any bug fixes.
     Security to invite users to upgrade in case of vulnerabilities.
 
+## [6.2.0] - 2026-02-25
+
+### Added
+- Edition and deletion of an existing message
+- Meeting export
+- Accessibility improvements (information popup annoucement, labels for search bar, notifications)
+- Direct access to medias and documents from the contact page
+- Access to a meeting chat from the call history
+- Recording access from account menu
+- Scroll to original message when clicking on reply message
+- New parameters : 
+    - hide the past meetings
+
+### Fixed
+- Crashes (in meetings participants, in chat messages, on call end)
+- Deleted files from an ephemeral message are now also deleted from the download folder
+- UI fixes (chat message formatting, more error messages, meeting list view, download link on new Linphone version notification, items position and margins...)
+- Update screen list in screencast panel when a screen is connected/disconnected
+- Mac: fix showing the main window after it was closed, click escape to leave full screen mode
+- Device changing in waiting room before entering a meeting
+- Remove account data from the linphonerc file when disconnected
+
+### Changed
+- Unification of URI handling with a unique scheme
+- Remote provisioning does not require to restart the app anymore
+- SDK version is now 5.5.0
+
+## [6.1.2] - 2026-04-03
+
+### Added
+- New setting to enable or disable auto check for new version on start
+- Accessibility improvements (visible focus on buttons to facilitate key navigation, start call by pressing Enter...)
+
+### Fixed
+- UI improvements and fixes
+- Crash and bug fixes
+- Notifications stealing focus on MacOS
+
+### Changed
+- Handle both arm64 and Intel compilations for MacOS
+- SDK version is now 5.4.104
+- Qt version is now 6.10.2 (Qt < 6.9 is deprecated because of the emojis rendering)
+
 
 ## [6.1.1] - 2026-02-25
 
