@@ -7382,4 +7382,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <translation>Error</translation>
     </message>
 </context>
+<context>
+    <name>SettingsCore</name>
+    <message>
+        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <source>info_popup_error_title</source>
+        <translation>Error</translation>
+    </message>
+</context>
 </TS>

@@ -6492,7 +6492,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
     <message>
         <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
         <source>info_popup_error_title</source>
-        <translation type="unfinished">Erreur</translation>
+        <translation>Erreur</translation>
     </message>
 </context>
 <context>
@@ -6510,7 +6510,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
         <location filename="../../model/setting/SettingsModel.cpp" line="392"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Pas de token trouvé</translation>
     </message>
 </context>
 <context>
