@@ -7430,4 +7430,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <translation>Erro</translation>
     </message>
 </context>
+<context>
+    <name>SettingsCore</name>
+    <message>
+        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <source>info_popup_error_title</source>
+        <translation>Erro</translation>
+    </message>
+</context>
 </TS>

@@ -7603,4 +7603,20 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <translation>Ez da tokenik aurkitu</translation>
     </message>
 </context>
+<context>
+    <name>SettingsCore</name>
+    <message>
+        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <source>info_popup_error_title</source>
+        <translation>Errorea</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsModel</name>
+    <message>
+        <location filename="../../model/setting/SettingsModel.cpp" line="392"/>
+        <source>set_capture_device_error</source>
+        <translation>Ez da tokenik aurkitu</translation>
+    </message>
+</context>
 </TS>
