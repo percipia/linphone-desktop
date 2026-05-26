@@ -319,8 +319,7 @@ QVariantList SettingsModel::getCaptureDevices() const {
 	QVariantList list;
 
 	for (const auto &device : core->getExtendedAudioDevices()) {
-		if (device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityRecord) ||
-		    device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityAll)) {
+		if (device->hasCapability(linphone::AudioDevice::Capabilities::CapabilityRecord)) {
 			list << ToolModel::createVariant(device);
 		}
 	}
@@ -378,9 +377,6 @@ void SettingsModel::setCaptureDevice(const QVariantMap &device) {
 	lInfo() << log().arg("Trying to set capture device with id :") << device["id"];
 	auto audioDevice =
 	    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityRecord);
-	if (!audioDevice)
-		audioDevice =
-		    ToolModel::findAudioDevice(device["id"].toString(), linphone::AudioDevice::Capabilities::CapabilityAll);
 	if (audioDevice) {
 		lInfo() << log().arg("Set capture device") << device["id"];
 		CoreModel::getInstance()->getCore()->setDefaultInputAudioDevice(audioDevice);

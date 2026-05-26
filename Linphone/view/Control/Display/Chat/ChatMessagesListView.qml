@@ -92,8 +92,16 @@ ListView {
         target: mainItem.chat ? mainItem.chat.core : null
         function onUnreadMessagesCountChanged() {
             if (mainItem.atYEnd){
-                mainItem.chat.core.lMarkAsRead()
+                if (mainWindow.active) {
+                    mainItem.chat.core.lMarkAsRead()
+                }
             }
+        }
+    }
+    Connections {
+        target: mainWindow
+        function onActiveChanged() {
+            if (mainWindow.active && mainItem.atYEnd) mainItem.chat.core.lMarkAsRead()
         }
     }
 

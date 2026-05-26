@@ -151,8 +151,9 @@ ApplicationWindow {
                         Rectangle {
                             anchors.fill: parent
                             opacity: 0.7
-                            visible: index === popuplist.currentIndex
-                            color: DefaultStyle.main2_100
+                            z: -1
+                            visible: index === popuplist.currentIndex || delegateMouseArea.containsMouse
+                            color: index === popuplist.currentIndex ? DefaultStyle.main2_200 : DefaultStyle.main2_100
                             radius: Utils.getSizeWithScreenRatio(8)
                         }
                         MouseArea {

@@ -382,6 +382,7 @@ MainRightPanel {
 					}
 					delegate: FormItemLayout {
 						label: modelData.label
+						Layout.fillWidth: true
 						contentItem: RowLayout {
 							id: phoneNumberLayout
 							width: parent.width

@@ -481,7 +481,7 @@ AbstractMainPage {
                                 text: contactDetail.isLocalFriend ? qsTr("menu_see_existing_contact") :
                                                               //: "Add to contacts"
                                                               qsTr("menu_add_address_to_contacts")
-                                icon.source: AppIcons.plusCircle
+                                icon.source: contactDetail.isLocalFriend ? AppIcons.adressBook : AppIcons.plusCircle
                                 icon.width: Utils.getSizeWithScreenRatio(32)
                                 icon.height: Utils.getSizeWithScreenRatio(32)
                                 onClicked: {
