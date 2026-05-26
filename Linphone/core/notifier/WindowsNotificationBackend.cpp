@@ -205,8 +205,9 @@ void NotificationBackend::sendCallNotification(QVariantMap data) {
 
 	connect(call->mCore.get(), &CallCore::stateChanged, this, [this, call, notifier, toast] {
 		if (call->mCore->getState() == LinphoneEnums::CallState::End ||
-		    call->mCore->getState() == LinphoneEnums::CallState::Error) {
-			qDebug() << "Call ended or error, remove toast";
+		    call->mCore->getState() == LinphoneEnums::CallState::Error ||
+		    call->mCore->getState() == LinphoneEnums::CallState::StreamsRunning) {
+			qDebug() << "Call ended, answered or error, remove toast";
 			auto callId = call->mCore->getCallId();
 			call->deleteLater();
 
