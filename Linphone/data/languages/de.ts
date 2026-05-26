@@ -46,7 +46,7 @@
         <translation>Telefonnummer oder SIP-Adresse wählen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/AbstractWindow.qml" line="329"/>
+        <location filename="../../view/Page/Window/AbstractWindow.qml" line="330"/>
         <source>fps_counter</source>
         <translation>%1 FPS</translation>
     </message>
@@ -698,139 +698,139 @@
         <translation>Möchten Sie die Remote-Konfiguration von dieser Adresse herunterladen und anwenden?</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="423"/>
-        <location filename="../../core/App.cpp" line="432"/>
-        <location filename="../../core/App.cpp" line="436"/>
-        <location filename="../../core/App.cpp" line="494"/>
-        <location filename="../../core/App.cpp" line="871"/>
+        <location filename="../../core/App.cpp" line="425"/>
+        <location filename="../../core/App.cpp" line="434"/>
+        <location filename="../../core/App.cpp" line="438"/>
+        <location filename="../../core/App.cpp" line="499"/>
+        <location filename="../../core/App.cpp" line="878"/>
         <source>info_popup_error_title</source>
         <extracomment>Error</extracomment>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="424"/>
-        <location filename="../../core/App.cpp" line="873"/>
+        <location filename="../../core/App.cpp" line="426"/>
+        <location filename="../../core/App.cpp" line="880"/>
         <source>info_popup_configuration_failed_message</source>
         <extracomment>Remote provisioning failed : %1</extracomment>
         <translation>Remote-Provisionierung fehlgeschlagen: %1</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="497"/>
+        <location filename="../../core/App.cpp" line="502"/>
         <source>info_popup_error_checking_update</source>
         <extracomment>An error occured while trying to check update. Please try again later or contact support team.</extracomment>
         <translation>Fehler bei der Update-Prüfung. Bitte später erneut versuchen oder Support-Team kontaktieren.</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="504"/>
+        <location filename="../../core/App.cpp" line="509"/>
         <source>info_popup_new_version_download_label</source>
         <extracomment>Download it !</extracomment>
         <translation>Herunterladen!</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="507"/>
+        <location filename="../../core/App.cpp" line="512"/>
         <source>info_popup_new_version_available_title</source>
         <extracomment>New version available !</extracomment>
         <translation>Neue Version verfügbar!</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="509"/>
+        <location filename="../../core/App.cpp" line="514"/>
         <source>info_popup_new_version_available_message</source>
         <extracomment>A new version of Linphone (%1) is available. %2</extracomment>
         <translation>Eine neue Version von Linphone (%1) ist unter %1 verfügbar</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="517"/>
+        <location filename="../../core/App.cpp" line="522"/>
         <source>info_popup_version_up_to_date_title</source>
         <extracomment>Up to date</extracomment>
         <translation>Auf dem neuesten Stand</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="519"/>
+        <location filename="../../core/App.cpp" line="524"/>
         <source>info_popup_version_up_to_date_message</source>
         <extracomment>Your version is up to date</extracomment>
         <translation>Ihre Version ist auf dem neuesten Stand</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="866"/>
+        <location filename="../../core/App.cpp" line="873"/>
         <source>configuration_error_detail</source>
         <extracomment>not reachable</extracomment>
         <translation>nicht erreichbar</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1166"/>
+        <location filename="../../core/App.cpp" line="1173"/>
         <source>application_description</source>
         <extracomment>&quot;A free and open source SIP video-phone.&quot;</extracomment>
         <translation>Ein kostenloses Open-Source SIP Video-Telefon.</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1168"/>
+        <location filename="../../core/App.cpp" line="1175"/>
         <source>command_line_arg_order</source>
         <extracomment>&quot;Send an order to the application towards a command line&quot;</extracomment>
         <translation>Kommandozeilen-Befehl an die Anwendung schicken</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1172"/>
+        <location filename="../../core/App.cpp" line="1179"/>
         <source>command_line_option_show_help</source>
         <translation>Zeige Hilfe</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1177"/>
+        <location filename="../../core/App.cpp" line="1184"/>
         <source>command_line_option_show_app_version</source>
         <translation>App-Version anzeigen</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1185"/>
+        <location filename="../../core/App.cpp" line="1192"/>
         <source>command_line_option_config_to_fetch</source>
         <extracomment>&quot;Specify the linphone configuration file to be fetched. It will be merged with the current configuration.&quot;</extracomment>
         <translation>Abzurufende Linphone-Konfigurationsdatei angeben. Sie wird mit der aktuellen Konfiguration zusammengeführt.</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1187"/>
+        <location filename="../../core/App.cpp" line="1194"/>
         <source>command_line_option_config_to_fetch_arg</source>
         <extracomment>&quot;URL, path or file&quot;</extracomment>
         <translation>URL, Pfad oder Datei</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1192"/>
+        <location filename="../../core/App.cpp" line="1199"/>
         <source>command_line_option_minimized</source>
         <translation>Minimieren</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1195"/>
+        <location filename="../../core/App.cpp" line="1202"/>
         <source>command_line_option_log_to_stdout</source>
         <translation>Debug-Informationen auf der Standardausgabe ausgeben</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1198"/>
+        <location filename="../../core/App.cpp" line="1205"/>
         <source>command_line_option_print_app_logs_only</source>
         <extracomment>&quot;Print only logs from the application&quot;</extracomment>
         <translation>Nur Anwendungs-Logs ausgeben</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1675"/>
+        <location filename="../../core/App.cpp" line="1682"/>
         <source>hide_action</source>
         <extracomment>&quot;Cacher&quot; &quot;Afficher&quot;</extracomment>
         <translation>Ausblenden</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1675"/>
+        <location filename="../../core/App.cpp" line="1682"/>
         <source>show_action</source>
         <translation>Zeigen</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1690"/>
+        <location filename="../../core/App.cpp" line="1697"/>
         <source>quit_action</source>
         <extracomment>&quot;Quitter&quot;</extracomment>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1708"/>
+        <location filename="../../core/App.cpp" line="1715"/>
         <source>check_for_update</source>
         <extracomment>Check for update</extracomment>
         <translation>Auf Updates prüfen</translation>
     </message>
     <message>
-        <location filename="../../core/App.cpp" line="1857"/>
+        <location filename="../../core/App.cpp" line="1864"/>
         <source>mark_all_read_action</source>
         <translation>Alle als gelesen markieren</translation>
     </message>
@@ -2576,44 +2576,44 @@ Error</extracomment>
 <context>
     <name>ChatMessagesListView</name>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="134"/>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="145"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="142"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="153"/>
         <source>popup_info_find_message_title</source>
         <extracomment>Find message</extracomment>
         <translation>Nachricht suchen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="137"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="145"/>
         <source>info_popup_last_result_message</source>
         <extracomment>Last result reached</extracomment>
         <translation>Letztes Ergebnis erreicht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="139"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="147"/>
         <source>info_popup_first_result_message</source>
         <extracomment>First result reached</extracomment>
         <translation>Erstes Ergebnis erreicht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="147"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="155"/>
         <source>info_popup_no_result_message</source>
         <extracomment>No result found</extracomment>
         <translation>Keine Ergebnisse gefunden</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="195"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="203"/>
         <source>chat_message_list_encrypted_header_title</source>
         <extracomment>End to end encrypted chat</extracomment>
         <translation>Ende-zu-Ende-verschlüsselter Chat</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="197"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="205"/>
         <source>unencrypted_conversation_warning</source>
         <extracomment>This conversation is not encrypted !</extracomment>
         <translation>Dieser Chat ist nicht verschlüsselt!</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="208"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="216"/>
         <source>chat_message_list_encrypted_header_message</source>
         <extracomment>Messages in this conversation are e2e encrypted. 
  Only your correspondent can decrypt them.</extracomment>
@@ -2621,7 +2621,7 @@ Error</extracomment>
 Nur Ihr Gesprächspartner kann sie entschlüsseln.</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="210"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="218"/>
         <source>chat_message_list_not_encrypted_header_message</source>
         <extracomment>Messages are not end to end encrypted, 
  make sure you don&apos;t share any sensitive information !</extracomment>
@@ -2629,39 +2629,39 @@ Nur Ihr Gesprächspartner kann sie entschlüsseln.</translation>
 Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="251"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="259"/>
         <source>chat_message_is_writing_info</source>
         <extracomment>%1 is writing…</extracomment>
         <translation>%1 schreibt…</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="272"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="280"/>
         <source>conversation_dialog_delete_chat_message_title</source>
         <extracomment>&quot;Supprimer le message ?&quot;</extracomment>
         <translation>Nachricht löschen?</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="280"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="288"/>
         <source>conversation_dialog_delete_locally_label</source>
         <translation>Für mich</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="292"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="300"/>
         <source>conversation_dialog_delete_for_everyone_label</source>
         <translation>Für alle</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="303"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="311"/>
         <source>dialog_cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="381"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="389"/>
         <source>info_toast_deleted_title</source>
         <translation>Gelöscht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="383"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="391"/>
         <source>info_toast_deleted_message</source>
         <extracomment>The message has been deleted</extracomment>
         <translation>Die Nachricht wurde gelöscht</translation>
@@ -3079,26 +3079,26 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <translation>Neue SIP Adresse</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="412"/>
+        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="413"/>
         <source>phone_number_number_accessible_name</source>
         <extracomment>&quot;Phone number number %1&quot;</extracomment>
         <translation>Telefonnummer %1</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="427"/>
+        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="428"/>
         <source>remove_phone_number_accessible_name</source>
         <extracomment>Remove phone number %1</extracomment>
         <translation>Lösche Telefonnummer %1</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="458"/>
+        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="459"/>
         <source>new_phone_number_accessible_name</source>
         <extracomment>&quot;New phone number&quot;</extracomment>
         <translation>Neue Telefonnummer</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="409"/>
-        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="435"/>
+        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="410"/>
+        <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="436"/>
         <source>phone</source>
         <extracomment>&quot;Téléphone&quot;</extracomment>
         <translation>Telefon</translation>
@@ -6252,31 +6252,31 @@ Ablauf: %1</translation>
         <translation>Erstellen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="334"/>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="336"/>
         <source>assistant_account_create_missing_username_error</source>
         <extracomment>&quot;Veuillez entrer un nom d&apos;utilisateur&quot;</extracomment>
         <translation>Bitte Benutzernamen eingeben</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="338"/>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="341"/>
         <source>assistant_account_create_missing_password_error</source>
         <extracomment>&quot;Veuillez entrer un mot de passe&quot;</extracomment>
         <translation>Bitte Passwort eingeben</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="342"/>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="346"/>
         <source>assistant_account_create_confirm_password_error</source>
         <extracomment>&quot;Les mots de passe sont différents&quot;</extracomment>
         <translation>Die Passwörter stimmen nicht überein</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="346"/>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="351"/>
         <source>assistant_account_create_missing_number_error</source>
         <extracomment>&quot;Veuillez entrer un numéro de téléphone&quot;</extracomment>
         <translation>Bitte Telefonnummer eingeben</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="350"/>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="356"/>
         <source>assistant_account_create_missing_email_error</source>
         <extracomment>&quot;Veuillez entrer un email&quot;</extracomment>
         <translation>Bitte E-Mail eingeben</translation>
@@ -6620,7 +6620,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../../model/setting/SettingsModel.cpp" line="392"/>
+        <location filename="../../model/setting/SettingsModel.cpp" line="388"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
         <translation>Kein Token gefunden</translation>
