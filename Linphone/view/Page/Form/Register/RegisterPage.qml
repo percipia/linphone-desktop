@@ -328,27 +328,34 @@ LoginLayout {
                         //: "Créer"
                         text: qsTr("assistant_account_create")
 						onClicked:{
+							var ok = true
 							if (usernameInput.text.length === 0) {
+								ok = false
 								console.log("ERROR username")
                                 //: "Veuillez entrer un nom d'utilisateur"
                                 usernameItem.errorMessage = qsTr("assistant_account_create_missing_username_error")
-							} else if (pwdInput.text.length === 0) {
+							} if (pwdInput.text.length === 0) {
+								ok = false
 								console.log("ERROR password")
                                 //: "Veuillez entrer un mot de passe"
                                 passwordItem.errorMessage = qsTr("assistant_account_create_missing_password_error")
-							} else if (pwdInput.text != confirmPwdInput.text) {
+							} if (pwdInput.text != confirmPwdInput.text) {
+								ok = false
 								console.log("ERROR confirm pwd")
                                 //: "Les mots de passe sont différents"
                                 passwordItem.errorMessage = qsTr("assistant_account_create_confirm_password_error")
-							} else if (bar.currentIndex === 0 && phoneNumberInput.phoneNumber.length === 0) {
+							} if (bar.currentIndex === 0 && phoneNumberInput.phoneNumber.length === 0) {
+								ok = false
 								console.log("ERROR phone number")
                                 //: "Veuillez entrer un numéro de téléphone"
                                 phoneNumberInput.errorMessage = qsTr("assistant_account_create_missing_number_error")
-							} else if (bar.currentIndex === 1 && emailInput.text.length === 0) {
+							} if (bar.currentIndex === 1 && emailInput.text.length === 0) {
+								ok = false
 								console.log("ERROR email")
                                 //: "Veuillez entrer un email"
                                 emailItem.errorMessage = qsTr("assistant_account_create_missing_email_error")
-							} else {
+							}
+							if (ok) {
 								console.log("[RegisterPage] User: Call register")
 								mainItem.browserValidationRequested()
 								if (bar.currentIndex === 0)
