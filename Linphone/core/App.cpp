@@ -406,6 +406,8 @@ void App::connectCoreModel() {
 					    mEngine->clearSingletons();
 					    mEngine->clearComponentCache();
 				    }
+			    } else if (gstate == linphone::GlobalState::Off) {
+				    CoreModel::getInstance()->getCore()->stopHidDevicesDetection();
 			    }
 		    });
 	    });
@@ -467,6 +469,9 @@ void App::connectCoreModel() {
 		mCoreModelConnection->invokeToCore([this, state] {
 			setCoreGlobalState((int)state);
 			setCoreStarted(state == linphone::GlobalState::On);
+			if (state == linphone::GlobalState::Off) {
+				CoreModel::getInstance()->getCore()->stopHidDevicesDetection();
+			}
 		});
 	});
 
@@ -530,7 +535,7 @@ void App::connectCoreModel() {
 	                                         });
 	mCoreModelConnection->makeConnectToCore(&App::lForceOidcTimeout, [this] {
 		qDebug() << "App: force oidc timeout";
-		mCoreModelConnection->invokeToModel([this] { emit CoreModel::getInstance()->forceOidcTimeout(); });
+		mCoreModelConnection->invokeToModel([this] { emit CoreModel::getInstance() -> forceOidcTimeout(); });
 	});
 	mCoreModelConnection->makeConnectToModel(&CoreModel::timeoutTimerStarted, [this]() {
 		qDebug() << "App: oidc timer started";
@@ -696,6 +701,8 @@ void App::initCore() {
 				    assert(mEngine);
 			    }
 			    mSettings = settings;
+			    lDebug() << log().arg("Starting HID devices detection");
+			    CoreModel::getInstance()->getCore()->startHidDevicesDetection();
 			    // Provide `+custom` folders for custom components and `5.9` for old components.
 			    QStringList selectors("custom");
 			    const QVersionNumber &version = QLibraryInfo::version();
