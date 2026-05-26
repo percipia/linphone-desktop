@@ -2646,22 +2646,22 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <translation>Für mich</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="291"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="292"/>
         <source>conversation_dialog_delete_for_everyone_label</source>
         <translation>Für alle</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="302"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="303"/>
         <source>dialog_cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="384"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="381"/>
         <source>info_toast_deleted_title</source>
         <translation>Gelöscht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="386"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="383"/>
         <source>info_toast_deleted_message</source>
         <extracomment>The message has been deleted</extracomment>
         <translation>Die Nachricht wurde gelöscht</translation>
@@ -6789,44 +6789,44 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <translation>Gruppengespräch konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="550"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="551"/>
         <source>voice_recording_duration</source>
         <extracomment>&quot;Voice recording (%1)&quot; : %1 is the duration formated in mm:ss</extracomment>
         <translation>Sprachnachricht (%1)</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="558"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="559"/>
         <source>conference_invitation</source>
         <translation>Meeting-Einladung</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="560"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="561"/>
         <source>conference_invitation_updated</source>
         <translation>Meeting-Änderung</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="562"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="563"/>
         <source>conference_invitation_cancelled</source>
         <translation>Meeting-Absage</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="572"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="573"/>
         <source>conversation_message_content_deleted_by_us_label</source>
         <translation>&lt;i&gt;Sie haben diese Nachricht gelöscht&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="573"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="574"/>
         <source>conversation_message_content_deleted_label</source>
         <translation>&lt;i&gt;Diese Nachricht wurde gelöscht&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="633"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="634"/>
         <source>unknown_audio_device_name</source>
         <extracomment>&quot;Unknown device&quot;</extracomment>
         <translation>Unbekannter Gerätename</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="670"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="671"/>
         <source>Dummy subject</source>
         <extracomment>Dummy subject</extracomment>
         <translation>Dummy-Betreff</translation>

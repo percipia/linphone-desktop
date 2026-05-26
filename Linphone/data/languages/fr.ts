@@ -2605,22 +2605,22 @@ assurez-vous de ne pas partager d’informations sensibles !</translation>
         <translation>Pour moi</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="291"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="292"/>
         <source>conversation_dialog_delete_for_everyone_label</source>
         <translation>Pour tout le monde</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="302"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="303"/>
         <source>dialog_cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="384"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="381"/>
         <source>info_toast_deleted_title</source>
         <translation>Supprimé</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="386"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="383"/>
         <source>info_toast_deleted_message</source>
         <extracomment>The message has been deleted</extracomment>
         <translation>Le message a été supprimé</translation>
@@ -6666,45 +6666,45 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
         <translation>L&apos;appel de groupe n&apos;a pas pu être créé</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="550"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="551"/>
         <source>voice_recording_duration</source>
         <extracomment>&quot;Voice recording (%1)&quot; : %1 is the duration formated in mm:ss</extracomment>
         <translation>Message vocal (%1)</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="633"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="634"/>
         <source>unknown_audio_device_name</source>
         <extracomment>&quot;Unknown device&quot;</extracomment>
         <translation>Appareil inconnu</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="670"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="671"/>
         <source>Dummy subject</source>
         <extracomment>Dummy subject</extracomment>
         <translation>Sujet par défaut</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="558"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="559"/>
         <source>conference_invitation</source>
         <translation>Invitation à une réunion</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="562"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="563"/>
         <source>conference_invitation_cancelled</source>
         <translation>Annulation d&apos;une réunion</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="560"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="561"/>
         <source>conference_invitation_updated</source>
         <translation>Modification d&apos;une réunion</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="573"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="574"/>
         <source>conversation_message_content_deleted_label</source>
         <translation>&lt;i&gt;Le message a été supprimé&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../model/tool/ToolModel.cpp" line="572"/>
+        <location filename="../../model/tool/ToolModel.cpp" line="573"/>
         <source>conversation_message_content_deleted_by_us_label</source>
         <translation>&lt;i&gt;Vous avez supprimé le message&lt;/i&gt;</translation>
     </message>
