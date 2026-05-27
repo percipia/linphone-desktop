@@ -8,7 +8,7 @@ Control.TextField {
     property real inputSize: Utils.getSizeWithScreenRatio(100)
 	property bool isError: false
 	color: activeFocus ? DefaultStyle.main1_500_main : DefaultStyle.main2_500_main
-	validator: IntValidator{bottom: 0; top: 9}
+	validator: RegularExpressionValidator { regularExpression: /[0-9]/ }
 
 	width: inputSize * 0.9
 	height: inputSize
