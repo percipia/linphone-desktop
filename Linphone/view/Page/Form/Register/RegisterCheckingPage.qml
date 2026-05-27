@@ -60,6 +60,10 @@ LoginLayout {
 		}
 	]
 
+	function updateCode() {
+		mainItem.code = repeater.itemAt(0).text + repeater.itemAt(1).text + repeater.itemAt(2).text + repeater.itemAt(3).text
+	}
+
 	centerContent: [
 		ColumnLayout {
 			anchors.left: parent.left
@@ -85,8 +89,8 @@ LoginLayout {
 				contentItem: RowLayout {
 					spacing: Utils.getSizeWithScreenRatio(45)
 					Repeater {
-						model: 4
 						id: repeater
+						model: 4
 						signal pasteRequested(string text)
 						DigitInput {
 							id: digitInput
@@ -106,9 +110,8 @@ LoginLayout {
 								}
 							}
 							onTextChanged: {
-								console.log("text edited", text)
+								mainItem.updateCode()
 								if (text.length > 0 ) {
-									mainItem.code = mainItem.code.slice(0, index) + text + mainItem.code.slice(index)
 									if (index < 3)
 										nextItemInFocusChain(true).forceActiveFocus()
 									else {
