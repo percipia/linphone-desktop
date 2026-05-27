@@ -157,7 +157,7 @@ void CameraGui::updateSDKRenderer(QQuickFramebufferObject::Renderer *renderer) {
 				});
 		} break;
 		case Device: {
-			if (mCallGui)
+			if (mParticipantDeviceGui)
 				App::postModelAsync([qmlName = mQmlName, participantDeviceGui = mParticipantDeviceGui, renderer]() {
 					auto device = participantDeviceGui->getCore()->getModel()->getMonitor();
 					if (device) {
