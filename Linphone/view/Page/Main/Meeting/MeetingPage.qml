@@ -678,6 +678,20 @@ AbstractMainPage {
 								Layout.fillWidth: true
 							}
 							RoundButton {
+								id: calendarPlusButton
+								style: ButtonStyle.noBackground
+								icon.source: AppIcons.calendarPlus
+								KeyNavigation.left: calendarPlusButton
+								KeyNavigation.right: calendarPlusButton
+								KeyNavigation.up: shareNetworkButton
+								KeyNavigation.down: joinButton
+								//: Export to ICS
+								ToolTip.text: qsTr("export_conference_info_ics_tooltip")
+								onClicked: {
+									mainItem.selectedConference.core.exportConferenceToICS()
+								}
+							}
+							RoundButton {
 								id: editButton
 								property var isMeObj: UtilsCpp.isMe(mainItem.selectedConference?.core?.organizerAddress)
 								visible: mainItem.selectedConference && isMeObj && isMeObj.value || false
@@ -830,18 +844,6 @@ AbstractMainPage {
 								Layout.fillWidth: true
 								font {
 									pixelSize: Utils.getSizeWithScreenRatio(14)
-								}
-							}
-							RoundButton {
-								id: calendarPlusButton
-								style: ButtonStyle.noBackground
-								icon.source: AppIcons.calendarPlus
-								KeyNavigation.left: calendarPlusButton
-								KeyNavigation.right: calendarPlusButton
-								KeyNavigation.up: shareNetworkButton
-								KeyNavigation.down: joinButton
-								onClicked: {
-									mainItem.selectedConference.core.exportConferenceToICS()
 								}
 							}
 						}

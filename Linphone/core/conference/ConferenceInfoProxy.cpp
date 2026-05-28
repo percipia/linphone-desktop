@@ -157,7 +157,7 @@ bool ConferenceInfoProxy::SortFilterList::filterAcceptsRow(int sourceRow, const 
 		} else return mFilterType == -1;
 	} else {
 		// if mlist count == 1 there is only the dummy row which we don't display alone
-		return !list->haveCurrentDate() && list->getCount() > 1 && mFilterText.isEmpty();
+		return !list->haveCurrentDate() && mFilterText.isEmpty();
 	}
 }
 
