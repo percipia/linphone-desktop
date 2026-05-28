@@ -83,13 +83,6 @@ void ConferenceInfoList::setSelf(QSharedPointer<ConferenceInfoList> me) {
 			}
 			std::list<std::shared_ptr<linphone::ConferenceInfo>> conferenceInfos =
 			    defaultAccount->getConferenceInformationList();
-			if (conferenceInfos.empty()) {
-				beginResetModel();
-				mList.clear();
-				endResetModel();
-				setIsUpdating(false);
-				return;
-			}
 			QList<QSharedPointer<ConferenceInfoCore>> *items = new QList<QSharedPointer<ConferenceInfoCore>>();
 			items->push_back(nullptr); // Add Dummy conference for today
 			for (auto conferenceInfo : conferenceInfos) {
@@ -302,6 +295,7 @@ QHash<int, QByteArray> ConferenceInfoList::roleNames() const {
 	QHash<int, QByteArray> roles;
 	roles[Qt::DisplayRole] = "$modelData";
 	roles[Qt::DisplayRole + 1] = "$sectionMonth";
+	roles[Qt::DisplayRole + 2] = "$sectionWeek";
 	return roles;
 }
 
@@ -310,12 +304,34 @@ QVariant ConferenceInfoList::data(const QModelIndex &index, int role) const {
 	if (!index.isValid() || row < 0 || row >= mList.count()) return QVariant();
 	auto conferenceInfo = mList[row].objectCast<ConferenceInfoCore>();
 	if (conferenceInfo) {
+		auto dateTime = mList[row].objectCast<ConferenceInfoCore>()->getDateTimeSystem();
+		QDate date = dateTime.date();
 		if (role == Qt::DisplayRole) {
 			return QVariant::fromValue(new ConferenceInfoGui(mList[row].objectCast<ConferenceInfoCore>()));
 		} else if (role == Qt::DisplayRole + 1) {
-			auto date = mList[row].objectCast<ConferenceInfoCore>()->getDateTimeSystem();
-			if (date.date().year() != QDate::currentDate().year()) return Utils::toDateMonthAndYearString(date);
-			else return Utils::toDateMonthString(date);
+			if (date.year() != QDate::currentDate().year()) return Utils::toDateMonthAndYearString(dateTime);
+			else return Utils::toDateMonthString(dateTime);
+		} else if (role == Qt::DisplayRole + 2) {
+			QDate monday = date.addDays(-(date.dayOfWeek() - 1));
+			QDate sunday = monday.addDays(6);
+
+			QDate firstOfMonth(date.year(), date.month(), 1);
+			QDate lastOfMonth = firstOfMonth.addMonths(1).addDays(-1);
+
+			QDate from = qMax(monday, firstOfMonth);
+			QDate to = qMin(sunday, lastOfMonth);
+
+			if (from.month() == to.month())
+				return QString("%1-%2 %3")
+				    .arg(QLocale().toString(from.day()))
+				    .arg(QLocale().toString(to.day()))
+				    .arg(QLocale().toString(from, "MMM")); // "4-10 mai"
+
+			return QString("%1 %2 - %3 %4")
+			    .arg(QLocale().toString(from.day()))
+			    .arg(QLocale().toString(from, "MMM"))
+			    .arg(QLocale().toString(to.day()))
+			    .arg(QLocale().toString(to, "MMM"));
 		}
 	} else { // Dummy date
 		if (role == Qt::DisplayRole) {

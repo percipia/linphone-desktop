@@ -43,7 +43,7 @@ Control.Button {
 	property var textFormat: Text.AutoText
 	property var textHAlignment: Text.AlignHCenter
 	// Tooltip properties
-	ToolTip.visible: hovered && ToolTip.text != ""
+	ToolTip.visible: false
 	ToolTip.delay: 500
 	// Border properties
 	property color borderColor: style?.borderColor?.normal || "transparent"
@@ -66,6 +66,12 @@ Control.Button {
 	// Size properties
 	spacing: Utils.getSizeWithScreenRatio(5)
     property real radius: Math.ceil(height / 2)
+
+	ToolTip {
+		text: mainItem.ToolTip.text
+		delay: mainItem.ToolTip.delay
+		visible: hovered && text != ""
+	}
 
 	MouseArea {
 		id: mouseArea
