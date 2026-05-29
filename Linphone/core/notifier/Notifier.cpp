@@ -191,9 +191,7 @@ bool Notifier::createNotification(AbstractNotificationBackend::NotificationType 
 						    // ensure to have the Window on Top and fullscreen independant
 						    window->setFlags((showAsTool ? Qt::Tool : Qt::WindowStaysOnTopHint) |
 						                     Qt::FramelessWindowHint);
-#if defined(Q_OS_LINUX) || defined(Q_OS_WIN)
 						    window->setFlag(Qt::WindowDoesNotAcceptFocus);
-#endif
 						    //						    for (auto it = data.begin(); it != data.end(); ++it)
 						    //							    window->setProperty(it.key().toLatin1(), it.value());
 						    const int timeout = Notifications[type].getTimeout() * 1000;
