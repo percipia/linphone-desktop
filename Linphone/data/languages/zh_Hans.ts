@@ -7575,7 +7575,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="19"/>
         <source>unread</source>
-        <translation> </translation>
+        <translation type="unfinished"> </translation>
     </message>
 </context>
 <context>
@@ -7591,7 +7591,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../model/setting/SettingsModel.cpp" line="392"/>
         <source>set_capture_device_error</source>
-        <translation> </translation>
+        <translation type="unfinished"> </translation>
     </message>
 </context>
 </TS>

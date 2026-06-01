@@ -5238,7 +5238,7 @@ Ablauf: %1</translation>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="689"/>
         <source>export_conference_info_ics_tooltip</source>
         <extracomment>Export to ICS</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Als ICS exportieren</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="723"/>
@@ -6629,7 +6629,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <location filename="../../model/setting/SettingsModel.cpp" line="388"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
-        <translation>Kein Token gefunden</translation>
+        <translation>Aufnahmegerät konnte nicht festgelegt werden. Die ID lässt sich keinem vorhandenen Gerät zuordnen: %1</translation>
     </message>
 </context>
 <context>
@@ -6844,7 +6844,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="19"/>
         <source>unread</source>
         <extracomment>Unread</extracomment>
-        <translation>Kein Token gefunden</translation>
+        <translation>Ungelesen</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="21"/>

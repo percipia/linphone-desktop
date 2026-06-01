@@ -4948,6 +4948,11 @@ Expirace : %1</translation>
         <extracomment>&quot;Rejoindre la réunion&quot;</extracomment>
         <translation>Připojit ke schůzce</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="689"/>
+        <source>export_conference_info_ics_tooltip</source>
+        <translation>Export do ICS</translation>
+    </message>
 </context>
 <context>
     <name>MeetingsSettingsLayout</name>
@@ -8146,7 +8151,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="19"/>
         <source>unread</source>
-        <translation>Žádný token nenalezen</translation>
+        <translation>Nepřečteno</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="21"/>
@@ -8167,7 +8172,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../model/setting/SettingsModel.cpp" line="392"/>
         <source>set_capture_device_error</source>
-        <translation>Žádný token nenalezen</translation>
+        <translation>Nelze nastavit zařízení pro snímání. ID nelze přiřadit k žádnému existujícímu zařízení: %1</translation>
     </message>
 </context>
 </TS>

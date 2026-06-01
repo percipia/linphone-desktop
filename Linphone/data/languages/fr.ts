@@ -6516,7 +6516,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
         <location filename="../../model/setting/SettingsModel.cpp" line="388"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
-        <translation>Pas de token trouvé</translation>
+        <translation type="unfinished">Pas de token trouvé</translation>
     </message>
 </context>
 <context>
@@ -6721,7 +6721,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="19"/>
         <source>unread</source>
         <extracomment>Unread</extracomment>
-        <translation>non lues</translation>
+        <translation type="unfinished">non lues</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/UnreadNotification.qml" line="21"/>
