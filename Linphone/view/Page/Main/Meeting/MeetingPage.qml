@@ -184,6 +184,8 @@ AbstractMainPage {
 						icon.width: Utils.getSizeWithScreenRatio(28)
 						icon.height: Utils.getSizeWithScreenRatio(28)
 						KeyNavigation.down: scrollToCurrentDateButton
+						//: "New meeting"
+						Accessible.name: qsTr("new_meeting_acccessibility_label")
 						onClicked: {
 							mainItem.editConference()
 						}
