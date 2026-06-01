@@ -160,6 +160,8 @@ AbstractMainPage {
                         popup.x: 0
                         KeyNavigation.right: newChatButton
                         KeyNavigation.down: searchBar
+                        //: "Chat option"
+                        Accessible.name: qsTr("chat_option_acccessibility_label")
                         popup.contentItem: ColumnLayout {
                             IconLabelButton {
                                 Layout.fillWidth: true
@@ -185,6 +187,8 @@ AbstractMainPage {
                         icon.height: Utils.getSizeWithScreenRatio(28)
                         KeyNavigation.left: chatListMenu
                         KeyNavigation.down: searchBar
+                        //: "New chat"
+                        Accessible.name: qsTr("new_chat_acccessibility_label")
                         onClicked: {
                             console.debug("[ChatPage]User: create new chat")
                             mainItem.goToNewChat()
