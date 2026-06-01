@@ -78,7 +78,7 @@ class EventLogCore;
 
 class ChatMessageCore : public QObject, public AbstractObject {
 	Q_OBJECT
-	Q_PROPERTY(QDateTime timestamp READ getTimestamp CONSTANT)
+	Q_PROPERTY(QDateTime timestamp READ getTimestamp WRITE setTimestamp NOTIFY timestampChanged)
 	Q_PROPERTY(QString text READ getText WRITE setText NOTIFY textChanged)
 	Q_PROPERTY(QString utf8Text MEMBER mUtf8Text CONSTANT)
 	Q_PROPERTY(bool hasTextContent MEMBER mHasTextContent CONSTANT)
@@ -143,6 +143,7 @@ public:
 	int getEphemeralDuration() const;
 	void setEphemeralDuration(int duration);
 	QDateTime getTimestamp() const;
+	void setTimestamp(QDateTime timestamp);
 
 	bool hasFileContent() const;
 
@@ -183,6 +184,7 @@ signals:
 	void isRemoteMessageChanged(bool isRemote);
 	void messageStateChanged();
 	void imdnStatusListChanged();
+	void timestampChanged();
 	void messageReactionChanged();
 	void singletonReactionMapChanged();
 	void ephemeralDurationChanged(int duration);

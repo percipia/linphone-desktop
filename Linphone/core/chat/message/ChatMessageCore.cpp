@@ -296,9 +296,11 @@ void ChatMessageCore::setSelf(QSharedPointer<ChatMessageCore> me) {
 	    [this](const std::shared_ptr<linphone::ChatMessage> &message, linphone::ChatMessage::State state) {
 		    auto imdnStatusList = computeDeliveryStatus(message);
 		    auto msgState = LinphoneEnums::fromLinphone(state);
-		    mChatMessageModelConnection->invokeToCore([this, msgState, imdnStatusList] {
+		    auto timestamp = QDateTime::fromSecsSinceEpoch(message->getTime());
+		    mChatMessageModelConnection->invokeToCore([this, msgState, imdnStatusList, timestamp] {
 			    setImdnStatusList(imdnStatusList);
 			    setMessageState(msgState);
+			    setTimestamp(timestamp);
 		    });
 	    });
 	mChatMessageModelConnection->makeConnectToModel(
@@ -429,6 +431,13 @@ QList<ImdnStatus> ChatMessageCore::computeDeliveryStatus(const std::shared_ptr<l
 
 QDateTime ChatMessageCore::getTimestamp() const {
 	return mTimestamp;
+}
+
+void ChatMessageCore::setTimestamp(QDateTime timestamp) {
+	if (mTimestamp != timestamp) {
+		mTimestamp = timestamp;
+		emit timestampChanged();
+	}
 }
 
 QString ChatMessageCore::getText() const {
