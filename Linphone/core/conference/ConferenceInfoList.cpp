@@ -303,35 +303,35 @@ QVariant ConferenceInfoList::data(const QModelIndex &index, int role) const {
 	int row = index.row();
 	if (!index.isValid() || row < 0 || row >= mList.count()) return QVariant();
 	auto conferenceInfo = mList[row].objectCast<ConferenceInfoCore>();
-	if (conferenceInfo) {
-		auto dateTime = mList[row].objectCast<ConferenceInfoCore>()->getDateTimeSystem();
-		QDate date = dateTime.date();
+	auto dateTime = conferenceInfo ? conferenceInfo->getDateTimeSystem() : QDateTime::currentDateTime();
+	QDate date = dateTime.date();
+	if (role == Qt::DisplayRole + 2) {
+		QDate monday = date.addDays(-(date.dayOfWeek() - 1));
+		QDate sunday = monday.addDays(6);
+
+		QDate firstOfMonth(date.year(), date.month(), 1);
+		QDate lastOfMonth = firstOfMonth.addMonths(1).addDays(-1);
+
+		QDate from = qMax(monday, firstOfMonth);
+		QDate to = qMin(sunday, lastOfMonth);
+
+		if (from.month() == to.month())
+			return QString("%1-%2 %3")
+			    .arg(QLocale().toString(from.day()))
+			    .arg(QLocale().toString(to.day()))
+			    .arg(QLocale().toString(from, "MMM")); // "4-10 mai"
+
+		return QString("%1 %2 - %3 %4")
+		    .arg(QLocale().toString(from.day()))
+		    .arg(QLocale().toString(from, "MMM"))
+		    .arg(QLocale().toString(to.day()))
+		    .arg(QLocale().toString(to, "MMM"));
+	} else if (conferenceInfo) {
 		if (role == Qt::DisplayRole) {
-			return QVariant::fromValue(new ConferenceInfoGui(mList[row].objectCast<ConferenceInfoCore>()));
+			return QVariant::fromValue(new ConferenceInfoGui(conferenceInfo));
 		} else if (role == Qt::DisplayRole + 1) {
 			if (date.year() != QDate::currentDate().year()) return Utils::toDateMonthAndYearString(dateTime);
 			else return Utils::toDateMonthString(dateTime);
-		} else if (role == Qt::DisplayRole + 2) {
-			QDate monday = date.addDays(-(date.dayOfWeek() - 1));
-			QDate sunday = monday.addDays(6);
-
-			QDate firstOfMonth(date.year(), date.month(), 1);
-			QDate lastOfMonth = firstOfMonth.addMonths(1).addDays(-1);
-
-			QDate from = qMax(monday, firstOfMonth);
-			QDate to = qMin(sunday, lastOfMonth);
-
-			if (from.month() == to.month())
-				return QString("%1-%2 %3")
-				    .arg(QLocale().toString(from.day()))
-				    .arg(QLocale().toString(to.day()))
-				    .arg(QLocale().toString(from, "MMM")); // "4-10 mai"
-
-			return QString("%1 %2 - %3 %4")
-			    .arg(QLocale().toString(from.day()))
-			    .arg(QLocale().toString(from, "MMM"))
-			    .arg(QLocale().toString(to.day()))
-			    .arg(QLocale().toString(to, "MMM"));
 		}
 	} else { // Dummy date
 		if (role == Qt::DisplayRole) {

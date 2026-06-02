@@ -19,6 +19,7 @@ ListView {
 	property ConferenceInfoGui confToBeSelected: null
 	property bool _moveToIndex: false
     property bool loading: false
+	property bool haveCurrentDate: confInfoProxy.haveCurrentDate
     property real busyIndicatorSize: Utils.getSizeWithScreenRatio(60)
 
 	clip: true

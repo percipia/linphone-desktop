@@ -320,7 +320,7 @@
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="227"/>
         <source>manage_account_dialog_remove_account_message</source>
         <extracomment>Si vous souhaitez supprimer définitivement votre compte rendez-vous sur : https://sip.linphone.org</extracomment>
-        <translation>Wenn Sie Ihr Konto dauerhaft löschen möchten, besuchen Sie: https://sip.linphone.org</translation>
+        <translation>Wenn Sie Ihr Konto dauerhaft löschen möchten, besuchen Sie: https://subscribe.linphone.org</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="131"/>
