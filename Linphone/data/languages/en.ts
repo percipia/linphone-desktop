@@ -319,7 +319,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="227"/>
         <source>manage_account_dialog_remove_account_message</source>
-        <extracomment>Si vous souhaitez supprimer définitivement votre compte rendez-vous sur : https://sip.linphone.org</extracomment>
+        <extracomment>Si vous souhaitez supprimer définitivement votre compte rendez-vous sur : https://subscribe.linphone.org</extracomment>
         <translation>If you wish to permanently delete your account, go to: https://subscribe.linphone.org</translation>
     </message>
     <message>
@@ -709,6 +709,7 @@
     <message>
         <location filename="../../core/App.cpp" line="509"/>
         <source>info_popup_new_version_download_label</source>
+        <extracomment>Download it !</extracomment>
         <translation>Download it !</translation>
     </message>
     <message>
@@ -726,6 +727,7 @@
     <message>
         <location filename="../../core/App.cpp" line="522"/>
         <source>info_popup_version_up_to_date_title</source>
+        <extracomment>Up to date</extracomment>
         <translation>Up to date</translation>
     </message>
     <message>
@@ -1114,6 +1116,7 @@
     <message>
         <location filename="../../core/call/CallList.cpp" line="106"/>
         <source>local_group_call</source>
+        <extracomment>&quot;Local group call&quot;</extracomment>
         <translation>Local group call</translation>
     </message>
     <message>
@@ -2386,6 +2389,7 @@ Error</extracomment>
     <message>
         <location filename="../../core/chat/message/content/ChatMessageContentList.cpp" line="123"/>
         <source>popup_error_nb_files_not_found_message</source>
+        <extracomment>%n files were not found</extracomment>
         <translation>%1 files were not found</translation>
     </message>
     <message numerus="yes">
@@ -2406,6 +2410,7 @@ Error</extracomment>
     <message>
         <location filename="../../core/chat/message/content/ChatMessageContentList.cpp" line="176"/>
         <source>popup_error_unsupported_files_message</source>
+        <extracomment>Unable to get supported mime type for %1 files.</extracomment>
         <translation>Unable to get supported mime type for %1 files.</translation>
     </message>
     <message>
@@ -2818,39 +2823,32 @@ Only your correspondent can decrypt them.</translation>
 <context>
     <name>CliModel</name>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="62"/>
         <source>show_function_description</source>
-        <translation>Show</translation>
+        <translation type="vanished">Show</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="63"/>
         <source>fetch_config_function_description</source>
-        <translation>Fetch config</translation>
+        <translation type="vanished">Fetch config</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="64"/>
         <source>call_function_description</source>
-        <translation>Call</translation>
+        <translation type="vanished">Call</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="65"/>
         <source>bye_function_description</source>
-        <translation>Bye</translation>
+        <translation type="vanished">Bye</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="66"/>
         <source>accept_function_description</source>
-        <translation>Accept</translation>
+        <translation type="vanished">Accept</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="67"/>
         <source>decline_function_description</source>
-        <translation>Decline</translation>
+        <translation type="vanished">Decline</translation>
     </message>
     <message>
-        <location filename="../../model/cli/CliModel.cpp" line="68"/>
         <source>use_sips_function_description</source>
-        <translation>Use sips</translation>
+        <translation type="vanished">Use sips</translation>
     </message>
     <message>
         <location filename="../../model/cli/CliModel.cpp" line="463"/>
@@ -4555,6 +4553,7 @@ Expiration : %1</translation>
     <message>
         <location filename="../../core/login/LoginPage.cpp" line="86"/>
         <source>default_account_connection_state_error_toast</source>
+        <extracomment>Erreur durant la connexion, veuillez vérifier vos paramètres</extracomment>
         <translation>Error during connection</translation>
     </message>
 </context>
@@ -4930,19 +4929,19 @@ Expiration : %1</translation>
 <context>
     <name>MeetingListView</name>
     <message>
-        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="305"/>
+        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="306"/>
         <source>meeting_info_cancelled</source>
         <extracomment>&quot;Réunion annulée&quot;</extracomment>
         <translation>Meeting canceled</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="329"/>
+        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="330"/>
         <source>meetings_list_no_meeting_for_today</source>
         <extracomment>&quot;Aucune réunion aujourd&apos;hui&quot;</extracomment>
         <translation>No meeting for today</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="365"/>
+        <location filename="../../view/Control/Display/Meeting/MeetingListView.qml" line="366"/>
         <source>meeting_info_delete</source>
         <extracomment>&quot;Supprimer la réunion&quot;</extracomment>
         <translation>Delete meeting</translation>
@@ -5354,32 +5353,26 @@ Expiration : %1</translation>
 <context>
     <name>NotificationBackend</name>
     <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
         <source>info_popup_error_title</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
         <source>info_popup_error_creating_notification</source>
-        <translation>Error creating notification</translation>
+        <translation type="vanished">Error creating notification</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="134"/>
+        <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="65"/>
         <source>incoming_call</source>
         <translation>Incoming call</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="141"/>
+        <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>accept_button</source>
-        <extracomment>Accept</extracomment>
         <translation>Accept</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="143"/>
+        <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>decline_button</source>
-        <extracomment>Decline</extracomment>
         <translation>Decline</translation>
     </message>
 </context>
@@ -6705,6 +6698,7 @@ To enable them in a commercial project, please contact us.</translation>
     <message>
         <location filename="../../model/tool/ToolModel.cpp" line="634"/>
         <source>unknown_audio_device_name</source>
+        <extracomment>&quot;Unknown device&quot;</extracomment>
         <translation>Unknown device name</translation>
     </message>
     <message>
@@ -6981,6 +6975,9 @@ To enable them in a commercial project, please contact us.</translation>
         <location filename="../../tool/Utils.cpp" line="2217"/>
         <location filename="../../tool/Utils.cpp" line="2283"/>
         <source>chat_error</source>
+        <extracomment>Error creating or opening the chat
+----------
+Error in the chat</extracomment>
         <translation>Error in the chat</translation>
     </message>
     <message>
