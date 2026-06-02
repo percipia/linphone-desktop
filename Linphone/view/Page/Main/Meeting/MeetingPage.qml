@@ -11,7 +11,7 @@ import "qrc:/qt/qml/Linphone/view/Control/Tool/Helper/utils.js" as Utils
 AbstractMainPage {
 	id: mainItem
 	property ConferenceInfoGui selectedConference
-	property int meetingListCount: 0
+	property bool haveCurrentDate: false
 	signal returnRequested()
 	signal addParticipantsValidated(list<string> selectedParticipants)
     //: "Créer une réunion"
@@ -20,7 +20,7 @@ AbstractMainPage {
     emptyListText: qsTr("meetings_list_empty")
 	newItemIconSource: AppIcons.plusCircle
 	rightPanelColor: selectedConference ? DefaultStyle.grey_0 : DefaultStyle.grey_100 
-	showDefaultItem: leftPanelStackView.currentItem && leftPanelStackView.currentItem.objectName === "listLayout" && meetingListCount === 0
+	showDefaultItem: leftPanelStackView.currentItem && leftPanelStackView.currentItem.objectName === "listLayout" && haveCurrentDate
 
 	rightPanelStackView.width:  Utils.getSizeWithScreenRatio(393)
 	rightPanelStackTopMargin: Utils.getSizeWithScreenRatio(45)
@@ -251,8 +251,8 @@ AbstractMainPage {
 
 					searchBarText: searchBar.text
 
-					onCountChanged: {
-						mainItem.meetingListCount = count
+					onHaveCurrentDateChanged: {
+						mainItem.haveCurrentDate = haveCurrentDate
 					}
 					Binding {
 						target: mainItem

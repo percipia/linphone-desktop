@@ -283,7 +283,7 @@
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="209"/>
         <source>manage_account_dialog_remove_account_message</source>
         <extracomment>Si vous souhaitez supprimer définitivement votre compte rendez-vous sur : https://sip.linphone.org</extracomment>
-        <translation>Якщо ви хочете остаточно видалити свій обліковий запис, перейдіть за посиланням: https://sip.linphone.org</translation>
+        <translation>Якщо ви хочете остаточно видалити свій обліковий запис, перейдіть за посиланням: https://subscribe.linphone.org</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="266"/>
