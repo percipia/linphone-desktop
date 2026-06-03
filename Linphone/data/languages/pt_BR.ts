@@ -2537,6 +2537,26 @@ Apenas seu correspondente pode descriptografá-las.</translation>
 </context>
 <context>
     <name>CliModel</name>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="62"/>
+        <source>show_function_description</source>
+        <translation>Exibir</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="64"/>
+        <source>call_function_description</source>
+        <translation>Chamar</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="66"/>
+        <source>accept_function_description</source>
+        <translation>Aceitar</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="67"/>
+        <source>decline_function_description</source>
+        <translation>Recusar</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInfoCore</name>
@@ -4650,6 +4670,11 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <source>meeting_info_join_title</source>
         <extracomment>&quot;Rejoindre la réunion&quot;</extracomment>
         <translation>Entrar na conferência</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="188"/>
+        <source>new_meeting_acccessibility_label</source>
+        <translation>Nova reunião</translation>
     </message>
 </context>
 <context>
@@ -7643,6 +7668,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>decline_button</source>
         <translation>Recusar</translation>
+    </message>
+    <message>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
+        <source>info_popup_error_title</source>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>

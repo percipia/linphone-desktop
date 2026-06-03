@@ -7390,4 +7390,13 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <translation>Error</translation>
     </message>
 </context>
+<context>
+    <name>NotificationBackend</name>
+    <message>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
+        <source>info_popup_error_title</source>
+        <translation>Error</translation>
+    </message>
+</context>
 </TS>
