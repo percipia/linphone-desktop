@@ -2506,6 +2506,26 @@ Error</extracomment>
         <source>info_popup_cli_unsupported_scheme_message</source>
         <translation type="unfinished"> </translation>
     </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="62"/>
+        <source>show_function_description</source>
+        <translation>显示</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="64"/>
+        <source>call_function_description</source>
+        <translation>通话</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="66"/>
+        <source>accept_function_description</source>
+        <translation>接受</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="67"/>
+        <source>decline_function_description</source>
+        <translation>拒绝</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInfoCore</name>
@@ -4613,6 +4633,11 @@ Error</extracomment>
         <source>meeting_info_join_title</source>
         <extracomment>&quot;Rejoindre la réunion&quot;</extracomment>
         <translation>加入会议</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="188"/>
+        <source>new_meeting_acccessibility_label</source>
+        <translation>新会议</translation>
     </message>
 </context>
 <context>
@@ -7560,6 +7585,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>decline_button</source>
         <translation>拒绝</translation>
+    </message>
+    <message>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
+        <source>info_popup_error_title</source>
+        <translation>错误</translation>
     </message>
 </context>
 <context>

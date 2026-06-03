@@ -2738,6 +2738,26 @@ Alleen jouw gesprekspartner kan deze ontsleutelen.</translation>
         <source>info_popup_cli_unsupported_scheme_message</source>
         <translation>Geen geldige URI: `%1` Niet-ondersteund schema: `%2`.</translation>
     </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="62"/>
+        <source>show_function_description</source>
+        <translation>Toon</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="64"/>
+        <source>call_function_description</source>
+        <translation>Bellen</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="66"/>
+        <source>accept_function_description</source>
+        <translation>Accepteren</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="67"/>
+        <source>decline_function_description</source>
+        <translation>Weigeren</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInfoCore</name>
@@ -3019,7 +3039,7 @@ Alleen jouw gesprekspartner kan deze ontsleutelen.</translation>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="16"/>
         <source>contacts_list_empty</source>
         <extracomment>&quot;Aucun contact pour le moment&quot;</extracomment>
-        <translation>Geen contacten op dit moment</translation>
+        <translation>Geen contacten op dit ogenblik</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="74"/>
@@ -4942,6 +4962,11 @@ Verlooptijd: %1</translation>
         <source>meeting_info_join_title</source>
         <extracomment>&quot;Rejoindre la réunion&quot;</extracomment>
         <translation>Deelnemen aan meeting</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="188"/>
+        <source>new_meeting_acccessibility_label</source>
+        <translation>Nieuwe meeting</translation>
     </message>
 </context>
 <context>
@@ -8011,6 +8036,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>decline_button</source>
         <translation>Weigeren</translation>
+    </message>
+    <message>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
+        <source>info_popup_error_title</source>
+        <translation>Fout</translation>
     </message>
 </context>
 <context>

@@ -5103,7 +5103,7 @@ Ablauf: %1</translation>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="188"/>
         <source>new_meeting_acccessibility_label</source>
         <extracomment>&quot;New meeting&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Neue Besprechung</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="216"/>
@@ -5459,7 +5459,7 @@ Ablauf: %1</translation>
     <name>NotificationBackend</name>
     <message>
         <source>info_popup_error_title</source>
-        <translation type="obsolete">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="65"/>

@@ -2495,6 +2495,16 @@ Error</extracomment>
 </context>
 <context>
     <name>CliModel</name>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="62"/>
+        <source>show_function_description</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <location filename="../../model/cli/CliModel.cpp" line="64"/>
+        <source>call_function_description</source>
+        <translation>Chamar</translation>
+    </message>
 </context>
 <context>
     <name>ConferenceInfoCore</name>
@@ -7420,6 +7430,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="65"/>
         <source>incoming_call</source>
         <translation>Chamada recebida</translation>
+    </message>
+    <message>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
+        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
+        <source>info_popup_error_title</source>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>
