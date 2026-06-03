@@ -728,7 +728,7 @@ void CallCore::setRemoteTokens(const QStringList &token) {
 }
 
 LinphoneEnums::MediaEncryption CallCore::getEncryption() const {
-	return mEncryption;
+	return mConference ? LinphoneEnums::MediaEncryption::Srtp : mEncryption;
 }
 
 LinphoneEnums::ConferenceSecurityLevel CallCore::getConferenceSecurityLevel() const {
@@ -743,6 +743,7 @@ void CallCore::setConferenceSecurityLevel(LinphoneEnums::ConferenceSecurityLevel
 }
 
 QString CallCore::getEncryptionString() const {
+	if (mConference) return tr("media_encryption_srtp");
 	switch (mEncryption) {
 		case LinphoneEnums::MediaEncryption::Dtls:
 			//: DTLS
