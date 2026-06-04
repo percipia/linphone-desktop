@@ -21,7 +21,6 @@
 #ifndef CHAT_MESSAGE_CORE_H_
 #define CHAT_MESSAGE_CORE_H_
 
-#include "EventLogCore.hpp"
 #include "core/chat/message/content/ChatMessageContentGui.hpp"
 #include "core/chat/message/content/ChatMessageContentProxy.hpp"
 #include "core/conference/ConferenceInfoCore.hpp"
@@ -74,7 +73,6 @@ public:
 };
 
 class ChatCore;
-class EventLogCore;
 
 class ChatMessageCore : public QObject, public AbstractObject {
 	Q_OBJECT

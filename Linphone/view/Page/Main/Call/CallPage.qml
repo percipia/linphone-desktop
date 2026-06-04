@@ -271,7 +271,10 @@ AbstractMainPage {
                         contentItem: ColumnLayout {
                             Text {
                                 visible: historyListView.count === 0 && !historyListView.loading
+                                Layout.fillWidth: true
+                                horizontalAlignment: Text.AlignHCenter
                                 Layout.alignment: Qt.AlignHCenter
+                                maximumLineCount: 2
                                 Layout.topMargin: Utils.getSizeWithScreenRatio(137)
                                 //: "Aucun résultat…"
                                 text: searchBar.text.length != 0 ? qsTr("list_filter_no_result_found")
