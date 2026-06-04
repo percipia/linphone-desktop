@@ -349,14 +349,14 @@ Control.Control {
                                                 : mainItem.msgState === LinphoneEnums.ChatMessageState.StateDisplayed
                                                     ? AppIcons.checks
                                                     : mainItem.msgState === LinphoneEnums.ChatMessageState.StatePendingDelivery
+                                                    || mainItem.msgState === LinphoneEnums.ChatMessageState.StateIdle
                                                         ? AppIcons.hourglass
                                                         : ""
                                     BusyIndicator {
                                         anchors.fill: parent
                                         Layout.preferredWidth: visible ? 14 : 0
                                         Layout.preferredHeight: visible ? 14 : 0
-                                        visible: mainItem.msgState === LinphoneEnums.ChatMessageState.StateIdle
-                                            || mainItem.msgState === LinphoneEnums.ChatMessageState.StateInProgress
+                                        visible: mainItem.msgState === LinphoneEnums.ChatMessageState.StateInProgress
                                             || mainItem.msgState === LinphoneEnums.ChatMessageState.StateFileTransferInProgress
                                     }
                                 }

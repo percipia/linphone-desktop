@@ -319,6 +319,24 @@ void ChatCore::setSelf(const QSharedPointer<ChatCore> &me) {
 			linMessage->send();
 		});
 	});
+	mChatModelConnection->makeConnectToCore(&ChatCore::lMessageSending, [this](ChatMessageGui *chatMessage) {
+		auto chatMessageCore = chatMessage ? chatMessage->mCore : nullptr;
+		auto chatMessageModel = chatMessageCore ? chatMessageCore->getModel() : nullptr;
+		if (chatMessageModel) {
+			mChatModelConnection->invokeToModel([this, chatMessageModel]() {
+				auto message = chatMessageModel->getMonitor();
+				if (message) {
+					auto eventLog = message->getEventLog();
+					auto chatRoom = mChatModel->getMonitor();
+					if (eventLog) {
+						auto event = EventLogCore::create(eventLog, chatRoom);
+						mChatModelConnection->invokeToCore([this, event]() { emit eventsInserted({event}); });
+					}
+				}
+			});
+		}
+	});
+
 	mChatModelConnection->makeConnectToModel(
 	    &ChatModel::chatMessageSending, [this](const std::shared_ptr<linphone::ChatRoom> &chatRoom,
 	                                           const std::shared_ptr<const linphone::EventLog> &eventLog) {

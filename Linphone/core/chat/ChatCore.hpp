@@ -187,6 +187,7 @@ signals:
 	void lSendTextMessage(QString message);
 	void lSendMessage(QString message, QVariantList files);
 	void lSendVoiceMessage();
+	void lMessageSending(ChatMessageGui *chatMessage);
 	void lCompose();
 	void lLeave();
 	void lSetMuted(bool muted);

@@ -589,6 +589,7 @@ FocusScope {
                             mainItem.chat.core.lSendTextMessage(text)
                         else mainItem.chat.core.lSendMessage(text, filesContents)
                         contents.clear()
+                        mainItem.chat.core.lMessageSending(mainItem.chatMessage);
                     }
                     onDropped: (files) => {
                         contents.addFiles(files)
