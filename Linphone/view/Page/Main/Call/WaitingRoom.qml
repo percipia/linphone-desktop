@@ -17,6 +17,7 @@ RowLayout {
 	signal joinConfRequested(string uri)
 	signal cancelJoiningRequested()
 	signal cancelAfterJoinRequested()
+	Component.onCompleted: localVideoEnabled = true
 	RowLayout {
 		Layout.fillWidth: false
 		Layout.fillHeight: false
