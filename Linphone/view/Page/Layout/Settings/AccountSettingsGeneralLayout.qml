@@ -194,7 +194,7 @@ AbstractSettingsLayout {
 				ColumnLayout {
                     spacing : Utils.getSizeWithScreenRatio(5)
 					Text {
-                        //: "Déconnecter mon compte"
+                        //: "Supprimer mon compte"
                         text: qsTr("manage_account_delete")
 						font: Typography.p2l
 						wrapMode: Text.WordWrap
