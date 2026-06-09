@@ -895,65 +895,65 @@
         <translation>Die Aufnahme wurde in der folgenden Datei gespeichert: %1</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="422"/>
-        <location filename="../../core/call/CallCore.cpp" line="447"/>
+        <location filename="../../core/call/CallCore.cpp" line="430"/>
+        <location filename="../../core/call/CallCore.cpp" line="455"/>
         <source>call_stats_codec_label</source>
         <extracomment>&quot;Codec: %1 / %2 kHz&quot;</extracomment>
         <translation>Codec: %1 / %2 kHz</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="426"/>
-        <location filename="../../core/call/CallCore.cpp" line="450"/>
+        <location filename="../../core/call/CallCore.cpp" line="434"/>
+        <location filename="../../core/call/CallCore.cpp" line="458"/>
         <source>call_stats_bandwidth_label</source>
         <extracomment>&quot;Bande passante : %1 %2 kbits/s %3 %4 kbits/s&quot;</extracomment>
         <translation>Bandbreite: %1 %2 kbits/s %3 %4 kbits/s</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="432"/>
-        <location filename="../../core/call/CallCore.cpp" line="455"/>
+        <location filename="../../core/call/CallCore.cpp" line="440"/>
+        <location filename="../../core/call/CallCore.cpp" line="463"/>
         <source>call_stats_loss_rate_label</source>
         <extracomment>&quot;Taux de perte: %1% %2%&quot;</extracomment>
         <translation>Verlustquote: %1% %2%</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="437"/>
+        <location filename="../../core/call/CallCore.cpp" line="445"/>
         <source>call_stats_jitter_buffer_label</source>
         <extracomment>&quot;Tampon de gigue: %1 ms&quot;</extracomment>
         <translation>Jitter-Puffer: %1 ms</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="464"/>
+        <location filename="../../core/call/CallCore.cpp" line="472"/>
         <source>call_stats_resolution_label</source>
         <extracomment>&quot;Définition vidéo : %1 %2 %3 %4&quot;</extracomment>
         <translation>Videoauflösung: %1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="470"/>
+        <location filename="../../core/call/CallCore.cpp" line="478"/>
         <source>call_stats_fps_label</source>
         <extracomment>&quot;FPS : %1 %2 %3 %4&quot;</extracomment>
         <translation>FPS : %1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="750"/>
+        <location filename="../../core/call/CallCore.cpp" line="758"/>
         <source>media_encryption_dtls</source>
         <extracomment>DTLS</extracomment>
         <translation>DTLS</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="753"/>
+        <location filename="../../core/call/CallCore.cpp" line="761"/>
         <source>media_encryption_none</source>
         <extracomment>None</extracomment>
         <translation>Nichts</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="746"/>
-        <location filename="../../core/call/CallCore.cpp" line="756"/>
+        <location filename="../../core/call/CallCore.cpp" line="754"/>
+        <location filename="../../core/call/CallCore.cpp" line="764"/>
         <source>media_encryption_srtp</source>
         <extracomment>SRTP</extracomment>
         <translation>SRTP</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="759"/>
+        <location filename="../../core/call/CallCore.cpp" line="767"/>
         <source>media_encryption_post_quantum</source>
         <extracomment>&quot;ZRTP - Post quantique&quot;</extracomment>
         <translation>Post-quantum ZRTP</translation>
@@ -6601,25 +6601,25 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <translation>Nachricht wird bearbeitet</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="710"/>
+        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="711"/>
         <source>shared_medias_title</source>
         <extracomment>Shared medias</extracomment>
         <translation>Geteilte Medien</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="712"/>
+        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="713"/>
         <source>shared_documents_title</source>
         <extracomment>Shared documents</extracomment>
         <translation>Geteilte Dokumente</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="741"/>
+        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="742"/>
         <source>forward_to_title</source>
         <extracomment>Forward to…</extracomment>
         <translation>Weiterleiten an…</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="775"/>
+        <location filename="../../view/Page/Form/Chat/SelectedChatView.qml" line="776"/>
         <source>conversations_title</source>
         <extracomment>Conversations</extracomment>
         <translation>Konversationen</translation>
@@ -6875,7 +6875,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
 <context>
     <name>Utils</name>
     <message numerus="yes">
-        <location filename="../../tool/Utils.cpp" line="2370"/>
+        <location filename="../../tool/Utils.cpp" line="2376"/>
         <source>nMinute</source>
         <translation>
             <numerusform>%1 Minute</numerusform>
@@ -6883,7 +6883,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../tool/Utils.cpp" line="2371"/>
+        <location filename="../../tool/Utils.cpp" line="2377"/>
         <source>nHour</source>
         <translation>
             <numerusform>%1 Stunde</numerusform>
@@ -6891,8 +6891,8 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../tool/Utils.cpp" line="2372"/>
-        <location filename="../../tool/Utils.cpp" line="2373"/>
+        <location filename="../../tool/Utils.cpp" line="2378"/>
+        <location filename="../../tool/Utils.cpp" line="2379"/>
         <source>nDay</source>
         <translation>
             <numerusform>%1 Tag</numerusform>
@@ -6900,7 +6900,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../tool/Utils.cpp" line="2374"/>
+        <location filename="../../tool/Utils.cpp" line="2380"/>
         <source>nWeek</source>
         <translation>
             <numerusform>%1 Woche</numerusform>
@@ -6908,7 +6908,7 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../tool/Utils.cpp" line="2375"/>
+        <location filename="../../tool/Utils.cpp" line="2381"/>
         <source>nSeconds</source>
         <translation>
             <numerusform>%1 Sekunde</numerusform>
@@ -7034,34 +7034,34 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
         <translation>Offline</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2215"/>
+        <location filename="../../tool/Utils.cpp" line="2221"/>
         <source>chat_message_edit_error</source>
         <extracomment>Cannot edit to invalid message</extracomment>
         <translation>Nachricht ist ungültig und kann nicht bearbeitet werden</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2221"/>
+        <location filename="../../tool/Utils.cpp" line="2227"/>
         <source>info_popup_edited_message_error</source>
         <extracomment>Could not send edited message : %1</extracomment>
         <translation>Bearbeitete Nachricht konnte nicht gesendet werden: %1</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2248"/>
+        <location filename="../../tool/Utils.cpp" line="2254"/>
         <source>info_popup_send_edited_message_error_message</source>
         <extracomment>Failed to create edited message</extracomment>
         <translation>Bearbeitete Nachricht konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2281"/>
+        <location filename="../../tool/Utils.cpp" line="2287"/>
         <source>recorder_error</source>
         <extracomment>Error with the recorder</extracomment>
         <translation>Fehler mit der Aufzeichnung</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="2141"/>
-        <location filename="../../tool/Utils.cpp" line="2173"/>
-        <location filename="../../tool/Utils.cpp" line="2217"/>
-        <location filename="../../tool/Utils.cpp" line="2283"/>
+        <location filename="../../tool/Utils.cpp" line="2174"/>
+        <location filename="../../tool/Utils.cpp" line="2223"/>
+        <location filename="../../tool/Utils.cpp" line="2289"/>
         <source>chat_error</source>
         <extracomment>Error creating or opening the chat
 ----------
@@ -7077,12 +7077,12 @@ Error in the chat</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="2143"/>
         <location filename="../../tool/Utils.cpp" line="2158"/>
-        <location filename="../../tool/Utils.cpp" line="2175"/>
-        <location filename="../../tool/Utils.cpp" line="2202"/>
-        <location filename="../../tool/Utils.cpp" line="2219"/>
-        <location filename="../../tool/Utils.cpp" line="2246"/>
-        <location filename="../../tool/Utils.cpp" line="2285"/>
-        <location filename="../../tool/Utils.cpp" line="2299"/>
+        <location filename="../../tool/Utils.cpp" line="2176"/>
+        <location filename="../../tool/Utils.cpp" line="2208"/>
+        <location filename="../../tool/Utils.cpp" line="2225"/>
+        <location filename="../../tool/Utils.cpp" line="2252"/>
+        <location filename="../../tool/Utils.cpp" line="2291"/>
+        <location filename="../../tool/Utils.cpp" line="2305"/>
         <source>info_popup_error_title</source>
         <extracomment>Error</extracomment>
         <translation>Fehler</translation>
@@ -7100,31 +7100,31 @@ Error in the chat</extracomment>
         <translation>Weiterleitungsnachricht konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2171"/>
+        <location filename="../../tool/Utils.cpp" line="2172"/>
         <source>chat_message_reply_error</source>
         <extracomment>Cannot reply to invalid message</extracomment>
         <translation>Auf eine ungültige Nachricht kann nicht geantwortet werden</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2177"/>
+        <location filename="../../tool/Utils.cpp" line="2178"/>
         <source>info_popup_reply_message_error</source>
         <extracomment>Could not send reply message : %1</extracomment>
         <translation>Antwort konnte nicht gesendet werden: %1</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2204"/>
+        <location filename="../../tool/Utils.cpp" line="2210"/>
         <source>info_popup_send_reply_message_error_message</source>
         <extracomment>Failed to create reply message</extracomment>
         <translation>Antwort konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2287"/>
+        <location filename="../../tool/Utils.cpp" line="2293"/>
         <source>info_popup_send_voice_message_error_message</source>
         <extracomment>Could not send voice message : %1</extracomment>
         <translation>Sprachnachricht konnte nicht gesendet werden: %1</translation>
     </message>
     <message>
-        <location filename="../../tool/Utils.cpp" line="2301"/>
+        <location filename="../../tool/Utils.cpp" line="2307"/>
         <source>info_popup_send_voice_message_sending_error_message</source>
         <extracomment>Failed to create message from record</extracomment>
         <translation>Nachricht aus der Aufnahme konnte nicht erstellt werden</translation>
@@ -7142,32 +7142,32 @@ Error in the chat</extracomment>
 <context>
     <name>WaitingRoom</name>
     <message>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="98"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="99"/>
         <source>meeting_waiting_room_title</source>
         <extracomment>Participer à :</extracomment>
         <translation>Beitreten :</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="120"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="121"/>
         <source>meeting_waiting_room_join</source>
         <extracomment>&quot;Rejoindre&quot;</extracomment>
         <translation>Beitreten</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="131"/>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="174"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="132"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="175"/>
         <source>cancel</source>
         <extracomment>Cancel</extracomment>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="145"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="146"/>
         <source>meeting_waiting_room_joining_title</source>
         <extracomment>&quot;Connexion à la réunion&quot;</extracomment>
         <translation>Verbindung zur Besprechung</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="155"/>
+        <location filename="../../view/Page/Main/Call/WaitingRoom.qml" line="156"/>
         <source>meeting_waiting_room_joining_subtitle</source>
         <extracomment>&quot;Vous allez rejoindre la réunion dans quelques instants…&quot;</extracomment>
         <translation>Sie werden der Besprechung in wenigen Momenten beitreten...</translation>
