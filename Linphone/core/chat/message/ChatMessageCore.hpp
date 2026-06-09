@@ -72,8 +72,6 @@ public:
 	static Reaction createMessageReactionVariant(const QString &body, const QString &address);
 };
 
-class ChatCore;
-
 class ChatMessageCore : public QObject, public AbstractObject {
 	Q_OBJECT
 	Q_PROPERTY(QDateTime timestamp READ getTimestamp WRITE setTimestamp NOTIFY timestampChanged)
