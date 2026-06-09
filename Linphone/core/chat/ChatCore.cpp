@@ -302,6 +302,14 @@ void ChatCore::setSelf(const QSharedPointer<ChatCore> &me) {
 		mChatModelConnection->invokeToModel([this, message]() {
 			auto linMessage = mChatModel->createTextMessageFromText(message);
 			linMessage->send();
+			auto eventLog = linMessage->getEventLog();
+			auto chatRoom = mChatModel->getMonitor();
+			if (eventLog) {
+				auto event = EventLogCore::create(eventLog, chatRoom);
+				mChatModelConnection->invokeToCore([this, event]() { emit eventsInserted({event}); });
+			} else {
+				lWarning() << log().arg("associated event log is null, do not add");
+			}
 		});
 	});
 	mChatModelConnection->makeConnectToCore(&ChatCore::lSendMessage, [this](QString message, QVariantList files) {
@@ -317,33 +325,17 @@ void ChatCore::setSelf(const QSharedPointer<ChatCore> &me) {
 		mChatModelConnection->invokeToModel([this, message, filesContent]() {
 			auto linMessage = mChatModel->createMessage(message, filesContent);
 			linMessage->send();
+			auto eventLog = linMessage->getEventLog();
+			auto chatRoom = mChatModel->getMonitor();
+			if (eventLog) {
+				auto event = EventLogCore::create(eventLog, chatRoom);
+				mChatModelConnection->invokeToCore([this, event]() { emit eventsInserted({event}); });
+			} else {
+				lWarning() << log().arg("associated event log is null, do not add");
+			}
 		});
 	});
-	mChatModelConnection->makeConnectToCore(&ChatCore::lMessageSending, [this](ChatMessageGui *chatMessage) {
-		auto chatMessageCore = chatMessage ? chatMessage->mCore : nullptr;
-		auto chatMessageModel = chatMessageCore ? chatMessageCore->getModel() : nullptr;
-		if (chatMessageModel) {
-			mChatModelConnection->invokeToModel([this, chatMessageModel]() {
-				auto message = chatMessageModel->getMonitor();
-				if (message) {
-					auto eventLog = message->getEventLog();
-					auto chatRoom = mChatModel->getMonitor();
-					if (eventLog) {
-						auto event = EventLogCore::create(eventLog, chatRoom);
-						mChatModelConnection->invokeToCore([this, event]() { emit eventsInserted({event}); });
-					}
-				}
-			});
-		}
-	});
 
-	mChatModelConnection->makeConnectToModel(
-	    &ChatModel::chatMessageSending, [this](const std::shared_ptr<linphone::ChatRoom> &chatRoom,
-	                                           const std::shared_ptr<const linphone::EventLog> &eventLog) {
-		    lInfo() << "Chat message sending in chatroom" << this << mChatModel->getTitle();
-		    auto event = EventLogCore::create(eventLog, chatRoom);
-		    mChatModelConnection->invokeToCore([this, event]() { emit eventsInserted({event}); });
-	    });
 	mChatModelConnection->makeConnectToCore(
 	    &ChatCore::lCompose, [this]() { mChatModelConnection->invokeToModel([this]() { mChatModel->compose(); }); });
 	mChatModelConnection->makeConnectToModel(
