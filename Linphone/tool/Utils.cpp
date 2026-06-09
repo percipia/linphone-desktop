@@ -2164,7 +2164,8 @@ void Utils::forwardMessageTo(ChatMessageGui *message, ChatGui *chatGui) {
 }
 
 void Utils::sendReplyMessage(ChatMessageGui *message, ChatGui *chatGui, QString text, QVariantList files) {
-	auto chatModel = chatGui && chatGui->mCore ? chatGui->mCore->getModel() : nullptr;
+	auto chatCore = chatGui ? chatGui->mCore : nullptr;
+	auto chatModel = chatCore ? chatGui->mCore->getModel() : nullptr;
 	auto chatMessageModel = message && message->mCore ? message->mCore->getModel() : nullptr;
 	if (!chatModel || !chatMessageModel) {
 		//: Cannot reply to invalid message
@@ -2185,7 +2186,7 @@ void Utils::sendReplyMessage(ChatMessageGui *message, ChatGui *chatGui, QString 
 			filesContent.append(contentCore->getContentModel());
 		}
 	}
-	App::postModelAsync([chatModel, chatMessageModel, text, filesContent] {
+	App::postModelAsync([chatCore, chatModel, chatMessageModel, text, filesContent] {
 		mustBeInLinphoneThread(sLog().arg(Q_FUNC_INFO));
 		auto chat = chatModel->getMonitor();
 		auto messageToReplyTo = chatMessageModel->getMonitor();
@@ -2196,6 +2197,11 @@ void Utils::sendReplyMessage(ChatMessageGui *message, ChatGui *chatGui, QString 
 				linMessage->addFileContent(content->getContent());
 			}
 			linMessage->send();
+			if (!linMessage->getEventLog()) {
+				lWarning() << "linphon message" << linMessage.get() << "has no associated event log !";
+			}
+			auto messageCore = EventLogCore::create(linMessage->getEventLog(), chat);
+			App::postCoreAsync([messageCore, chatCore] { emit chatCore->eventsInserted({messageCore}); });
 		} else {
 			App::postCoreAsync([] {
 				//: Error

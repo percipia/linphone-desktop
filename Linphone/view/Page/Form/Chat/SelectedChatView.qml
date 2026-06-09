@@ -585,11 +585,12 @@ FocusScope {
                             UtilsCpp.sendReplaceMessage(mainItem.chatMessage, mainItem.chat, text, filesContents)
                             mainItem.editingMessage = false
                         }
-                        else if (filesContents.length === 0)
-                            mainItem.chat.core.lSendTextMessage(text)
-                        else mainItem.chat.core.lSendMessage(text, filesContents)
+                        else {
+                            if (filesContents.length === 0)
+                               mainItem.chat.core.lSendTextMessage(text)
+                            else mainItem.chat.core.lSendMessage(text, filesContents)
+                        }
                         contents.clear()
-                        mainItem.chat.core.lMessageSending(mainItem.chatMessage);
                     }
                     onDropped: (files) => {
                         contents.addFiles(files)
