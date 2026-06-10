@@ -2459,11 +2459,6 @@ Error</extracomment>
 </context>
 <context>
     <name>CliModel</name>
-    <message>
-        <location filename="../../model/cli/CliModel.cpp" line="64"/>
-        <source>call_function_description</source>
-        <translation>Volať</translation>
-    </message>
 </context>
 <context>
     <name>ConferenceInfoCore</name>

@@ -2723,7 +2723,7 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="164"/>
         <source>chat_option_acccessibility_label</source>
         <extracomment>&quot;Chat option&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chat-Einstellungen</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="170"/>
@@ -2735,7 +2735,7 @@ Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="191"/>
         <source>new_chat_acccessibility_label</source>
         <extracomment>&quot;New chat&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Neuer Chat</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="204"/>

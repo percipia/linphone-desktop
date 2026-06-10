@@ -2688,6 +2688,16 @@ proto nezveřejňujte žádné citlivé informace!</translation>
         <source>loading_popup_chatroom_creation_pending_message</source>
         <translation>Chatovací místnost se vytváří...</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="164"/>
+        <source>chat_option_acccessibility_label</source>
+        <translation>Volby chatu</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="191"/>
+        <source>new_chat_acccessibility_label</source>
+        <translation>Nový chat</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsLayout</name>
@@ -2741,26 +2751,6 @@ proto nezveřejňujte žádné citlivé informace!</translation>
         <location filename="../../model/cli/CliModel.cpp" line="443"/>
         <source>info_popup_cli_unsupported_scheme_message</source>
         <translation>Neplatné URI: `%1` Nepodporované schéma: `%2`.</translation>
-    </message>
-    <message>
-        <location filename="../../model/cli/CliModel.cpp" line="62"/>
-        <source>show_function_description</source>
-        <translation>Zobrazit</translation>
-    </message>
-    <message>
-        <location filename="../../model/cli/CliModel.cpp" line="64"/>
-        <source>call_function_description</source>
-        <translation>Volat</translation>
-    </message>
-    <message>
-        <location filename="../../model/cli/CliModel.cpp" line="66"/>
-        <source>accept_function_description</source>
-        <translation>Přijmout</translation>
-    </message>
-    <message>
-        <location filename="../../model/cli/CliModel.cpp" line="67"/>
-        <source>decline_function_description</source>
-        <translation>Odmítnout</translation>
     </message>
 </context>
 <context>
@@ -8103,12 +8093,6 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/notifier/SysTrayNotificationBackend.cpp" line="80"/>
         <source>decline_button</source>
         <translation>Odmítnout</translation>
-    </message>
-    <message>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="92"/>
-        <location filename="../../core/notifier/WindowsNotificationBackend.cpp" line="193"/>
-        <source>info_popup_error_title</source>
-        <translation>Chyba</translation>
     </message>
 </context>
 <context>
