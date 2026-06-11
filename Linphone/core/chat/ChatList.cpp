@@ -264,6 +264,9 @@ bool ChatList::addChatInList(QSharedPointer<ChatCore> chatCore, bool emitAddSign
 		lWarning() << "ChatRoom with invalid identifier cannot be added to the list, return";
 		return false;
 	}
+	if (findChatById(chatCore->getIdentifier())) {
+		return false;
+	}
 	connectItem(chatCore);
 	lInfo() << "Add ChatRoom" << chatCore->getTitle();
 	add(chatCore);
@@ -272,7 +275,6 @@ bool ChatList::addChatInList(QSharedPointer<ChatCore> chatCore, bool emitAddSign
 		emit chatAdded(chatCore);
 	}
 	return true;
-	return false;
 }
 
 QVariant ChatList::data(const QModelIndex &index, int role) const {
