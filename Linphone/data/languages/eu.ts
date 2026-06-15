@@ -256,7 +256,7 @@
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="180"/>
         <source>manage_account_delete</source>
         <extracomment>&quot;Déconnecter mon compte&quot;</extracomment>
-        <translation>Deskonektatu nire kontua</translation>
+        <translation type="unfinished">Deskonektatu nire kontua</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="188"/>

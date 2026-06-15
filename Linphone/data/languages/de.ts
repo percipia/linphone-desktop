@@ -303,7 +303,7 @@
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="198"/>
         <source>manage_account_delete</source>
         <extracomment>&quot;Supprimer mon compte&quot;</extracomment>
-        <translation>Konto trennen</translation>
+        <translation type="unfinished">Konto trennen</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="206"/>

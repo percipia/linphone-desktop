@@ -7,19 +7,19 @@
         <location filename="../../view/Page/Layout/Settings/AbstractSettingsLayout.qml" line="67"/>
         <source>return_accessible_name</source>
         <extracomment>Return</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>indietro</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AbstractSettingsLayout.qml" line="86"/>
         <source>save</source>
         <extracomment>&quot;Enregistrer&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AbstractSettingsLayout.qml" line="90"/>
         <source>save_settings_accessible_name</source>
         <extracomment>Save %1 settings</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salva le impostazioni</translation>
     </message>
 </context>
 <context>
@@ -28,13 +28,13 @@
         <location filename="../../view/Page/Form/Settings/AbstractSettingsMenu.qml" line="52"/>
         <source>back_previous_menu_accessible_name</source>
         <extracomment>Back to previous menu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Torna al menù precedete</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Settings/AbstractSettingsMenu.qml" line="76"/>
         <source>settings_page_selection_accessible_name</source>
         <extracomment>Settings page selection</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Schermata Impostazioni</translation>
     </message>
 </context>
 <context>
@@ -43,12 +43,12 @@
         <location filename="../../view/Page/Window/AbstractWindow.qml" line="82"/>
         <source>contact_dialog_pick_phone_number_or_sip_address_title</source>
         <extracomment>&quot;Choisissez un numéro ou adresse SIP&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Scegli il numero o l&apos;indirizzo SIP</translation>
     </message>
     <message>
         <location filename="../../view/Page/Window/AbstractWindow.qml" line="329"/>
         <source>fps_counter</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 FPS (fotogrammi al secondo)</translation>
     </message>
 </context>
 <context>
@@ -57,45 +57,45 @@
         <location filename="../../core/account/AccountCore.cpp" line="464"/>
         <source>drawer_menu_account_connection_status_connected</source>
         <extracomment>&quot;Connecté&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Collegato</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="467"/>
         <source>drawer_menu_account_connection_status_refreshing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricaricamento…</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="470"/>
         <source>drawer_menu_account_connection_status_progress</source>
-        <translation type="unfinished"></translation>
+        <translation>Connessione…</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="473"/>
         <source>drawer_menu_account_connection_status_failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="477"/>
         <source>drawer_menu_account_connection_status_cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Disattivato</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="511"/>
         <source>manage_account_status_connected_summary</source>
         <extracomment>&quot;Vous êtes en ligne et joignable.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sei connesso e raggiungibile.</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="514"/>
         <source>manage_account_status_failed_summary</source>
         <extracomment>&quot;Erreur de connexion, vérifiez vos paramètres.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore di connessione, controlla le impostazioni.</translation>
     </message>
     <message>
         <location filename="../../core/account/AccountCore.cpp" line="518"/>
         <source>manage_account_status_cleared_summary</source>
         <extracomment>&quot;Compte désactivé, vous ne recevrez ni appel ni message.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Account disabilitato. Non riceverai chiamate o messaggi.</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
         <location filename="../../core/account/AccountDeviceList.cpp" line="156"/>
         <source>manage_account_no_device_found_error_message</source>
         <extracomment>&quot;Erreur lors de la récupération des appareils&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore nel recupero dei dispositivi: %1</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
         <location filename="../../view/Page/Main/Account/AccountListView.qml" line="87"/>
         <source>add_an_account</source>
         <extracomment>Add an account</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi un account</translation>
     </message>
 </context>
 <context>
@@ -122,37 +122,37 @@
         <location filename="../../model/account/AccountManager.cpp" line="94"/>
         <source>assistant_account_login_already_connected_error</source>
         <extracomment>&quot;The account is already connected&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;account risulta già connesso.</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="144"/>
         <source>assistant_account_login_outbound_proxy_uri_error</source>
         <extracomment>Outbound proxy uri is invalid. Please make sure it matches the following format : sip:host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; is optional)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;URI del proxy in uscita non è valido. Assicurati che rispetti il seguente formato : sip:host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; e opzionale)</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="109"/>
         <source>assistant_account_login_proxy_address_error</source>
         <extracomment>&quot;Unable to create proxy address. Please check the domain name.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile creare l&apos;indirizzo del proxy. Assicurati che il nome di dominio sia corretto.</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="122"/>
         <source>assistant_account_login_address_configuration_error</source>
         <extracomment>&quot;Unable to configure address: `%1`.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Non è stato possibile configurare l&apos;indirizzo: `%1`.</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="133"/>
         <source>assistant_account_login_registrar_uri_error</source>
         <extracomment>Registrar uri is invalid. Please make sure it matches the following format : sip:host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; is optional)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;URI del registrar non è valido. Assicurati che rispetti il seguente formato: sip:&lt;host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; è opzionale).</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="151"/>
         <source>assistant_account_login_params_configuration_error</source>
         <extracomment>&quot;Unable to configure account settings.&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile configurare le impostazioni dell&apos;account.</translation>
     </message>
     <message>
         <location filename="../../model/account/AccountManager.cpp" line="175"/>
