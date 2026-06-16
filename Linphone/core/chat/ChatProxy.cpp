@@ -48,12 +48,9 @@ void ChatProxy::setSourceModel(QAbstractItemModel *model) {
 		        [this, newChatList] { emit newChatList->filterChanged(getFilterText()); });
 		connect(newChatList, &ChatList::chatAdded, this, [this](QSharedPointer<ChatCore> chatCore) {
 			if (chatCore) {
-				invalidate();
 				emit chatAdded(new ChatGui(chatCore));
 			}
 		});
-		connect(newChatList, &ChatList::dataChanged, this,
-		        [this] { QTimer::singleShot(0, this, [this] { invalidate(); }); });
 		newChatList->lUpdate();
 	}
 	QSortFilterProxyModel::setSourceModel(newChatList);
