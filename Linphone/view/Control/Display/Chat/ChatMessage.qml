@@ -444,7 +444,7 @@ Control.Control {
                             Layout.fillWidth: true
                             Layout.preferredHeight: Utils.getSizeWithScreenRatio(45)
                             onClicked: {
-                                mainItem.chatMessage.core.lSend()
+                                mainItem.chatMessage.core.lSend(false)
                             }
                         }
                         IconLabelButton {

@@ -194,7 +194,7 @@ signals:
 	void readChanged();
 	void lSendReaction(const QString &reaction);
 	void lRemoveReaction();
-	void lSend();
+	void lSend(bool firstTime = true);
 
 private:
 	DECLARE_ABSTRACT_OBJECT

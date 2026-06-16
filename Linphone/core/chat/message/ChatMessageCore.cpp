@@ -251,19 +251,21 @@ void ChatMessageCore::setSelf(QSharedPointer<ChatMessageCore> me) {
 	mChatMessageModelConnection->makeConnectToCore(&ChatMessageCore::lRemoveReaction, [this]() {
 		mChatMessageModelConnection->invokeToModel([this] { mChatMessageModel->removeReaction(); });
 	});
-	mChatMessageModelConnection->makeConnectToCore(&ChatMessageCore::lSend, [this]() {
-		mChatMessageModelConnection->invokeToModel([this] {
+	mChatMessageModelConnection->makeConnectToCore(&ChatMessageCore::lSend, [this](bool firstTime) {
+		mChatMessageModelConnection->invokeToModel([this, firstTime] {
 			mChatMessageModel->send();
-			auto linMsg = mChatMessageModel->getMonitor();
-			auto chatroom = linMsg->getChatRoom();
-			auto eventLog = linMsg->getEventLog();
-			if (eventLog) {
-				auto eventLogCore = EventLogCore::create(eventLog, chatroom);
-				auto chatCore = App::getInstance()->getChatList()->findChatById(
-				    Utils::coreStringToAppString(chatroom->getIdentifier()));
-				mChatMessageModelConnection->invokeToCore([this, chatCore, eventLogCore] {
-					if (chatCore) emit chatCore->eventsInserted({eventLogCore});
-				});
+			if (firstTime) {
+				auto linMsg = mChatMessageModel->getMonitor();
+				auto chatroom = linMsg->getChatRoom();
+				auto eventLog = linMsg->getEventLog();
+				if (eventLog) {
+					auto eventLogCore = EventLogCore::create(eventLog, chatroom);
+					auto chatCore = App::getInstance()->getChatList()->findChatById(
+					    Utils::coreStringToAppString(chatroom->getIdentifier()));
+					mChatMessageModelConnection->invokeToCore([this, chatCore, eventLogCore] {
+						if (chatCore) emit chatCore->eventsInserted({eventLogCore});
+					});
+				}
 			}
 		});
 	});
