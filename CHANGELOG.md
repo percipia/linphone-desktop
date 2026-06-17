@@ -31,6 +31,7 @@ Group changes to describe their impact on the project, as follows:
 - Mac: fix showing the main window after it was closed, click escape to leave full screen mode
 - Device changing in waiting room before entering a meeting
 - Remove account data from the linphonerc file when disconnected
+- Accessibility (screen reader and focus on main page, magic search bar, calls, contacts, settings, dialer, modal, combobox, call window, popup, notification badge; various default focus item; auto-scroll in settings; navigation on page tab bar)
 
 ### Changed
 - Unification of URI handling with a unique scheme
