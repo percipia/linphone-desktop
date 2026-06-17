@@ -79,6 +79,7 @@ public:
 	                                 const std::shared_ptr<linphone::Friend> &f);
 
 	static QString getMessageFromContent(std::list<std::shared_ptr<linphone::Content>> contents);
+	static QString getMessageFromContent(std::shared_ptr<linphone::Content> content);
 	static QString getMessageFromMessage(std::shared_ptr<linphone::ChatMessage> message);
 
 	static void loadDownloadedCodecs();
