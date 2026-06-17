@@ -216,6 +216,8 @@ private:
 	                                                const std::string &url) override;
 	virtual void onFriendListRemoved(const std::shared_ptr<linphone::Core> &core,
 	                                 const std::shared_ptr<linphone::FriendList> &friendList) override;
+	virtual void onFriendListCreated(const std::shared_ptr<linphone::Core> &core,
+	                                 const std::shared_ptr<linphone::FriendList> &friendList) override;
 	virtual void onAudioDevicesListUpdated(const std::shared_ptr<linphone::Core> &core) override;
 	virtual void onAudioDeviceChanged(const std::shared_ptr<linphone::Core> &core,
 	                                  const std::shared_ptr<linphone::AudioDevice> &device) override;
@@ -304,6 +306,8 @@ signals:
 	                                      const std::string &url,
 	                                      bool checkRequestedByUser);
 	void friendListRemoved(const std::shared_ptr<linphone::Core> &core,
+	                       const std::shared_ptr<linphone::FriendList> &friendList);
+	void friendListCreated(const std::shared_ptr<linphone::Core> &core,
 	                       const std::shared_ptr<linphone::FriendList> &friendList);
 	void audioDevicesListUpdated(const std::shared_ptr<linphone::Core> &core);
 	void audioDeviceChanged(const std::shared_ptr<linphone::Core> &core,
