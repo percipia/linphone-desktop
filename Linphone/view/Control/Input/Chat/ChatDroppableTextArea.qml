@@ -197,7 +197,7 @@ Control.Control {
 										sendingTextArea.clear()
 									}
 									function onFocusTextArea() {
-										sendingTextArea.forceActiveFocus()
+										if (mainItem.visible) sendingTextArea.forceActiveFocus()
 									}
 								}
 							}
