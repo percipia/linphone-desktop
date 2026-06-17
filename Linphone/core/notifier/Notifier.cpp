@@ -409,9 +409,14 @@ void Notifier::notifyReceivedMessages(const std::shared_ptr<linphone::ChatRoom> 
 				//: 'Voice message received!' : message to warn the user in a notification for voice messages.
 				txt = tr("new_voice_message");
 			else txt = tr("new_file_message");
-			if (txt.isEmpty() && message->hasConferenceInvitationContent())
-				//: 'Conference invitation received!' : Notification about receiving an invitation to a conference.
-				txt = tr("new_conference_invitation");
+			if (txt.isEmpty() && message->hasConferenceInvitationContent()) {
+				for (const auto &content : message->getContents()) {
+					if (content->isIcalendar()) {
+						txt = ToolModel::getMessageFromContent(content);
+						break;
+					}
+				}
+			}
 		};
 
 		if (messages.size() == 1 &&

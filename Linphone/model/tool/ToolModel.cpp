@@ -545,7 +545,6 @@ QString ToolModel::getMessageFromContent(std::list<std::shared_ptr<linphone::Con
 	for (auto &content : contents) {
 		if (content->isText()) {
 			if (!content->getUtf8Text().empty()) return Utils::coreStringToAppString(content->getUtf8Text());
-			continue;
 		} else if (content->isVoiceRecording()) {
 			//: "Voice recording (%1)" : %1 is the duration formated in mm:ss
 			return tr("voice_recording_duration").arg(Utils::formatDuration(content->getFileDuration()));
@@ -564,6 +563,32 @@ QString ToolModel::getMessageFromContent(std::list<std::shared_ptr<linphone::Con
 		} else if (content->isMultipart()) {
 			return getMessageFromContent(content->getParts());
 		}
+	}
+	return res;
+}
+
+QString ToolModel::getMessageFromContent(std::shared_ptr<linphone::Content> content) {
+	mustBeInLinphoneThread(sLog().arg(Q_FUNC_INFO));
+	QString res;
+	if (content->isText()) {
+		if (!content->getUtf8Text().empty()) return Utils::coreStringToAppString(content->getUtf8Text());
+	} else if (content->isVoiceRecording()) {
+		//: "Voice recording (%1)" : %1 is the duration formated in mm:ss
+		return tr("voice_recording_duration").arg(Utils::formatDuration(content->getFileDuration()));
+	} else if (content->isFile() || content->isFileTransfer() || content->isFileEncrypted()) {
+		if (res.isEmpty()) res.append(Utils::coreStringToAppString(content->getName()));
+		else res.append(", " + Utils::coreStringToAppString(content->getName()));
+	} else if (content->isIcalendar()) {
+		auto conferenceInfo = linphone::Factory::get()->createConferenceInfoFromIcalendarContent(content);
+		auto conferenceInfoCore = ConferenceInfoCore::create(conferenceInfo);
+		if (conferenceInfoCore->getConferenceInfoState() == LinphoneEnums::ConferenceInfoState::New)
+			return tr("conference_invitation");
+		if (conferenceInfoCore->getConferenceInfoState() == LinphoneEnums::ConferenceInfoState::Updated)
+			return tr("conference_invitation_updated");
+		if (conferenceInfoCore->getConferenceInfoState() == LinphoneEnums::ConferenceInfoState::Cancelled)
+			return tr("conference_invitation_cancelled");
+	} else if (content->isMultipart()) {
+		return getMessageFromContent(content->getParts());
 	}
 	return res;
 }

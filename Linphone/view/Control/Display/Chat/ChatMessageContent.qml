@@ -71,7 +71,7 @@ ColumnLayout {
 	Repeater {
 		id: conferenceList
 		visible: count > 0
-		model: ChatMessageContentProxy{
+		model: ChatMessageContentProxy {
 			filterType: ChatMessageContentProxy.FilterContentType.Conference
 			chatMessageGui: mainItem.chatMessageGui
 		}
