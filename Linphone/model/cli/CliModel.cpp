@@ -517,7 +517,7 @@ void CliModel::executeCommand(QString command) { //, CommandFormat *format) {
 				    Utils::appStringToCoreString(qAddress)); // Test if command is an address
 			}
 			// if (format) *format = UriFormat;
-
+			command = decodeBase64Url(command);
 			lInfo() << log().arg("Detecting URI command: `%1`…").arg(command);
 			QString functionName;
 			if (address) {
@@ -627,7 +627,7 @@ void CliModel::executeCommand(QString command) { //, CommandFormat *format) {
 						break;
 					} else {
 						const std::string header = address->getHeader(Utils::appStringToCoreString(argName));
-						headers[argName] = decodeBase64Url(QByteArray(header.c_str(), int(header.length())));
+						headers[argName] = QString::fromStdString(header);
 					}
 				}
 				mCommands[functionName].executeUri(qAddress, headers, this);
