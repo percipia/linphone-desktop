@@ -5148,12 +5148,6 @@ Verlooptijd: %1</translation>
         <translation>Bestand ontvangen!</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="367"/>
-        <source>new_conference_invitation</source>
-        <extracomment>&apos;Conference invitation received!&apos; : Notification about receiving an invitation to a conference.</extracomment>
-        <translation>Conferentie uitnodiging ontvangen !</translation>
-    </message>
-    <message>
         <location filename="../../core/notifier/Notifier.cpp" line="387"/>
         <source>new_chat_room_messages</source>
         <extracomment>&apos;New messages received!&apos; Notification that warn the user of new messages.</extracomment>
