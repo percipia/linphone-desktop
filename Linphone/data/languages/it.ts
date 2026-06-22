@@ -327,7 +327,7 @@
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="280"/>
         <source>error</source>
         <extracomment>Erreur</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="318"/>
@@ -394,7 +394,7 @@
     <message>
         <location filename="../../view/Page/Form/Settings/AccountSettingsPage.qml" line="41"/>
         <source>contact_editor_dialog_abort_confirmation_save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
 </context>
 <context>
@@ -423,7 +423,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="47"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="65"/>
@@ -610,7 +610,7 @@
         <location filename="../../view/Page/Layout/Settings/AdvancedSettingsLayout.qml" line="99"/>
         <source>information_popup_error_title</source>
         <extracomment>Invalid URL format</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AdvancedSettingsLayout.qml" line="99"/>
@@ -685,7 +685,7 @@
         <location filename="../../core/App.cpp" line="856"/>
         <source>info_popup_error_title</source>
         <extracomment>Error</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/App.cpp" line="444"/>
@@ -1109,7 +1109,7 @@
     <message>
         <location filename="../../core/call/CallList.cpp" line="111"/>
         <source>info_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/call/CallList.cpp" line="113"/>
@@ -1363,7 +1363,7 @@
         <location filename="../../view/Page/Main/Call/CallPage.qml" line="425"/>
         <location filename="../../view/Page/Main/Call/CallPage.qml" line="523"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Call/CallPage.qml" line="423"/>
@@ -1548,7 +1548,7 @@
         <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="84"/>
         <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="168"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="86"/>
@@ -2004,7 +2004,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="31"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="33"/>
@@ -2026,7 +2026,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="45"/>
         <source>settings_contacts_carddav_popup_synchronization_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="47"/>
@@ -2074,6 +2074,11 @@
         <extracomment>&quot;Stocker ici les contacts nouvellement crées&quot;</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/CarddavSettingsLayout.qml" line="32"/>
+        <source>save</source>
+        <translation>Salvare</translation>
+    </message>
 </context>
 <context>
     <name>ChangeLayoutForm</name>
@@ -2100,7 +2105,7 @@
         <location filename="../../view/Control/Display/Chat/ChatAudioContent.qml" line="78"/>
         <source>information_popup_error_title</source>
         <extracomment>Error</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatAudioContent.qml" line="38"/>
@@ -2315,13 +2320,13 @@
     <message>
         <location filename="../../core/chat/message/content/ChatMessageContentCore.cpp" line="112"/>
         <source>info_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/chat/message/content/ChatMessageContentCore.cpp" line="144"/>
         <source>popup_error_title</source>
         <extracomment>Error</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/chat/message/content/ChatMessageContentCore.cpp" line="146"/>
@@ -2603,7 +2608,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="52"/>
         <source>info_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="54"/>
@@ -2682,7 +2687,7 @@ Error</extracomment>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="371"/>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="376"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Chat/ChatPage.qml" line="350"/>
@@ -2808,7 +2813,7 @@ Error</extracomment>
         <location filename="../../core/conference/ConferenceInfoCore.cpp" line="587"/>
         <source>information_popup_error_title</source>
         <extracomment>&quot;Erreur&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/conference/ConferenceInfoCore.cpp" line="589"/>
@@ -2823,7 +2828,7 @@ Error</extracomment>
         <location filename="../../view/Control/Display/Contact/Contact.qml" line="165"/>
         <source>information_popup_error_title</source>
         <extracomment>Erreur</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Contact/Contact.qml" line="167"/>
@@ -2850,7 +2855,7 @@ Error</extracomment>
         <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="29"/>
         <source>save</source>
         <extracomment>&quot;Enregistrer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Contact/ContactEdition.qml" line="43"/>
@@ -3025,7 +3030,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Control/Display/Contact/ContactListItem.qml" line="243"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Contact/ContactListItem.qml" line="245"/>
@@ -3107,7 +3112,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="103"/>
         <source>save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="117"/>
@@ -3367,7 +3372,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="857"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Contact/ContactPage.qml" line="859"/>
@@ -3933,7 +3938,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Layout/Chat/EphemeralSettings.qml" line="26"/>
         <source>disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Disattivato</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Chat/EphemeralSettings.qml" line="35"/>
@@ -4023,7 +4028,7 @@ Error</extracomment>
     <message>
         <location filename="../../core/friend/FriendCore.cpp" line="429"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../core/friend/FriendCore.cpp" line="431"/>
@@ -4094,7 +4099,7 @@ Error</extracomment>
         <location filename="../../view/Control/Container/GroupCreationFormLayout.qml" line="40"/>
         <source>return_accessible_name</source>
         <extracomment>Return</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>indietro</translation>
     </message>
     <message>
         <location filename="../../view/Control/Container/GroupCreationFormLayout.qml" line="76"/>
@@ -4200,7 +4205,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Layout/Settings/LdapSettingsLayout.qml" line="34"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/LdapSettingsLayout.qml" line="56"/>
@@ -4407,7 +4412,7 @@ Error</extracomment>
         <location filename="../../view/Page/Form/Login/LoginPage.qml" line="31"/>
         <source>return_accessible_name</source>
         <extracomment>Return</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>indietro</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Login/LoginPage.qml" line="45"/>
@@ -4567,7 +4572,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="403"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="405"/>
@@ -4632,7 +4637,12 @@ Error</extracomment>
         <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="590"/>
         <source>drawer_menu_add_account</source>
         <extracomment>&quot;Ajouter un compte&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi un account</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Main/MainLayout.qml" line="96"/>
+        <source>contact_editor_dialog_abort_confirmation_save</source>
+        <translation>Salvare</translation>
     </message>
 </context>
 <context>
@@ -4726,7 +4736,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="29"/>
         <source>info_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="31"/>
@@ -4935,7 +4945,7 @@ Error</extracomment>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="486"/>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="537"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="327"/>
@@ -4973,7 +4983,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="476"/>
         <source>save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="526"/>
@@ -5276,12 +5286,6 @@ Error</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="407"/>
-        <source>new_conference_invitation</source>
-        <extracomment>&apos;Conference invitation received!&apos; : Notification about receiving an invitation to a conference.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../core/notifier/Notifier.cpp" line="429"/>
         <source>new_chat_room_message</source>
         <extracomment>&apos;New message received!&apos; Notification that warn the user of a new message.</extracomment>
@@ -5549,7 +5553,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Control/Display/Contact/PresenceSetCustomStatus.qml" line="71"/>
         <source>contact_presence_button_save_custom_status</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare</translation>
     </message>
 </context>
 <context>
@@ -5739,7 +5743,7 @@ Error</extracomment>
         <location filename="../../view/Page/Main/Record/RecordPage.qml" line="345"/>
         <location filename="../../view/Page/Main/Record/RecordPage.qml" line="394"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Record/RecordPage.qml" line="188"/>
@@ -5777,7 +5781,7 @@ Error</extracomment>
     <message>
         <location filename="../../view/Page/Main/Record/RecordPage.qml" line="335"/>
         <source>save</source>
-        <translation type="unfinished">Save</translation>
+        <translation>Salvare</translation>
     </message>
     <message>
         <location filename="../../view/Page/Main/Record/RecordPage.qml" line="385"/>
@@ -5900,7 +5904,7 @@ Error</extracomment>
         <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="46"/>
         <source>return_accessible_name</source>
         <extracomment>Return</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>indietro</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="58"/>
@@ -6037,7 +6041,7 @@ Error</extracomment>
         <location filename="../../view/Page/Form/Login/SIPLoginPage.qml" line="33"/>
         <source>return_accessible_name</source>
         <extracomment>Return</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>indietro</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Login/SIPLoginPage.qml" line="44"/>
@@ -6629,7 +6633,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</source>
         <location filename="../../tool/Utils.cpp" line="1675"/>
         <source>information_popup_error_title</source>
         <extracomment>Failed to create 1-1 conversation with %1 !</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="211"/>
@@ -6738,7 +6742,7 @@ Error in the chat</extracomment>
         <location filename="../../tool/Utils.cpp" line="2220"/>
         <source>info_popup_error_title</source>
         <extracomment>Error</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="2208"/>
@@ -8134,7 +8138,7 @@ Error in the chat</extracomment>
         <location filename="../../view/Control/Tool/Helper/utils.js" line="754"/>
         <location filename="../../view/Control/Tool/Helper/utils.js" line="762"/>
         <source>information_popup_error_title</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../../view/Control/Tool/Helper/utils.js" line="747"/>
@@ -8164,6 +8168,22 @@ Error in the chat</extracomment>
         <location filename="../../view/Control/Tool/Helper/utils.js" line="805"/>
         <source>okButton</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsCore</name>
+    <message>
+        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <source>info_popup_error_title</source>
+        <translation>Errore</translation>
+    </message>
+</context>
+<context>
+    <name>EventLogProxy</name>
+    <message>
+        <location filename="../../core/chat/message/EventLogProxy.cpp" line="65"/>
+        <source>info_popup_error_title</source>
+        <translation>Errore</translation>
     </message>
 </context>
 </TS>

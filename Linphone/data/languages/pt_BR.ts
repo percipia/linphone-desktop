@@ -329,6 +329,11 @@
         <source>account_settings_sip_address_copied_message</source>
         <translation>O seu endereço SIP foi copiado para a área de transferência</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/AccountSettingsGeneralLayout.qml" line="276"/>
+        <source>no_device_message</source>
+        <translation>Nenhum dispositivo encontrado</translation>
+    </message>
 </context>
 <context>
     <name>AccountSettingsPage</name>
@@ -417,7 +422,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="127"/>
         <source>account_settings_registrar_uri_title</source>
-        <translation type="unfinished"></translation>
+        <translation>URI do registrador</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="140"/>
@@ -477,6 +482,21 @@
         <source>account_settings_lime_server_url_title</source>
         <extracomment>&quot;URL du serveur d’échange de clés de chiffrement&quot;</extracomment>
         <translation>URL do servidor de troca de chaves de criptografia</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="68"/>
+        <source>mwi_server_address_tooltip</source>
+        <translation>Endereço do servidor MWI que envia notificações SIP para indicar novas mensagens no correio de voz</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="90"/>
+        <source>voicemail_address_tooltip</source>
+        <translation>Endereço SIP chamado ao clicar no botão de correio de voz</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/AccountSettingsParametersLayout.qml" line="282"/>
+        <source>account_settings_ccmp_server_url_title</source>
+        <translation>URL do servidor CCMP</translation>
     </message>
 </context>
 <context>
@@ -580,7 +600,7 @@
         <location filename="../../view/Page/Layout/Settings/AdvancedSettingsLayout.qml" line="103"/>
         <source>download_apply_remote_provisioning_accessible_name</source>
         <extracomment>&quot;Download and apply remote provisioning&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Baixar e aplicar o provisionamento remoto</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/AdvancedSettingsLayout.qml" line="116"/>
@@ -726,7 +746,42 @@
     <message>
         <location filename="../../core/App.cpp" line="1448"/>
         <source>mark_all_read_action</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar tudo como lido</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="1715"/>
+        <source>check_for_update</source>
+        <translation>Verificar atualizações</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="502"/>
+        <source>info_popup_error_checking_update</source>
+        <translation>Ocorreu um erro ao tentar verificar se há atualizações. Tente novamente mais tarde ou entre em contato com a equipe de suporte.</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="509"/>
+        <source>info_popup_new_version_download_label</source>
+        <translation>Baixar agora!</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="512"/>
+        <source>info_popup_new_version_available_title</source>
+        <translation>Nova versão disponível!</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="514"/>
+        <source>info_popup_new_version_available_message</source>
+        <translation>Uma nova versão do Linphone (%1) está disponível em %1</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="522"/>
+        <source>info_popup_version_up_to_date_title</source>
+        <translation>Atualizado</translation>
+    </message>
+    <message>
+        <location filename="../../core/App.cpp" line="524"/>
+        <source>info_popup_version_up_to_date_message</source>
+        <translation>Você está usando a versão mais recente</translation>
     </message>
 </context>
 <context>
@@ -891,7 +946,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/CallForwardSettingsLayout.qml" line="133"/>
         <source>settings_call_forward_sipaddress_placeholder</source>
-        <translation type="unfinished"></translation>
+        <translation>Joao.silva</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/CallForwardSettingsLayout.qml" line="51"/>
@@ -925,6 +980,11 @@
         <extracomment>&quot;Appel Video&quot;</extracomment>
         <translation>Video chamada</translation>
     </message>
+    <message>
+        <location filename="../../view/Control/Container/Call/CallHistoryLayout.qml" line="155"/>
+        <source>contact_conversation_action</source>
+        <translation>Conversa</translation>
+    </message>
 </context>
 <context>
     <name>CallHistoryListView</name>
@@ -948,6 +1008,11 @@
         <location filename="../../view/Control/Display/Call/CallHistoryListView.qml" line="266"/>
         <source>call_audio_incoming</source>
         <translation>Chamada recebida</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Call/CallHistoryListView.qml" line="260"/>
+        <source>call_history_entry_accessible_name</source>
+        <translation>%1 - %2 - %3 - seta para a direita do botão de retornar chamada</translation>
     </message>
 </context>
 <context>
@@ -1392,7 +1457,7 @@
     <message>
         <location filename="../../view/Page/Layout/Settings/CallSettingsLayout.qml" line="89"/>
         <source>settings_calls_command_line_title_place_holder</source>
-        <translation type="unfinished"></translation>
+        <translation>comando &quot;https://exemplo.com/?phone=$1&amp;displayName=$2&quot;</translation>
     </message>
     <message>
         <location filename="../../view/Page/Layout/Settings/CallSettingsLayout.qml" line="97"/>
@@ -1869,6 +1934,22 @@
         <extracomment>&quot;Désactiver le son&quot;</extracomment>
         <translation>Desativar alto-falante</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="1413"/>
+        <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="1414"/>
+        <source>call_action_accept_call</source>
+        <translation>Atender a chamada</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="530"/>
+        <source>conference_end_to_end_encrypted</source>
+        <translation>Reunião com criptografia de ponta a ponta</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Window/Call/CallsWindow.qml" line="532"/>
+        <source>conference_srtp_point_to_point_encrypted</source>
+        <translation>Reunião com criptografia ponto a ponto</translation>
+    </message>
 </context>
 <context>
     <name>CarddavSettingsLayout</name>
@@ -2055,7 +2136,7 @@
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="368"/>
         <source>chat_room_unmute</source>
         <extracomment>&quot;Mute&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ativar microfone</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="381"/>
@@ -2092,6 +2173,21 @@
         <source>chat_list_delete_chat_popup_message</source>
         <extracomment>This conversation and all its messages will be deleted. Do You want to continue ?</extracomment>
         <translation>Esta conversa e todas as suas mensagens serão apagadas. Você deseja continuar?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="332"/>
+        <source>chat</source>
+        <translation>Conversa de %1</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="470"/>
+        <source>focused_chat_accessible_label</source>
+        <translation>Conversa de %1 %2</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatListView.qml" line="472"/>
+        <source>unread_messages_accessible_label</source>
+        <translation>: %1 mensagens não lidas</translation>
     </message>
 </context>
 <context>
@@ -2154,7 +2250,7 @@
         <location filename="../../view/Control/Display/Chat/ChatMessage.qml" line="406"/>
         <source>chat_message_reception_info</source>
         <extracomment>&quot;Reception info&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Informações de recepção</translation>
     </message>
     <message>
         <location filename="../../view/Control/Display/Chat/ChatMessage.qml" line="418"/>
@@ -2179,6 +2275,16 @@
         <source>menu_edit_chat_message</source>
         <translation>Editar</translation>
     </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatMessage.qml" line="442"/>
+        <source>chat_message_send_again</source>
+        <translation>Reenviar</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatMessage.qml" line="319"/>
+        <source>conversation_message_edited_label</source>
+        <translation>Editado</translation>
+    </message>
 </context>
 <context>
     <name>ChatMessageContentCore</name>
@@ -2198,6 +2304,11 @@
         <location filename="../../core/chat/message/content/ChatMessageContentCore.cpp" line="112"/>
         <source>info_popup_error_title</source>
         <translation>Erro</translation>
+    </message>
+    <message>
+        <location filename="../../core/chat/message/content/ChatMessageContentCore.cpp" line="111"/>
+        <source>download_file_default_error</source>
+        <translation>Erro ao baixar o arquivo %1</translation>
     </message>
 </context>
 <context>
@@ -2253,6 +2364,36 @@ Error</extracomment>
 </context>
 <context>
     <name>ChatMessageContentModel</name>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="136"/>
+        <source>download_file_error_unable_to_download</source>
+        <translation>Não foi possível baixar o arquivo da entrada %1</translation>
+    </message>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="87"/>
+        <source>download_error_object_doesnt_exist</source>
+        <translation>Erro interno: a mensagem associada a este conteúdo não existe mais!</translation>
+    </message>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="104"/>
+        <source>download_file_server_error</source>
+        <translation>Erro ao tentar baixar o conteúdo: %1</translation>
+    </message>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="114"/>
+        <source>download_file_error_no_safe_file_path</source>
+        <translation>Não foi possível criar um caminho seguro para o arquivo: %1</translation>
+    </message>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="123"/>
+        <source>download_file_error_file_transfer_unavailable</source>
+        <translation>Este arquivo já foi baixado e não está mais no servidor. Seu contato precisa reenviá-lo se quiser obtê-lo novamente.</translation>
+    </message>
+    <message>
+        <location filename="../../model/chat/message/content/ChatMessageContentModel.cpp" line="128"/>
+        <source>download_file_error_null_name</source>
+        <translation>Não foi possível baixar: o nome do conteúdo está vazio.</translation>
+    </message>
 </context>
 <context>
     <name>ChatMessageCore</name>
@@ -2401,6 +2542,16 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="382"/>
         <source>info_toast_deleted_message</source>
         <translation>Esta mensagem foi apagada</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="280"/>
+        <source>conversation_dialog_delete_chat_message_title</source>
+        <translation>Excluir essa mensagem?</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="288"/>
+        <source>conversation_dialog_delete_locally_label</source>
+        <translation>Para mim</translation>
     </message>
 </context>
 <context>
@@ -4844,12 +4995,6 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <location filename="../../core/notifier/Notifier.cpp" line="364"/>
         <source>new_file_message</source>
         <translation>Arquivo recebido!</translation>
-    </message>
-    <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="367"/>
-        <source>new_conference_invitation</source>
-        <extracomment>&apos;Conference invitation received!&apos; : Notification about receiving an invitation to a conference.</extracomment>
-        <translation>Convite de conferência recebido!</translation>
     </message>
     <message>
         <location filename="../../core/notifier/Notifier.cpp" line="387"/>
@@ -7664,6 +7809,19 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
         <source>info_popup_error_title</source>
         <translation>Erro</translation>
+    </message>
+</context>
+<context>
+    <name>AbstractSettingsMenu</name>
+    <message>
+        <location filename="../../view/Page/Form/Settings/AbstractSettingsMenu.qml" line="52"/>
+        <source>back_previous_menu_accessible_name</source>
+        <translation>Voltar ao menu anterior</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Settings/AbstractSettingsMenu.qml" line="76"/>
+        <source>settings_page_selection_accessible_name</source>
+        <translation>Seleção da página de configurações</translation>
     </message>
 </context>
 </TS>
