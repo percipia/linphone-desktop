@@ -808,9 +808,7 @@ void AccountCore::onAudioVideoConferenceFactoryAddressChanged(QString value) {
 		mAudioVideoConferenceFactoryAddress = value;
 		emit audioVideoConferenceFactoryAddressChanged();
 	}
-	if (mIsDefaultAccount) {
-		SettingsModel::getInstance()->setDisableMeetingsFeature(value.isEmpty());
-	}
+	emit SettingsModel::getInstance()->disableMeetingsFeatureChanged();
 }
 
 void AccountCore::onLimeServerUrlChanged(QString value) {

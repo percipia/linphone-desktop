@@ -289,7 +289,7 @@ signals:
 
 	void dndChanged(bool value);
 
-	void disableMeetingsFeatureChanged(bool value);
+	void disableMeetingsFeatureChanged();
 
 	void showPastMeetingsChanged(bool value);
 

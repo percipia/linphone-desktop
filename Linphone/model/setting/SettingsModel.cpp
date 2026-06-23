@@ -73,22 +73,9 @@ SettingsModel::SettingsModel() {
 	    CoreModel::getInstance().get(), &CoreModel::defaultAccountChanged, this,
 	    [this](const std::shared_ptr<linphone::Core> &core, const std::shared_ptr<linphone::Account> account) {
 		    mustBeInLinphoneThread(log().arg(Q_FUNC_INFO));
-		    if (!getDisableMeetingsFeature() && account &&
-		        !account->getParams()->getAudioVideoConferenceFactoryAddress())
-			    setDisableMeetingsFeature(true);
-		    else if (getDisableMeetingsFeature() && account &&
-		             account->getParams()->getAudioVideoConferenceFactoryAddress())
-			    setDisableMeetingsFeature(false);
+		    emit disableMeetingsFeatureChanged();
 	    });
-	auto defaultAccount = core->getDefaultAccount();
-	if (!getDisableMeetingsFeature() && defaultAccount &&
-	    !defaultAccount->getParams()->getAudioVideoConferenceFactoryAddress())
-		setDisableMeetingsFeature(true);
-	// We cannot call this cause the disable_meetings_feature value in the config file
-	// will be overwritten
-	// else if (getDisableMeetingsFeature() && defaultAccount &&
-	//          defaultAccount->getParams()->getAudioVideoConferenceFactoryAddress())
-	// 	setDisableMeetingsFeature(false);
+	emit disableMeetingsFeatureChanged();
 
 	// Media cards must not be used twice (capture card + call) else we will get latencies issues and bad echo
 	// calibrations in call.
@@ -935,7 +922,7 @@ bool SettingsModel::getLimeIsSupported() const {
 
 void SettingsModel::setDisableMeetingsFeature(bool value) {
 	mConfig->setBool(UiSection, "disable_meetings_feature", value);
-	emit disableMeetingsFeatureChanged(value);
+	emit disableMeetingsFeatureChanged();
 }
 
 bool SettingsModel::getDisableMeetingsFeature() const {
@@ -1040,7 +1027,7 @@ void SettingsModel::setDownloadFolder(const QString &downloadFolder) {
 // clang-format off
 void SettingsModel::notifyConfigReady(){
 	DEFINE_NOTIFY_CONFIG_READY(disableChatFeature, DisableChatFeature)
-	DEFINE_NOTIFY_CONFIG_READY(disableMeetingsFeature, DisableMeetingsFeature)
+	emit disableMeetingsFeatureChanged();
 	DEFINE_NOTIFY_CONFIG_READY(hideSettings,HideSettings)
 	DEFINE_NOTIFY_CONFIG_READY(hideAccountSettings, HideAccountSettings)
 	DEFINE_NOTIFY_CONFIG_READY(hideFps, HideFps)
@@ -1213,4 +1200,4 @@ DEFINE_GETSET_CONFIG_STRING(SettingsModel,
 							ThemeAboutPictureUrl,
 							"theme_about_picture_url",
 							"")
-    // clang-format on
+// clang-format on

@@ -37,6 +37,8 @@ public:
 	Q_PROPERTY(bool vfsEnabled READ getVfsEnabled WRITE setVfsEnabled NOTIFY vfsEnabledChanged)
 
 	// Call
+	Q_PROPERTY(bool disableMeetingsFeature READ getDisableMeetingsFeature WRITE setDisableMeetingsFeature NOTIFY
+	               disableMeetingsFeatureChanged)
 	Q_PROPERTY(bool videoEnabled READ getVideoEnabled WRITE setVideoEnabled NOTIFY videoEnabledChanged)
 	Q_PROPERTY(bool echoCancellationEnabled READ getEchoCancellationEnabled WRITE setEchoCancellationEnabled NOTIFY
 	               echoCancellationEnabledChanged)
@@ -265,6 +267,9 @@ public:
 	bool getCrashReporterEnabled() const;
 	void setCrashReporterEnabled(bool enabled);
 
+	bool getDisableMeetingsFeature() const;
+	void setDisableMeetingsFeature(bool enabled);
+
 	void setRingtone(QString path);
 	QString getRingtoneFileName() const;
 	QString getRingtonePath() const;
@@ -290,7 +295,6 @@ public:
 	Q_INVOKABLE void undo();
 
 	DECLARE_CORE_GETSET_MEMBER(bool, disableChatFeature, DisableChatFeature)
-	DECLARE_CORE_GETSET_MEMBER(bool, disableMeetingsFeature, DisableMeetingsFeature)
 	DECLARE_CORE_GETSET_MEMBER(bool, disableBroadcastFeature, DisableBroadcastFeature)
 	DECLARE_CORE_GETSET_MEMBER(bool, disableCallForward, DisableCallForward)
 	DECLARE_CORE_GETSET_MEMBER(bool, hideSettings, HideSettings)
@@ -360,6 +364,8 @@ signals:
 	void autoStartChanged();
 	void hideFpsChanged();
 
+	void disableMeetingsFeatureChanged();
+
 	void conferenceLayoutsChanged(const QVariantList &layouts);
 	void mediaEncryptionsChanged(const QVariantList &encryptions);
 
@@ -428,6 +434,8 @@ private:
 	QVariantMap mMediaEncryption;
 	bool mMediaEncryptionMandatory;
 	bool mCreateEndToEndEncryptedMeetingsAndGroupCalls;
+
+	bool mDisableMeetingsFeature = false;
 
 	// Call
 	bool mVideoEnabled;
