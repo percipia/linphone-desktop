@@ -3899,15 +3899,15 @@ You are about to call &quot;%1&quot; do you want to continue?</translation>
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="25"/>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="28"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="26"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="29"/>
         <source>dialog_confirm</source>
         <extracomment>&quot;Confirmer&quot;</extracomment>
         <translation>Confirm</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="27"/>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="29"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="28"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="30"/>
         <source>dialog_cancel</source>
         <extracomment>&quot;Annuler&quot;</extracomment>
         <translation>Cancel</translation>
@@ -6514,7 +6514,7 @@ To enable them in a commercial project, please contact us.</translation>
 <context>
     <name>SettingsCore</name>
     <message>
-        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <location filename="../../core/setting/SettingsCore.cpp" line="453"/>
         <source>info_popup_error_title</source>
         <translation>Error</translation>
     </message>
@@ -6531,7 +6531,7 @@ To enable them in a commercial project, please contact us.</translation>
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../../model/setting/SettingsModel.cpp" line="388"/>
+        <location filename="../../model/setting/SettingsModel.cpp" line="375"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
         <translation>Cannot set Capture device. The ID cannot be matched with an existant device : %1</translation>

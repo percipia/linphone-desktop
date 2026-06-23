@@ -3899,15 +3899,15 @@ Vous êtes sur le point d’appeler “%1” voulez vous continuer ?</translatio
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="25"/>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="28"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="26"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="29"/>
         <source>dialog_confirm</source>
         <extracomment>&quot;Confirmer&quot;</extracomment>
         <translation>Confirmer</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="27"/>
-        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="29"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="28"/>
+        <location filename="../../view/Control/Popup/Dialog/Dialog.qml" line="30"/>
         <source>dialog_cancel</source>
         <extracomment>&quot;Annuler&quot;</extracomment>
         <translation>Annuler</translation>
@@ -6518,7 +6518,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
 <context>
     <name>SettingsCore</name>
     <message>
-        <location filename="../../core/setting/SettingsCore.cpp" line="447"/>
+        <location filename="../../core/setting/SettingsCore.cpp" line="453"/>
         <source>info_popup_error_title</source>
         <translation>Erreur</translation>
     </message>
@@ -6535,7 +6535,7 @@ Pour les activer dans un projet commercial, merci de nous contacter.</translatio
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../../model/setting/SettingsModel.cpp" line="388"/>
+        <location filename="../../model/setting/SettingsModel.cpp" line="375"/>
         <source>set_capture_device_error</source>
         <extracomment>&quot;Cannot set Capture device. The ID cannot be matched with an existant device : %1&quot;</extracomment>
         <translation type="unfinished">Pas de token trouvé</translation>
