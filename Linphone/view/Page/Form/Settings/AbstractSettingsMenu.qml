@@ -74,12 +74,15 @@ AbstractMainPage {
 			Accessible.role: Accessible.List
 			//: Settings page selection
 			Accessible.name: qsTr("settings_page_selection_accessible_name")
+			keyNavigationEnabled: false
 			
 			delegate: SettingsMenuItem {
 				titleText: modelData.title
 				visible: modelData.visible != undefined ? modelData.visible : true
+				enabled: visible
 				isSelected: familiesList.selectedIndex == index
 				focus: index == 0
+				focusPolicy: visible ? Qt.StrongFocus : Qt.NoFocus
 				onSelected: {
 					familiesList.selectedIndex = index
 					rightPanelStackView.clear()
