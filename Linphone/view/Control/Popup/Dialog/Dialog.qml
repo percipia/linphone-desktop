@@ -3,6 +3,7 @@ import QtQuick.Controls.Basic as Control
 import QtQuick.Effects
 import QtQuick.Layouts
 import Linphone
+import CustomControls 1.0
 import 'qrc:/qt/qml/Linphone/view/Style/buttonStyle.js' as ButtonStyle
 import "qrc:/qt/qml/Linphone/view/Control/Tool/Helper/utils.js" as Utils
 
@@ -138,7 +139,11 @@ Popup {
 				id: buttonsLayout
 				Layout.alignment: Qt.AlignBottom | ( titleText.visible ? Qt.AlignRight : Qt.AlignHCenter)
                 spacing: Utils.getSizeWithScreenRatio(titleText.visible ? 20 : 10)
-	
+				onVisibleChanged: if (visible) {
+					if (mainItem.firstButtonAccept) firstButtonId.forceActiveFocus()
+					else secondButtonId.forceActiveFocus()
+				}
+
 				// Default buttons only visible if no other children
 				// have been set
 				MediumButton {
@@ -147,6 +152,9 @@ Popup {
 					text: mainItem.firstButtonText
 					style: mainItem.firstButtonAccept ? ButtonStyle.main : ButtonStyle.secondary
 					focus: !mainItem.firstButtonAccept
+					focusPolicy: Qt.StrongFocus
+					activeFocusOnTab:true
+					keyboardFocus: FocusHelper.keyboardFocus || FocusHelper.otherFocus
 					onClicked: {
 						if(mainItem.firstButtonAccept)
 							mainItem.accepted()
@@ -166,6 +174,9 @@ Popup {
 					text: mainItem.secondButtonText
 					style: mainItem.firstButtonAccept ? ButtonStyle.secondary : ButtonStyle.main
 					focus: !mainItem.secondButtonAccept
+					focusPolicy: Qt.StrongFocus
+					activeFocusOnTab:true
+					keyboardFocus: FocusHelper.keyboardFocus || FocusHelper.otherFocus
 					onClicked: {
 						if(mainItem.secondButtonAccept)
 							mainItem.accepted()
