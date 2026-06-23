@@ -106,10 +106,14 @@ SettingsCore::SettingsCore(QObject *parent) : QObject(parent) {
 	mDndEnabled = settingsModel->dndEnabled();
 
 	mDefaultDomain = settingsModel->getDefaultDomain();
+	mDisableMeetingsFeature = settingsModel->getDisableMeetingsFeature();
+
 	auto currentAccount = CoreModel::getInstance()->getCore()->getDefaultAccount();
 	if (currentAccount) {
 		auto accountDomain = Utils::coreStringToAppString(currentAccount->getParams()->getDomain());
 		mShowAccountDevices = (accountDomain == mDefaultDomain);
+		mDisableMeetingsFeature = settingsModel->getDisableMeetingsFeature() ||
+		                          !currentAccount->getParams()->getAudioVideoConferenceFactoryAddress();
 	}
 
 	// Chat
@@ -122,7 +126,6 @@ SettingsCore::SettingsCore(QObject *parent) : QObject(parent) {
 
 	// Ui
 	INIT_CORE_MEMBER(DisableChatFeature, settingsModel)
-	INIT_CORE_MEMBER(DisableMeetingsFeature, settingsModel)
 	INIT_CORE_MEMBER(ShowPastMeetings, settingsModel)
 	INIT_CORE_MEMBER(DisableBroadcastFeature, settingsModel)
 	INIT_CORE_MEMBER(DisableCallForward, settingsModel)
@@ -302,11 +305,15 @@ void SettingsCore::reloadSettings() {
 	// DND
 	setDndEnabled(settingsModel->dndEnabled());
 
+	setDisableMeetingsFeature(settingsModel->getDisableMeetingsFeature());
+
 	mDefaultDomain = settingsModel->getDefaultDomain();
 	auto currentAccount = CoreModel::getInstance()->getCore()->getDefaultAccount();
 	if (currentAccount) {
 		auto accountDomain = Utils::coreStringToAppString(currentAccount->getParams()->getDomain());
 		setShowAccountDevices(accountDomain == mDefaultDomain);
+		setDisableMeetingsFeature(settingsModel->getDisableMeetingsFeature() ||
+		                          !currentAccount->getParams()->getAudioVideoConferenceFactoryAddress());
 	}
 
 	// Chat
@@ -318,7 +325,6 @@ void SettingsCore::reloadSettings() {
 	mAutoCheckForUpdateOnStart = settingsModel->autoCheckForUpdateOnStart();
 
 	setDisableChatFeature(settingsModel->getDisableChatFeature());
-	setDisableMeetingsFeature(settingsModel->getDisableMeetingsFeature());
 	setShowPastMeetings(settingsModel->getShowPastMeetings());
 	setDisableBroadcastFeature(settingsModel->getDisableBroadcastFeature());
 	setDisableCallForward(settingsModel->getDisableCallForward());
@@ -510,6 +516,14 @@ void SettingsCore::setSelf(QSharedPointer<SettingsCore> me) {
 		mSettingsModelConnection->invokeToCore([this, ringtonePath]() { setRingtone(ringtonePath); });
 	});
 
+	mSettingsModelConnection->makeConnectToModel(&SettingsModel::disableMeetingsFeatureChanged, [this]() {
+		auto overridenValue = SettingsModel::getInstance()->getDisableMeetingsFeature();
+		auto defaultAccount = CoreModel::getInstance()->getCore()->getDefaultAccount();
+		bool disableFeature =
+		    overridenValue || !defaultAccount || !defaultAccount->getParams()->getAudioVideoConferenceFactoryAddress();
+		mSettingsModelConnection->invokeToCore([this, disableFeature]() { setDisableMeetingsFeature(disableFeature); });
+	});
+
 	mSettingsModelConnection->makeConnectToModel(&SettingsModel::videoDeviceChanged, [this](const QString device) {
 		mSettingsModelConnection->invokeToCore([this, device]() { setVideoDevice(device); });
 	});
@@ -580,8 +594,6 @@ void SettingsCore::setSelf(QSharedPointer<SettingsCore> me) {
 
 	DEFINE_CORE_GETSET_CONNECT(mSettingsModelConnection, SettingsCore, SettingsModel, settingsModel, bool,
 	                           disableChatFeature, DisableChatFeature)
-	DEFINE_CORE_GETSET_CONNECT(mSettingsModelConnection, SettingsCore, SettingsModel, settingsModel, bool,
-	                           disableMeetingsFeature, DisableMeetingsFeature)
 	DEFINE_CORE_GET_CONNECT(mSettingsModelConnection, SettingsCore, SettingsModel, settingsModel, bool,
 	                        showPastMeetings, ShowPastMeetings)
 	DEFINE_CORE_GETSET_CONNECT(mSettingsModelConnection, SettingsCore, SettingsModel, settingsModel, bool,
@@ -1184,6 +1196,17 @@ void SettingsCore::setCrashReporterEnabled(bool enabled) {
 	}
 }
 
+bool SettingsCore::getDisableMeetingsFeature() const {
+	return mDisableMeetingsFeature;
+}
+
+void SettingsCore::setDisableMeetingsFeature(bool enabled) {
+	if (mDisableMeetingsFeature != enabled) {
+		mDisableMeetingsFeature = enabled;
+		emit disableMeetingsFeatureChanged();
+	}
+}
+
 void SettingsCore::setRingtone(QString path) {
 	if (mRingtonePath != path) {
 		mRingtonePath = path;
@@ -1348,7 +1371,7 @@ void SettingsCore::writeIntoModel(std::shared_ptr<SettingsModel> model) const {
 
 	// UI
 	model->setDisableChatFeature(mDisableChatFeature);
-	model->setDisableMeetingsFeature(mDisableMeetingsFeature);
+	// model->setDisableMeetingsFeature(mDisableMeetingsFeature);
 	model->setShowPastMeetings(mShowPastMeetings);
 	model->setDisableBroadcastFeature(mDisableBroadcastFeature);
 	model->setDisableCallForward(mDisableCallForward);
@@ -1435,7 +1458,7 @@ void SettingsCore::writeFromModel(const std::shared_ptr<SettingsModel> &model) {
 
 	// UI
 	mDisableChatFeature = model->getDisableChatFeature();
-	mDisableMeetingsFeature = model->getDisableMeetingsFeature();
+	// mDisableMeetingsFeature = model->getDisableMeetingsFeature();
 	mShowPastMeetings = model->getShowPastMeetings();
 	mDisableBroadcastFeature = model->getDisableBroadcastFeature();
 	mDisableCallForward = model->getDisableCallForward();
