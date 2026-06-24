@@ -105,17 +105,17 @@ void CallList::setSelf(QSharedPointer<CallList> me) {
 				                      //: "Local group call"
 				                      : tr("local_group_call");
 				auto conference = ToolModel::createConference(subject, nullptr);
-				if (!conference) {
-					lWarning() << log().arg("Failed to merge calls");
-					mModelConnection->invokeToCore([] {
-						Utils::showInformationPopup(tr("info_popup_error_title"),
-						                            //: Failed to merge calls !
-						                            tr("info_popup_merge_calls_failed_message"), false);
-					});
-					return;
-				} else {
-					conference->addParticipants(currentCalls);
-				}
+			}
+			if (!conference) {
+				lWarning() << log().arg("Failed to merge calls");
+				mModelConnection->invokeToCore([] {
+					Utils::showInformationPopup(tr("info_popup_error_title"),
+					                            //: Failed to merge calls !
+					                            tr("info_popup_merge_calls_failed_message"), false);
+				});
+				return;
+			} else {
+				conference->addParticipants(currentCalls);
 			}
 		});
 	});
