@@ -820,8 +820,17 @@ AbstractWindow {
             Component {
                 id: callTransferPanel
                 Control.Control {
+                    id: callTransferControl
                     objectName: "callTransferPanel"
                     width: parent.width
+
+                    Connections {
+                        target: mainWindow
+                        function onConferenceChanged() {
+                            if (mainWindow.conference && callTransferControl.visible) rightPanel.visible = false
+                        }
+                    }
+
                     NewCallForm {
                         id: newCallForm
                         width: parent.width
@@ -1021,13 +1030,20 @@ AbstractWindow {
             Component {
                 id: changeLayoutPanel
                 ChangeLayoutForm {
+                    id: changeLayoutPanel
                     objectName: "changeLayoutPanel"
                     width: parent.width
+                    call: mainWindow.call
+                    Connections {
+                        target: mainWindow
+                        function onConferenceChanged() {
+                            if (mainWindow.conference && changeLayoutPanel.visible) rightPanel.visible = false
+                        }
+                    }
                     Keys.onEscapePressed: event => {
                         rightPanel.visible = false
                         event.accepted = true
                     }
-                    call: mainWindow.call
                     onChangeLayoutRequested: index => {
                         mainWindow.changeLayout(index)
                     }
@@ -1146,11 +1162,18 @@ AbstractWindow {
             Component {
                 id: screencastPanel
                 Control.Control {
+                    id: screencastControl
                     objectName: "screencastPanel"
                     width: parent.width
                     Keys.onEscapePressed: event => {
                         rightPanel.visible = false
                         event.accepted = true
+                    }
+                    Connections {
+                        target: mainWindow
+                        function onConferenceChanged() {
+                            if (mainWindow.conference && screencastControl.visible) rightPanel.visible = false
+                        }
                     }
                     contentItem: ScreencastSettings {
                         id: screencastsettings
@@ -1168,11 +1191,18 @@ AbstractWindow {
             Component {
                 id: participantListPanel
                 Control.Control {
+                    id: participantControl
                     width: parent.width
                     objectName: "participantListPanel"
                     Keys.onEscapePressed: event => {
                         rightPanel.visible = false
                         event.accepted = true
+                    }
+                    Connections {
+                        target: mainWindow
+                        function onConferenceChanged() {
+                            if (!mainWindow.conference && participantControl.visible) rightPanel.visible = false
+                        }
                     }
                     Control.StackView {
                         id: participantsStack
