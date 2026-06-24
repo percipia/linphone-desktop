@@ -412,6 +412,8 @@ QString CliModel::Command::getFunctionSyntax() const {
 //--------------------------------------------------------------------
 
 void CliModel::executeCommand(QString command) { //, CommandFormat *format) {
+	// Start by decoding command
+	command = decodeBase64Url(command);
 	// Detect if command is a CLI by testing commands
 	const QString &functionName = parseFunctionName(command, false);
 	if (!functionName.isEmpty()) { // It is a CLI
@@ -517,7 +519,6 @@ void CliModel::executeCommand(QString command) { //, CommandFormat *format) {
 				    Utils::appStringToCoreString(qAddress)); // Test if command is an address
 			}
 			// if (format) *format = UriFormat;
-			command = decodeBase64Url(command);
 			lInfo() << log().arg("Detecting URI command: `%1`…").arg(command);
 			QString functionName;
 			if (address) {
