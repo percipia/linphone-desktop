@@ -236,7 +236,7 @@ public:
 
 	static inline float computeVu(float volume) {
 		constexpr float VuMin = -20.f;
-		constexpr float VuMax = 4.f;
+		constexpr float VuMax = 0.f;
 
 		if (volume < VuMin) return 0.f;
 		if (volume > VuMax) return 1.f;

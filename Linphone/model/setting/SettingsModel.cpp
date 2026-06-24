@@ -19,6 +19,8 @@
  */
 
 #include "SettingsModel.hpp"
+#include <linphone/linphonecore.h> // for LINPHONE_VOLUME_DB_LOWEST
+
 #include "core/App.hpp"
 #include "core/path/Paths.hpp"
 #include "model/core/CoreModel.hpp"
@@ -232,15 +234,16 @@ bool SettingsModel::getCaptureGraphRunning() {
 
 float SettingsModel::getMicVolume() {
 	mustBeInLinphoneThread(log().arg(Q_FUNC_INFO));
-	float v = 0.0;
+	float v = LINPHONE_VOLUME_DB_LOWEST;
 	if (mSimpleCaptureGraph && mSimpleCaptureGraph->isRunning()) {
 		v = mSimpleCaptureGraph->getCaptureVolume();
 	} else {
 		auto call = CoreModel::getInstance()->getCore()->getCurrentCall();
 		if (call) {
-			v = static_cast<float>(pow(10.0, call->getRecordVolume() / 10.0));
+			v = call->getRecordVolume();
 		}
 	}
+	v = Utils::computeVu(v);
 	emit micVolumeChanged(v);
 	return v;
 }
