@@ -170,18 +170,10 @@ void SimpleCaptureGraph::setPlaybackGain(float gain) {
 }
 
 float SimpleCaptureGraph::getCaptureVolume() {
-	float vol = 0;
+	float vol = LINPHONE_VOLUME_DB_LOWEST;
 
 	if (captureVolumeFilter) {
 		ms_filter_call_method(captureVolumeFilter, MS_VOLUME_GET, &vol);
-		vol = MediastreamerUtils::dbToLinear(vol);
 	}
 	return vol;
-}
-
-float MediastreamerUtils::linearToDb(float volume) {
-	if (qFuzzyIsNull(volume)) {
-		return MS_VOLUME_DB_LOWEST;
-	}
-	return static_cast<float>(10.0 * log10(volume));
 }

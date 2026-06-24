@@ -36,21 +36,6 @@ struct _MSFactory;
 
 namespace MediastreamerUtils {
 
-inline float computeVu(float volume) {
-	constexpr float VuMin = -20.f;
-	constexpr float VuMax = 4.f;
-
-	if (volume < VuMin) return 0.f;
-	if (volume > VuMax) return 1.f;
-
-	return (volume - VuMin) / (VuMax - VuMin);
-}
-
-inline float dbToLinear(float volume) {
-	return static_cast<float>(pow(10.0, volume / 10.0));
-}
-
-float linearToDb(float volume);
 
 // Simple mediastreamer audio capture graph
 // Used to get current microphone volume in audio settings
