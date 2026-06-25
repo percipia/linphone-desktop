@@ -30,7 +30,28 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS ${QT_PACKAGES})
 find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
 
-if(NOT WIN32)
+string(REPLACE " " "" _requested_macos_archs "${LINPHONEAPP_MACOS_ARCHS}")
+string(REPLACE "," ";" _requested_macos_archs "${_requested_macos_archs}")
+list(LENGTH _requested_macos_archs _requested_macos_archs_count)
+
+if(APPLE AND CMAKE_OSX_ARCHITECTURES AND _requested_macos_archs_count GREATER 1)
+	get_target_property(_qtcore_lib Qt6::Core LOCATION)
+	execute_process(
+		COMMAND lipo -archs "${_qtcore_lib}"
+		OUTPUT_VARIABLE _qt_archs
+		OUTPUT_STRIP_TRAILING_WHITESPACE
+	)
+	message(STATUS "Qt6::Core = ${_qtcore_lib}")
+	message(STATUS "Qt supports archs: [${_qt_archs}] - requested: [${CMAKE_OSX_ARCHITECTURES}]")
+	foreach(_req_arch IN LISTS CMAKE_OSX_ARCHITECTURES)
+		string(FIND " ${_qt_archs} " " ${_req_arch} " _arch_idx)
+		if(_arch_idx EQUAL -1)
+			message(FATAL_ERROR "Qt at ${_qtcore_lib} does not provide architecture '${_req_arch}' (has: ${_qt_archs}). Use a universal Qt or drop this architecture.")
+		endif()
+	endforeach()
+endif()
+
+if(UNIX AND NOT APPLE)
 	find_package(X11)
 endif()
 
