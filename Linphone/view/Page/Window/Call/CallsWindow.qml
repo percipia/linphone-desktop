@@ -1676,6 +1676,9 @@ AbstractWindow {
                         Layout.preferredHeight: Utils.getSizeWithScreenRatio(55)
                         icon.width: Utils.getSizeWithScreenRatio(32)
                         icon.height: Utils.getSizeWithScreenRatio(32)
+                        KeyNavigation.tab: mainWindow.conference 
+                            ? participantListButton
+                            : moreOptionsButton
                         UnreadNotification {
                             anchors.top: parent.top
                             anchors.right: parent.right
