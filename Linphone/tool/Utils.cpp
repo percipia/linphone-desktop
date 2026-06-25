@@ -2087,7 +2087,30 @@ bool Utils::codepointIsEmoji(uint code) {
 	        (code >= 0x1F900 && code <= 0x1F9FF) || // Supplemental Symbols & Pictographs
 	        (code >= 0x1FA70 && code <= 0x1FAFF) || // Symbols and Pictographs Extended-A
 	        (code >= 0x2600 && code <= 0x26FF) ||   // Miscellaneous Symbols
-	        (code >= 0x2700 && code <= 0x27BF)      // Dingbats
+	        (code >= 0x2700 && code <= 0x27BF) ||   // Dingbats
+
+	        (code >= 0x2300 && code <= 0x23FF) ||   // Miscellaneous Technical ⌚⌛⏰…
+	        (code >= 0x2194 && code <= 0x2199) ||   // Flèches (↔ ↕ etc.)
+	        (code >= 0x21A9 && code <= 0x21AA) ||   // Flèches retour
+	        (code >= 0x231A && code <= 0x231B) ||   // ⌚⌛
+	        (code >= 0x23E9 && code <= 0x23F3) ||   // ⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲⏳
+	        (code >= 0x23F8 && code <= 0x23FA) ||   // ⏸⏹⏺
+	        (code >= 0x25AA && code <= 0x25AB) ||   // ▪▫
+	        (code >= 0x25B6 && code <= 0x25C0) ||   // ▶◀
+	        (code >= 0x25FB && code <= 0x25FE) ||   // ◻◼◽◾
+	        (code >= 0x2614 && code <= 0x2615) ||   // ☔☕
+	        (code >= 0x2648 && code <= 0x2653) ||   // Signes du zodiaque ♈…♓
+	        (code >= 0x267F && code <= 0x267F) ||   // ♿
+	        (code >= 0x2693 && code <= 0x2693) ||   // ⚓
+	        (code >= 0x26A1 && code <= 0x26A1) ||   // ⚡
+	        (code >= 0x1F000 && code <= 0x1F02F) || // Mahjong Tiles
+	        (code >= 0x1F0A0 && code <= 0x1F0FF) || // Playing Cards
+	        (code >= 0x1F100 && code <= 0x1F1FF) || // Enclosed Alphanumeric Supplement
+	        (code >= 0x1F200 && code <= 0x1F2FF) || // Enclosed Ideographic Supplement
+	        (code >= 0x1F800 && code <= 0x1F8FF) || // Supplemental Arrows-C
+	        (code == 0x200D) ||                     // ZWJ (Zero Width Joiner)
+	        (code == 0xFE0F) ||                     // Variation Selector-16 (emoji style)
+	        (code >= 0x1F3FB && code <= 0x1F3FF)    // Modificateurs de teinte de peau
 	);
 }
 
