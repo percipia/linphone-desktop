@@ -79,7 +79,7 @@ include(Linphone/application_info.cmake)
 
 if( APPLE )
 	if (NOT LINPHONEAPP_MACOS_ARCHS)
-		set(LINPHONEAPP_MACOS_ARCHS "arm64" CACHE STRING "MacOS architectures to build: comma-separated list of values in [arm64, x86_64]")
+		set(LINPHONEAPP_MACOS_ARCHS "arm64, x86_64" CACHE STRING "MacOS architectures to build: comma-separated list of values in [arm64, x86_64]")
 	endif()
 	set(LINPHONESDK_BUILD_TYPE "Default")#Using Mac will remove all SDK targets.
 	set(ENABLE_FAT_BINARY "ON") # Disable XCFrameworks as it is not supported.
