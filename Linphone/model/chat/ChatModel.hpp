@@ -81,6 +81,9 @@ public:
 	linphone::ChatRoom::State getState() const;
 	void setMuted(bool muted);
 	void setEphemeralLifetime(int time);
+	int getEphemeralLifetime();
+	void setEphemeralNotReadLifetime(int time);
+	int getEphemeralNotReadLifetime();
 	void setSubject(QString subject) const;
 	void removeParticipant(const QString &sipAddress) const;
 	void setParticipantAddresses(const QStringList &addresses);
@@ -93,6 +96,7 @@ signals:
 	void mutedChanged(bool muted);
 	void ephemeralEnableChanged(bool enable);
 	void ephemeralLifetimeChanged(int time);
+	void ephemeralNotReadLifetimeChanged(int time);
 	void participantAddressesChanged(const std::shared_ptr<linphone::ChatRoom> &chatRoom, bool success);
 
 private:

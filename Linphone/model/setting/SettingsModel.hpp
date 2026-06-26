@@ -207,6 +207,8 @@ public:
 	void setVersionCheckUrl(const QString &url);
 	void setVersionCheckType(const LinphoneEnums::VersionCheckType &type);
 
+	int getEphemeralNotReadLifetime();
+
 	// UI
 	DECLARE_GETSET(bool, disableChatFeature, DisableChatFeature)
 	DECLARE_GETSET(bool, disableBroadcastFeature, DisableBroadcastFeature)

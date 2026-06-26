@@ -984,6 +984,10 @@ void SettingsModel::setVersionCheckUrl(const QString &url) {
 	}
 }
 
+int SettingsModel::getEphemeralNotReadLifetime() {
+	return mConfig->getInt("misc", "ephemeral_not_read_lifetime", -1);
+}
+
 void SettingsModel::setChatNotificationSoundPath(const QString &path) {
 	QString cleanedPath = QDir::cleanPath(path);
 	mConfig->setString(UiSection, "chat_sound_notification_file", Utils::appStringToCoreString(cleanedPath));
