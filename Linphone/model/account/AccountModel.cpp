@@ -45,7 +45,8 @@ AccountModel::AccountModel(const std::shared_ptr<linphone::Account> &account, QO
 	});
 
 	connect(CoreModel::getInstance().get(), &CoreModel::unreadNotificationsChanged, this, [this]() {
-		emit unreadNotificationsChanged(mMonitor->getUnreadChatMessageCount(), mMonitor->getMissedCallsCount());
+		if (mMonitor->getState() == linphone::RegistrationState::Ok)
+			emit unreadNotificationsChanged(mMonitor->getUnreadChatMessageCount(), mMonitor->getMissedCallsCount());
 	});
 	connect(CoreModel::getInstance().get(), &CoreModel::accountRemoved, this,
 	        [this](const std::shared_ptr<linphone::Core> &core, const std::shared_ptr<linphone::Account> &account) {
@@ -82,6 +83,10 @@ void AccountModel::onRegistrationStateChanged(const std::shared_ptr<linphone::Ac
 		}
 		removeUserData(mMonitor);
 		emit removed();
+	} else if (state == linphone::RegistrationState::Ok) {
+		// Force refreshing notifications when account is connected to retrieve
+		// messages received while account was disconnected
+		refreshUnreadNotifications();
 	}
 	emit registrationStateChanged(account, state, message);
 }
@@ -161,7 +166,8 @@ void AccountModel::resetMissedCallsCount() {
 }
 
 void AccountModel::refreshUnreadNotifications() {
-	emit unreadNotificationsChanged(mMonitor->getUnreadChatMessageCount(), mMonitor->getMissedCallsCount());
+	if (mMonitor->getState() == linphone::RegistrationState::Ok)
+		emit unreadNotificationsChanged(mMonitor->getUnreadChatMessageCount(), mMonitor->getMissedCallsCount());
 }
 
 int AccountModel::getMissedCallsCount() const {

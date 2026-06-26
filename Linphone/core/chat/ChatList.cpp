@@ -90,7 +90,8 @@ void ChatList::connectItem(QSharedPointer<ChatCore> chat) {
 		auto defaultAccount = App::getInstance()->getAccountList()
 		                          ? App::getInstance()->getAccountList()->getDefaultAccountCore()
 		                          : nullptr;
-		if (defaultAccount) emit defaultAccount->lRefreshNotifications();
+		if (defaultAccount && defaultAccount->getRegistrationState() == LinphoneEnums::RegistrationState::Ok)
+			emit defaultAccount->lRefreshNotifications();
 	});
 	connect(chat.get(), &ChatCore::lastUpdatedTimeChanged, this, dataChange);
 	connect(chat.get(), &ChatCore::lastMessageChanged, this, dataChange);
