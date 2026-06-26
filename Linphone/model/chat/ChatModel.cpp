@@ -40,6 +40,9 @@ ChatModel::ChatModel(const std::shared_ptr<linphone::ChatRoom> &chatroom, QObjec
 		        [this](const std::shared_ptr<linphone::Core> &core, std::shared_ptr<linphone::ChatRoom> chatroom) {
 			        if (chatroom == mMonitor) emit messagesRead();
 		        });
+	if (mMonitor->ephemeralEnabled()) {
+		setEphemeralNotReadLifetime(SettingsModel::getInstance()->getEphemeralNotReadLifetime());
+	}
 }
 
 ChatModel::~ChatModel() {
@@ -147,14 +150,31 @@ void ChatModel::setMuted(bool muted) {
 	emit mutedChanged(muted);
 }
 
+int ChatModel::getEphemeralLifetime() {
+	return mMonitor->getEphemeralLifetime();
+}
+
 void ChatModel::setEphemeralLifetime(int time) {
 	if (time != 0) {
-		mMonitor->activateEphemeral(time, mMonitor->getEphemeralNotReadLifetime());
+		auto notReadSetting = SettingsModel::getInstance()->getEphemeralNotReadLifetime();
+		mMonitor->activateEphemeral(time,
+		                            notReadSetting != -1 ? notReadSetting : mMonitor->getEphemeralNotReadLifetime());
 	} else {
 		mMonitor->deactivateEphemeral();
 	}
 	emit ephemeralLifetimeChanged(time);
 	emit ephemeralEnableChanged(time != 0);
+}
+
+int ChatModel::getEphemeralNotReadLifetime() {
+	return mMonitor->getEphemeralNotReadLifetime();
+}
+
+void ChatModel::setEphemeralNotReadLifetime(int time) {
+	if (time != 0 && getEphemeralLifetime() != 0) {
+		mMonitor->activateEphemeral(getEphemeralLifetime(), time);
+		emit ephemeralNotReadLifetimeChanged(time);
+	}
 }
 
 void ChatModel::deleteHistory() {
