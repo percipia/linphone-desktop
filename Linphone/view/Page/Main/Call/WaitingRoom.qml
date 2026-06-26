@@ -34,10 +34,7 @@ RowLayout {
 				displayAll: false
 				displayPresence: false
 				mutedStatus: microButton.checked
-				AccountProxy {
-					id: accounts
-				}
-				account: accounts.defaultAccount
+				account: AppCpp.accounts.defaultAccount
 			}
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter

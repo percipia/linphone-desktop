@@ -579,6 +579,11 @@ void CoreModel::onMessageReceived(const std::shared_ptr<linphone::Core> &core,
                                   const std::shared_ptr<linphone::ChatRoom> &room,
                                   const std::shared_ptr<linphone::ChatMessage> &message) {
 	if (SettingsModel::getInstance()->getDisableChatFeature()) return;
+	auto receiverAccount = ToolModel::findAccount(message->getToAddress());
+	if (!receiverAccount || receiverAccount->getState() != linphone::RegistrationState::Ok) {
+		lInfo() << log().arg("Account not registered, do not display message notification.");
+		return;
+	}
 	if (message->isOutgoing()) return;
 	emit unreadNotificationsChanged();
 	std::list<std::shared_ptr<linphone::ChatMessage>> messages;
@@ -598,6 +603,12 @@ void CoreModel::onMessagesReceived(const std::shared_ptr<linphone::Core> &core,
 		finalMessages.push_back(message);
 	}
 	if (finalMessages.size() > 0) {
+		std::shared_ptr<linphone::ChatMessage> message = finalMessages.front();
+		auto receiverAccount = ToolModel::findAccount(message->getToAddress());
+		if (!receiverAccount || receiverAccount->getState() != linphone::RegistrationState::Ok) {
+			lInfo() << log().arg("Account not registered, do not display messages notification.");
+			return;
+		}
 		emit unreadNotificationsChanged();
 		emit messagesReceived(core, room, finalMessages);
 	}
