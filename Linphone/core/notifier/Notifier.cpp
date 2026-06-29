@@ -134,6 +134,7 @@ Notifier::~Notifier() {
 bool Notifier::createNotification(AbstractNotificationBackend::NotificationType type, QVariantMap data) {
 	mMutex->lock();
 	mustBeInMainThread(log().arg(Q_FUNC_INFO));
+	lInfo() << log().arg("Create notification");
 
 // Q_ASSERT(mInstancesNumber <= MaxNotificationsNumber);
 #if defined(Q_OS_WIN)
@@ -148,7 +149,7 @@ bool Notifier::createNotification(AbstractNotificationBackend::NotificationType 
 #else
 
 	if (mInstancesNumber >= MaxNotificationsNumber) { // Check existing instances.
-		qWarning() << QStringLiteral("Unable to create another notification.");
+		lWarning() << QStringLiteral("Unable to create another notification.");
 		mMutex->unlock();
 		return false;
 	}
@@ -236,7 +237,7 @@ bool Notifier::createNotification(AbstractNotificationBackend::NotificationType 
 				    }
 			    },
 			    static_cast<Qt::ConnectionType>(Qt::QueuedConnection | Qt::SingleShotConnection));
-			lDebug() << log().arg("Engine loading notification");
+			lInfo() << log().arg("Engine loading notification");
 			engine->load(url);
 		}
 	}
@@ -355,6 +356,7 @@ void Notifier::notifyReceivedCall(const shared_ptr<linphone::Call> &call) {
 
 	App::postCoreAsync([this, model, displayName, remoteAddrString]() {
 		mustBeInMainThread(getClassName());
+		lInfo() << log().arg("Display call notification");
 		QVariantMap map;
 		auto gui = new CallGui(model);
 		map["displayName"].setValue(displayName);

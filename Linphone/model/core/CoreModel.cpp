@@ -469,8 +469,14 @@ void CoreModel::onCallStateChanged(const std::shared_ptr<linphone::Core> &core,
                                    const std::shared_ptr<linphone::Call> &call,
                                    linphone::Call::State state,
                                    const std::string &message) {
+	lInfo() << log().arg("Call state changed") << call.get() << (int)state;
 	if (state == linphone::Call::State::IncomingReceived) {
-		if (App::getInstance()->getNotifier()) App::getInstance()->getNotifier()->notifyReceivedCall(call);
+		if (App::getInstance()->getNotifier()) {
+			lInfo() << log().arg("Incoming received, display call notification");
+			App::getInstance()->getNotifier()->notifyReceivedCall(call);
+		} else {
+			lWarning() << log().arg("App notifier is null ! Cannot display call notification");
+		}
 		if (!core->getConfig()->getBool(SettingsModel::UiSection, "disable_command_line", false) &&
 		    !core->getConfig()->getString(SettingsModel::UiSection, "command_line", "").empty()) {
 			QString command = Utils::coreStringToAppString(
