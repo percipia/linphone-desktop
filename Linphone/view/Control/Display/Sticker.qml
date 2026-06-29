@@ -209,11 +209,12 @@ Item {
 				triggeredOnStart: true
 				onTriggered: {cameraLoader.reset = !cameraLoader.reset}
 			}
+			visible: active &&status != Loader.Ready && !item.isReady
             active: mainItem.visible && !mainItem.remoteIsPaused
             && mainItem.videoEnabled
             && mainItem.callState !== LinphoneEnums.CallState.End
             && mainItem.callState !== LinphoneEnums.CallState.Released
-            && !cameraLoader.reset
+            && !reset
             onActiveChanged: console.log("("+mainItem.qmlName+") Camera active " + active +", visible="+mainItem.visible +", videoEnabled="+mainItem.videoEnabled +", reset="+cameraLoader.reset)
 			sourceComponent: cameraComponent
 		}
