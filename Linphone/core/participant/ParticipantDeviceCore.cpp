@@ -27,17 +27,16 @@
 
 DEFINE_ABSTRACT_OBJECT(ParticipantDeviceCore)
 
-QSharedPointer<ParticipantDeviceCore>
-ParticipantDeviceCore::create(std::shared_ptr<linphone::ParticipantDevice> device, const bool &isMe, QObject *parent) {
+QSharedPointer<ParticipantDeviceCore> ParticipantDeviceCore::create(std::shared_ptr<linphone::ParticipantDevice> device,
+                                                                    QObject *parent) {
 	auto sharedPointer =
-	    QSharedPointer<ParticipantDeviceCore>(new ParticipantDeviceCore(device, isMe, parent), &QObject::deleteLater);
+	    QSharedPointer<ParticipantDeviceCore>(new ParticipantDeviceCore(device, parent), &QObject::deleteLater);
 	sharedPointer->setSelf(sharedPointer);
 	sharedPointer->moveToThread(App::getInstance()->thread());
 	return sharedPointer;
 }
 
 ParticipantDeviceCore::ParticipantDeviceCore(const std::shared_ptr<linphone::ParticipantDevice> &device,
-                                             const bool &isMe,
                                              QObject *parent)
     : QObject(parent) {
 	App::getInstance()->mEngine->setObjectOwnership(this, QQmlEngine::CppOwnership);
@@ -64,8 +63,8 @@ ParticipantDeviceCore::ParticipantDeviceCore(const std::shared_ptr<linphone::Par
 		mIsVideoEnabled = mParticipantDeviceModel->isVideoEnabled();
 		mIsPaused = device->getState() == linphone::ParticipantDevice::State::Left ||
 		            device->getState() == linphone::ParticipantDevice::State::OnHold;
+		mIsMe = ToolModel::isMe(mAddress);
 	}
-	mIsMe = isMe;
 }
 
 ParticipantDeviceCore::~ParticipantDeviceCore() {

@@ -51,12 +51,10 @@ class ParticipantDeviceCore : public QObject, public AbstractObject {
 	Q_PROPERTY(LinphoneEnums::ParticipantDeviceState state READ getState WRITE setState NOTIFY stateChanged)
 
 public:
-	static QSharedPointer<ParticipantDeviceCore>
-	create(std::shared_ptr<linphone::ParticipantDevice> device, const bool &isMe = false, QObject *parent = nullptr);
+	static QSharedPointer<ParticipantDeviceCore> create(std::shared_ptr<linphone::ParticipantDevice> device,
+	                                                    QObject *parent = nullptr);
 
-	ParticipantDeviceCore(const std::shared_ptr<linphone::ParticipantDevice> &device,
-	                      const bool &isMe = false,
-	                      QObject *parent = nullptr);
+	ParticipantDeviceCore(const std::shared_ptr<linphone::ParticipantDevice> &device, QObject *parent = nullptr);
 	virtual ~ParticipantDeviceCore();
 	void setSelf(QSharedPointer<ParticipantDeviceCore> me);
 

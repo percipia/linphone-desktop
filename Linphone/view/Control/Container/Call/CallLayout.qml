@@ -18,7 +18,10 @@ Item {
 	property bool callTerminatedByUser: false
 	property bool callStarted: call? call.core.isStarted : false
 	readonly property var callState: call?.core.state
-	onCallStateChanged: if (callState === LinphoneEnums.CallState.End || callState === LinphoneEnums.CallState.Released) preview.visible = false
+	onCallStateChanged: {
+		if (callState === LinphoneEnums.CallState.End || callState === LinphoneEnums.CallState.Released) preview.visible = false
+		else setConferenceLayout()
+	}
 	property int conferenceLayout: call ? call.core.conferenceVideoLayout : LinphoneEnums.ConferenceLayout.ActiveSpeaker
 	property int participantDeviceCount: conference ? conference.core.participantDeviceCount : -1
 	property int lastConfLayoutBeforeSharing: -1
@@ -58,11 +61,13 @@ Item {
 				mainItem.lastConfLayoutBeforeSharing = -1
 			}
 			callLayout.sourceComponent = conference
-				? conference.core.isScreenSharingEnabled || (mainItem.conferenceLayout == LinphoneEnums.ConferenceLayout.ActiveSpeaker && participantDeviceCount > 1)
-					? activeSpeakerComponent
-					: participantDeviceCount <= 1
-						? waitingForOthersComponent
-						: gridComponent
+				? mainItem.callState === LinphoneEnums.CallState.Paused
+					? pauseStickerComponent 
+					: conference.core.isScreenSharingEnabled || (mainItem.conferenceLayout == LinphoneEnums.ConferenceLayout.ActiveSpeaker && participantDeviceCount > 1)
+						? activeSpeakerComponent
+						: participantDeviceCount <= 1
+							? waitingForOthersComponent
+							: gridComponent
 				: activeSpeakerComponent
 		})
 	}
@@ -191,15 +196,28 @@ Item {
 			}
 		}
 	}
+
+	
+	Component {
+		id: pauseStickerComponent
+		Sticker {
+			id: pauseSticker
+			anchors.fill: parent
+			Layout.fillWidth: true
+			Layout.fillHeight: true
+			previewEnabled: true
+			call: mainItem.call
+			displayAll: !mainItem.conference
+		}
+	}
 	
 	Component{
 		id: activeSpeakerComponent
-		ActiveSpeakerLayout{
+		ActiveSpeakerLayout {
 			id: activeSpeaker
 			Layout.fillWidth: true
 			Layout.fillHeight: true
 			call: mainItem.call
-
 		}
 	}
 	Component{
