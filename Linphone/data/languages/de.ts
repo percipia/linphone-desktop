@@ -1079,42 +1079,42 @@
 <context>
     <name>CallLayout</name>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="79"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="87"/>
         <source>meeting_event_conference_destroyed</source>
         <extracomment>&quot;Vous avez quitté la conférence&quot;</extracomment>
         <translation>Sie haben die Besprechung verlassen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="82"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="90"/>
         <source>call_ended_by_user</source>
         <extracomment>&quot;Vous avez terminé l&apos;appel&quot;</extracomment>
         <translation>Sie haben den Anruf beendet</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="85"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="93"/>
         <source>call_ended_by_remote</source>
         <extracomment>&quot;Votre correspondant a terminé l&apos;appel&quot;</extracomment>
         <translation>Der Anrufer hat das Gespräch beendet</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="160"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="168"/>
         <source>conference_call_empty</source>
         <extracomment>&quot;En attente d&apos;autres participants…&quot;</extracomment>
         <translation>Warten auf weitere Teilnehmer…</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="178"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="186"/>
         <source>conference_share_link_title</source>
         <extracomment>&quot;Partager le lien&quot;</extracomment>
         <translation>Link teilen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="184"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="192"/>
         <source>copied</source>
         <translation>Kopiert</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="186"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="194"/>
         <source>information_popup_meeting_address_copied_to_clipboard</source>
         <extracomment>Le lien de la réunion a été copié dans le presse-papier</extracomment>
         <translation>Der Besprechungs-Link wurde in die Zwischenablage kopiert</translation>
@@ -5502,19 +5502,19 @@ Ablauf: %1</translation>
 <context>
     <name>Notifier</name>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="354"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="355"/>
         <source>new_call_alert_accessible_name</source>
         <extracomment>New call from %1</extracomment>
         <translation>Neuer Anruf von %1</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="410"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="412"/>
         <source>new_voice_message</source>
         <extracomment>&apos;Voice message received!&apos; : message to warn the user in a notification for voice messages.</extracomment>
         <translation>Sprachnachricht empfangen!</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="411"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="413"/>
         <source>new_file_message</source>
         <translation>Datei empfangen!</translation>
     </message>
@@ -5524,19 +5524,19 @@ Ablauf: %1</translation>
         <translation type="vanished">Konferenzeinladung erhalten!</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="441"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="443"/>
         <source>new_chat_room_message</source>
         <extracomment>&apos;New message received!&apos; Notification that warn the user of a new message.</extracomment>
         <translation>Neue Nachricht empfangen!</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="444"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="446"/>
         <source>new_chat_room_messages</source>
         <extracomment>&apos;New messages received!&apos; Notification that warn the user of new messages.</extracomment>
         <translation>Neue Nachrichten erhalten!</translation>
     </message>
     <message>
-        <location filename="../../core/notifier/Notifier.cpp" line="477"/>
+        <location filename="../../core/notifier/Notifier.cpp" line="479"/>
         <source>new_message_alert_accessible_name</source>
         <extracomment>New message on chatroom %1</extracomment>
         <translation>Neue Nachricht im Chat %1</translation>
@@ -6751,13 +6751,13 @@ Um sie in einem kommerziellen Projekt zu aktivieren, kontaktieren Sie uns bitte.
 <context>
     <name>Sticker</name>
     <message>
-        <location filename="../../view/Control/Display/Sticker.qml" line="137"/>
+        <location filename="../../view/Control/Display/Sticker.qml" line="138"/>
         <source>conference_participant_joining_text</source>
         <extracomment>&quot;rejoint…&quot;</extracomment>
         <translation>tritt bei…</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Sticker.qml" line="163"/>
+        <location filename="../../view/Control/Display/Sticker.qml" line="164"/>
         <source>conference_participant_paused_text</source>
         <extracomment>&quot;En pause&quot;</extracomment>
         <translation>Pausiert</translation>
