@@ -200,7 +200,7 @@ ListView {
 		}
 	}
 	
-	delegate: ContactListItem{
+	delegate: ContactListItem {
 		id: contactItem
 		width: mainItem.width
 		focus: true
