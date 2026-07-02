@@ -43,6 +43,7 @@ ListView {
     signal findIndexWithFilter(bool forward)
     property bool searchForward: true
     onFindIndexWithFilter: (forward) => {
+        if (filterText === "") return
         searchForward = forward
         eventLogProxy.findIndexCorrespondingToFilter(currentIndex, searchForward, false)
     }
