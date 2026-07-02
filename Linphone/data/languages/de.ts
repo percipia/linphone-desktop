@@ -54,45 +54,45 @@
 <context>
     <name>AccountCore</name>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="464"/>
+        <location filename="../../core/account/AccountCore.cpp" line="465"/>
         <source>drawer_menu_account_connection_status_connected</source>
         <extracomment>&quot;Connecté&quot;</extracomment>
         <translation>Verbunden</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="467"/>
+        <location filename="../../core/account/AccountCore.cpp" line="468"/>
         <source>drawer_menu_account_connection_status_refreshing</source>
         <translation>Aktualisiere…</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="470"/>
+        <location filename="../../core/account/AccountCore.cpp" line="471"/>
         <source>drawer_menu_account_connection_status_progress</source>
         <translation>Verbinde…</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="473"/>
+        <location filename="../../core/account/AccountCore.cpp" line="474"/>
         <source>drawer_menu_account_connection_status_failed</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="477"/>
+        <location filename="../../core/account/AccountCore.cpp" line="478"/>
         <source>drawer_menu_account_connection_status_cleared</source>
         <translation>Deaktiviert</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="511"/>
+        <location filename="../../core/account/AccountCore.cpp" line="512"/>
         <source>manage_account_status_connected_summary</source>
         <extracomment>&quot;Vous êtes en ligne et joignable.&quot;</extracomment>
         <translation>Sie sind online und erreichbar.</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="514"/>
+        <location filename="../../core/account/AccountCore.cpp" line="515"/>
         <source>manage_account_status_failed_summary</source>
         <extracomment>&quot;Erreur de connexion, vérifiez vos paramètres.&quot;</extracomment>
         <translation>Verbindungsfehler, überprüfen Sie Ihre Einstellungen.</translation>
     </message>
     <message>
-        <location filename="../../core/account/AccountCore.cpp" line="518"/>
+        <location filename="../../core/account/AccountCore.cpp" line="519"/>
         <source>manage_account_status_cleared_summary</source>
         <extracomment>&quot;Compte désactivé, vous ne recevrez ni appel ni message.&quot;</extracomment>
         <translation>Konto deaktiviert, Sie erhalten keine Anrufe oder Nachrichten.</translation>
@@ -143,31 +143,31 @@
         <translation>Die Registrar Adresse ist ungültig. Bitte stellen Sie sicher, dass sie dem folgenden Format entspricht: sip:&lt;host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; ist optional)</translation>
     </message>
     <message>
-        <location filename="../../model/account/AccountManager.cpp" line="144"/>
+        <location filename="../../model/account/AccountManager.cpp" line="146"/>
         <source>assistant_account_login_outbound_proxy_uri_error</source>
         <extracomment>Outbound proxy uri is invalid. Please make sure it matches the following format : sip:host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; is optional)</extracomment>
         <translation>Die ausgehende Proxy-Adresse ist ungültig. Bitte stellen Sie sicher, dass sie dem folgenden Format entspricht: sip:&lt;host&gt;:&lt;port&gt;;transport=&lt;transport&gt; (:&lt;port&gt; ist optional)</translation>
     </message>
     <message>
-        <location filename="../../model/account/AccountManager.cpp" line="151"/>
+        <location filename="../../model/account/AccountManager.cpp" line="153"/>
         <source>assistant_account_login_params_configuration_error</source>
         <extracomment>&quot;Unable to configure account settings.&quot;</extracomment>
         <translation>Kontoeinstellungen konnten nicht konfiguriert werden.</translation>
     </message>
     <message>
-        <location filename="../../model/account/AccountManager.cpp" line="175"/>
+        <location filename="../../model/account/AccountManager.cpp" line="177"/>
         <source>assistant_account_login_forbidden_error</source>
         <extracomment>&quot;Username and password do not match&quot;</extracomment>
         <translation>Benutzername und Passwort stimmen nicht überein</translation>
     </message>
     <message>
-        <location filename="../../model/account/AccountManager.cpp" line="177"/>
+        <location filename="../../model/account/AccountManager.cpp" line="179"/>
         <source>assistant_account_login_error</source>
         <extracomment>&quot;Error during connection, please verify your parameters&quot;</extracomment>
         <translation>Fehler bei der Verbindung</translation>
     </message>
     <message>
-        <location filename="../../model/account/AccountManager.cpp" line="192"/>
+        <location filename="../../model/account/AccountManager.cpp" line="194"/>
         <source>assistant_account_add_error</source>
         <extracomment>&quot;Unable to add account.&quot;</extracomment>
         <translation>Konto konnte nicht hinzugefügt werden.</translation>
@@ -895,65 +895,65 @@
         <translation>Die Aufnahme wurde in der folgenden Datei gespeichert: %1</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="430"/>
-        <location filename="../../core/call/CallCore.cpp" line="455"/>
+        <location filename="../../core/call/CallCore.cpp" line="433"/>
+        <location filename="../../core/call/CallCore.cpp" line="458"/>
         <source>call_stats_codec_label</source>
         <extracomment>&quot;Codec: %1 / %2 kHz&quot;</extracomment>
         <translation>Codec: %1 / %2 kHz</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="434"/>
-        <location filename="../../core/call/CallCore.cpp" line="458"/>
+        <location filename="../../core/call/CallCore.cpp" line="437"/>
+        <location filename="../../core/call/CallCore.cpp" line="461"/>
         <source>call_stats_bandwidth_label</source>
         <extracomment>&quot;Bande passante : %1 %2 kbits/s %3 %4 kbits/s&quot;</extracomment>
         <translation>Bandbreite: %1 %2 kbits/s %3 %4 kbits/s</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="440"/>
-        <location filename="../../core/call/CallCore.cpp" line="463"/>
+        <location filename="../../core/call/CallCore.cpp" line="443"/>
+        <location filename="../../core/call/CallCore.cpp" line="466"/>
         <source>call_stats_loss_rate_label</source>
         <extracomment>&quot;Taux de perte: %1% %2%&quot;</extracomment>
         <translation>Verlustquote: %1% %2%</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="445"/>
+        <location filename="../../core/call/CallCore.cpp" line="448"/>
         <source>call_stats_jitter_buffer_label</source>
         <extracomment>&quot;Tampon de gigue: %1 ms&quot;</extracomment>
         <translation>Jitter-Puffer: %1 ms</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="472"/>
+        <location filename="../../core/call/CallCore.cpp" line="475"/>
         <source>call_stats_resolution_label</source>
         <extracomment>&quot;Définition vidéo : %1 %2 %3 %4&quot;</extracomment>
         <translation>Videoauflösung: %1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="478"/>
+        <location filename="../../core/call/CallCore.cpp" line="481"/>
         <source>call_stats_fps_label</source>
         <extracomment>&quot;FPS : %1 %2 %3 %4&quot;</extracomment>
         <translation>FPS : %1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="758"/>
+        <location filename="../../core/call/CallCore.cpp" line="761"/>
         <source>media_encryption_dtls</source>
         <extracomment>DTLS</extracomment>
         <translation>DTLS</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="761"/>
+        <location filename="../../core/call/CallCore.cpp" line="764"/>
         <source>media_encryption_none</source>
         <extracomment>None</extracomment>
         <translation>Nichts</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="754"/>
-        <location filename="../../core/call/CallCore.cpp" line="764"/>
+        <location filename="../../core/call/CallCore.cpp" line="757"/>
+        <location filename="../../core/call/CallCore.cpp" line="767"/>
         <source>media_encryption_srtp</source>
         <extracomment>SRTP</extracomment>
         <translation>SRTP</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallCore.cpp" line="767"/>
+        <location filename="../../core/call/CallCore.cpp" line="770"/>
         <source>media_encryption_post_quantum</source>
         <extracomment>&quot;ZRTP - Post quantique&quot;</extracomment>
         <translation>Post-quantum ZRTP</translation>
@@ -1079,42 +1079,42 @@
 <context>
     <name>CallLayout</name>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="87"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="84"/>
         <source>meeting_event_conference_destroyed</source>
         <extracomment>&quot;Vous avez quitté la conférence&quot;</extracomment>
         <translation>Sie haben die Besprechung verlassen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="90"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="87"/>
         <source>call_ended_by_user</source>
         <extracomment>&quot;Vous avez terminé l&apos;appel&quot;</extracomment>
         <translation>Sie haben den Anruf beendet</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="93"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="90"/>
         <source>call_ended_by_remote</source>
         <extracomment>&quot;Votre correspondant a terminé l&apos;appel&quot;</extracomment>
         <translation>Der Anrufer hat das Gespräch beendet</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="168"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="165"/>
         <source>conference_call_empty</source>
         <extracomment>&quot;En attente d&apos;autres participants…&quot;</extracomment>
         <translation>Warten auf weitere Teilnehmer…</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="186"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="183"/>
         <source>conference_share_link_title</source>
         <extracomment>&quot;Partager le lien&quot;</extracomment>
         <translation>Link teilen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="192"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="189"/>
         <source>copied</source>
         <translation>Kopiert</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="194"/>
+        <location filename="../../view/Control/Container/Call/CallLayout.qml" line="191"/>
         <source>information_popup_meeting_address_copied_to_clipboard</source>
         <extracomment>Le lien de la réunion a été copié dans le presse-papier</extracomment>
         <translation>Der Besprechungs-Link wurde in die Zwischenablage kopiert</translation>
@@ -1123,24 +1123,24 @@
 <context>
     <name>CallList</name>
     <message>
-        <location filename="../../core/call/CallList.cpp" line="104"/>
+        <location filename="../../core/call/CallList.cpp" line="109"/>
         <source>remote_group_call</source>
         <extracomment>Remote group call</extracomment>
         <translation>Remote-Gruppenanruf</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallList.cpp" line="106"/>
+        <location filename="../../core/call/CallList.cpp" line="111"/>
         <source>local_group_call</source>
         <extracomment>&quot;Local group call&quot;</extracomment>
         <translation>Lokaler Gruppenanruf</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallList.cpp" line="112"/>
+        <location filename="../../core/call/CallList.cpp" line="117"/>
         <source>info_popup_error_title</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../core/call/CallList.cpp" line="114"/>
+        <location filename="../../core/call/CallList.cpp" line="119"/>
         <source>info_popup_merge_calls_failed_message</source>
         <extracomment>Failed to merge calls !</extracomment>
         <translation>Zusammenführen der Anrufe fehlgeschlagen!</translation>
@@ -2164,13 +2164,13 @@
 <context>
     <name>ChatCore</name>
     <message>
-        <location filename="../../core/chat/ChatCore.cpp" line="145"/>
+        <location filename="../../core/chat/ChatCore.cpp" line="146"/>
         <source>info_toast_deleted_title</source>
         <extracomment>Deleted</extracomment>
         <translation>Gelöscht</translation>
     </message>
     <message>
-        <location filename="../../core/chat/ChatCore.cpp" line="147"/>
+        <location filename="../../core/chat/ChatCore.cpp" line="148"/>
         <source>info_toast_deleted_message_history</source>
         <extracomment>Message history has been deleted</extracomment>
         <translation>Der Nachrichtenverlauf wurde gelöscht</translation>
@@ -4867,54 +4867,54 @@ Ablauf: %1</translation>
         <translation>Ihr Gesprächspartner wurde an den ausgewählten Kontakt weitergeleitet</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="128"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="129"/>
         <source>information_popup_success_title</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="130"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="131"/>
         <source>information_popup_changes_saved</source>
         <extracomment>&quot;Les changements ont été sauvegardés&quot;</extracomment>
         <translation>Änderungen wurden gespeichert</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="242"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="243"/>
         <source>oidc_connection_waiting_message</source>
         <extracomment>&quot;Trying to connect to single sign on on web page ...&quot;</extracomment>
         <translation>Auf Single Sign-On Website anmelden ...</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="255"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="256"/>
         <source>cancel</source>
         <extracomment>Cancel</extracomment>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="292"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="293"/>
         <source>captcha_validation_loading_message</source>
         <extracomment>&quot;Veuillez valider le captcha sur la page web&quot;</extracomment>
         <translation>Bitte das Captcha auf der Webseite bestätigen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="300"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="301"/>
         <source>assistant_register_error_title</source>
         <extracomment>&quot;Erreur lors de la création&quot;</extracomment>
         <translation>Fehler bei der Erstellung</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="320"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="321"/>
         <source>assistant_register_success_title</source>
         <extracomment>&quot;Compte créé&quot;</extracomment>
         <translation>Konto erstellt</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="322"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="323"/>
         <source>assistant_register_success_message</source>
         <extracomment>&quot;Le compte a été créé. Vous pouvez maintenant vous connecter&quot;</extracomment>
         <translation>Das Konto wurde erstellt. Sie können sich jetzt anmelden.</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="327"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="328"/>
         <source>assistant_register_error_code</source>
         <extracomment>&quot;Erreur dans le code de validation&quot;</extracomment>
         <translation>Fehler im Bestätigungscode</translation>
@@ -6113,12 +6113,14 @@ Ablauf: %1</translation>
     <name>RegisterCheckingPage</name>
     <message>
         <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="45"/>
+        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="82"/>
         <source>email</source>
         <extracomment>&quot;email&quot;</extracomment>
         <translation>Email</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="47"/>
+        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="82"/>
         <source>phone_number</source>
         <extracomment>&quot;numéro de téléphone&quot;</extracomment>
         <translation>Telefonnummer</translation>
@@ -6130,19 +6132,19 @@ Ablauf: %1</translation>
         <translation>Registrieren | %1 bestätigen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="83"/>
+        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="84"/>
         <source>assistant_account_creation_confirmation_explanation</source>
-        <extracomment>Nous vous avons envoyé un code de vérification sur votre %1 %2&lt;br&gt; Merci de le saisir ci-dessous</extracomment>
+        <extracomment>Nous vous avons envoyé un code de vérification sur votre %1 %2 &lt;br&gt;Merci de le saisir ci-dessous</extracomment>
         <translation>Wir haben Ihnen einen Bestätigungscode an Ihr %1 %2&lt;br&gt; geschickt. Bitte geben Sie diesen unten ein.</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="159"/>
+        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="160"/>
         <source>assistant_account_creation_confirmation_did_not_receive_code</source>
         <extracomment>&quot;Vous n&apos;avez pas reçu le code ?&quot;</extracomment>
         <translation>Code nicht erhalten?</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="167"/>
+        <location filename="../../view/Page/Form/Register/RegisterCheckingPage.qml" line="168"/>
         <source>assistant_account_creation_confirmation_resend_code</source>
         <extracomment>&quot;Renvoyer un code&quot;</extracomment>
         <translation>Code erneut senden</translation>
