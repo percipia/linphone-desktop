@@ -64,17 +64,25 @@ bool CallProxy::getHaveCall() const {
 	return model ? model->getHaveCall() : false;
 }
 
+bool CallProxy::getHaveNonAdminMeeting() const {
+	auto model = qobject_cast<CallList *>(sourceModel());
+	return model ? model->getHaveNonAdminMeeting() : false;
+}
+
 void CallProxy::setSourceModel(QAbstractItemModel *model) {
 	auto oldCallList = qobject_cast<CallList *>(sourceModel());
 	if (oldCallList) {
 		disconnect(oldCallList, &CallList::currentCallChanged, this, nullptr);
 		disconnect(oldCallList, &CallList::haveCallChanged, this, nullptr);
+		disconnect(oldCallList, &CallList::haveNonAdminMeetingChanged, this, nullptr);
 		disconnect(this, &CallProxy::lMergeAll, oldCallList, nullptr);
 	}
 	auto newCallList = dynamic_cast<CallList *>(model);
 	if (newCallList) {
 		connect(newCallList, &CallList::currentCallChanged, this, &CallProxy::resetCurrentCall, Qt::QueuedConnection);
 		connect(newCallList, &CallList::haveCallChanged, this, &CallProxy::haveCallChanged, Qt::QueuedConnection);
+		connect(newCallList, &CallList::haveNonAdminMeetingChanged, this, &CallProxy::haveNonAdminMeetingChanged,
+		        Qt::QueuedConnection);
 		connect(this, &CallProxy::lMergeAll, newCallList, &CallList::lMergeAll);
 	}
 	QSortFilterProxyModel::setSourceModel(model);

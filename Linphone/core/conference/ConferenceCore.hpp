@@ -76,6 +76,7 @@ public:
 	ParticipantDeviceGui *getActiveSpeakerDeviceGui() const;
 	void setActiveSpeakerDevice(const QSharedPointer<ParticipantDeviceCore> &device);
 	ParticipantGui *getMeGui() const;
+	QSharedPointer<ParticipantCore> getMe() const;
 
 	void setIsReady(bool state);
 

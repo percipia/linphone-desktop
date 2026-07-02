@@ -32,6 +32,7 @@ class CallProxy : public SortFilterProxy, public AbstractObject {
 	Q_OBJECT
 	Q_PROPERTY(CallGui *currentCall READ getCurrentCall WRITE setCurrentCall NOTIFY currentCallChanged)
 	Q_PROPERTY(bool haveCall READ getHaveCall NOTIFY haveCallChanged)
+	Q_PROPERTY(bool haveNonAdminMeeting READ getHaveNonAdminMeeting NOTIFY haveNonAdminMeetingChanged)
 	Q_PROPERTY(bool showCurrentCall READ showCurrentCall WRITE setShowCurrentCall NOTIFY showCurrentCallChanged)
 
 public:
@@ -46,6 +47,7 @@ public:
 	void resetCurrentCall(); // Reset the default account to let UI build its new object if needed.
 
 	bool getHaveCall() const;
+	bool getHaveNonAdminMeeting() const;
 
 	void setShowCurrentCall(bool show);
 	bool showCurrentCall() const;
@@ -59,6 +61,7 @@ signals:
 	void lMergeAll();
 	void currentCallChanged();
 	void haveCallChanged();
+	void haveNonAdminMeetingChanged();
 	void showCurrentCallChanged();
 
 protected:

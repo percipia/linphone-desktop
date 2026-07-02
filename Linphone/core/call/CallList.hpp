@@ -48,6 +48,10 @@ public:
 	void setCurrentCall(CallGui *callGui);
 	void setCurrentCallCore(QSharedPointer<CallCore> call);
 
+	void updateHaveNonAdminMeeting();
+	bool getHaveNonAdminMeeting() const;
+	void setHaveNonAdminMeeting(bool haveNonAdminMeeting);
+
 	bool getHaveCall() const;
 	void setHaveCall(bool haveCall);
 
@@ -62,6 +66,7 @@ signals:
 	void lUpdate();
 	void lMergeAll();
 	void haveCallChanged();
+	void haveNonAdminMeetingChanged();
 	void currentCallChanged();
 
 private:
@@ -69,6 +74,7 @@ private:
 	void onStateChanged();
 
 	bool mHaveCall = false;
+	bool mHaveNonAdminMeeting = false;
 	QSharedPointer<CallCore> mCurrentCall;
 	QSharedPointer<SafeConnection<CallList, CoreModel>> mModelConnection;
 	DECLARE_ABSTRACT_OBJECT

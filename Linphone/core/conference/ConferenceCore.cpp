@@ -245,6 +245,10 @@ ParticipantGui *ConferenceCore::getMeGui() const {
 	return new ParticipantGui(mMe);
 }
 
+QSharedPointer<ParticipantCore> ConferenceCore::getMe() const {
+	return mMe;
+}
+
 void ConferenceCore::setActiveSpeakerDevice(const QSharedPointer<ParticipantDeviceCore> &device) {
 	if (mActiveSpeakerDevice != device) {
 		mActiveSpeakerDevice = device;

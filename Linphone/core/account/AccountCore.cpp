@@ -295,6 +295,7 @@ void AccountCore::setSelf(QSharedPointer<AccountCore> me) {
 	    &AccountCore::lSetPresence, [this](LinphoneEnums::Presence presence, bool userInitiated, bool resetToAuto) {
 		    mAccountModelConnection->invokeToModel(
 		        [this, presence, userInitiated, resetToAuto, presenceNote = mPresenceNote]() {
+			        lInfo() << log().arg("Set presence for account") << mIdentityAddress << presence;
 			        mAccountModel->setPresence(presence, userInitiated, resetToAuto, presenceNote);
 		        });
 	    });

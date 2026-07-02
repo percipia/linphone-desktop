@@ -311,6 +311,8 @@ void FriendModel::setStarred(bool starred) {
 }
 
 void FriendModel::onPresenceReceived(const std::shared_ptr<linphone::Friend> &contact) {
+	lInfo() << log().arg("presence received for contact")
+	        << (contact ? contact->getAddress()->asStringUriOnly() : "NULL") << getPresence(contact);
 	emit presenceReceived(getPresence(contact), getPresenceNote(contact));
 }
 

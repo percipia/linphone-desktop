@@ -382,7 +382,10 @@ void CallCore::setSelf(QSharedPointer<CallCore> me) {
 			    else level = LinphoneEnums::ConferenceSecurityLevel::PointToPoint;
 			    mCallModelConnection->invokeToCore([this, level]() { setConferenceSecurityLevel(level); });
 		    }
-		    mCallModelConnection->invokeToCore([this, core]() { setConference(core); });
+		    mCallModelConnection->invokeToCore([this, core]() {
+			    setConference(core);
+			    if (core) App::getInstance()->getCallList()->updateHaveNonAdminMeeting();
+		    });
 	    });
 	mCallModelConnection->makeConnectToCore(&CallCore::lAccept, [this](bool withVideo) {
 		mCallModelConnection->invokeToModel([this, withVideo]() { mCallModel->accept(withVideo); });

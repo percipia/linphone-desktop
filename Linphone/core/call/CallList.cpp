@@ -64,15 +64,20 @@ void CallList::setSelf(QSharedPointer<CallList> me) {
 			auto linphoneCalls = CoreModel::getInstance()->getCore()->getCalls();
 			auto currentCall = CoreModel::getInstance()->getCore()->getCurrentCall();
 			QSharedPointer<CallCore> currentCallCore;
+			bool haveNonAdminMeeting = false;
 			for (auto it : linphoneCalls) {
 				auto model = createCallCore(it);
 				if (it == currentCall) currentCallCore = model;
+				if (auto isConf = it->getConference()) {
+					if (isConf->getMe() && !isConf->getMe()->isAdmin()) haveNonAdminMeeting = true;
+				}
 				calls->push_back(model);
 			}
-			mModelConnection->invokeToCore([this, calls, currentCallCore]() {
+			mModelConnection->invokeToCore([this, calls, currentCallCore, haveNonAdminMeeting]() {
 				mustBeInMainThread(getClassName());
 				resetData<CallCore>(*calls);
 				setHaveCall(calls->size() > 0);
+				setHaveNonAdminMeeting(haveNonAdminMeeting);
 				setCurrentCallCore(currentCallCore);
 				delete calls;
 			});
@@ -124,6 +129,7 @@ void CallList::setSelf(QSharedPointer<CallList> me) {
 	mModelConnection->makeConnectToModel(&CoreModel::lastCallEnded, [this]() {
 		mModelConnection->invokeToCore([this]() {
 			setHaveCall(false);
+			setHaveNonAdminMeeting(false);
 			setCurrentCall(nullptr);
 		});
 	});
@@ -136,6 +142,7 @@ void CallList::setSelf(QSharedPointer<CallList> me) {
 				setCurrentCallCore(model);
 			}
 			setHaveCall(mList.size() > 0);
+			updateHaveNonAdminMeeting();
 			add(model);
 		});
 	});
@@ -171,6 +178,30 @@ void CallList::setHaveCall(bool haveCall) {
 	if (mHaveCall != haveCall) {
 		mHaveCall = haveCall;
 		emit haveCallChanged();
+	}
+}
+
+void CallList::updateHaveNonAdminMeeting() {
+	bool haveNonAdminMeeting = false;
+	for (auto &call : getSharedList<CallCore>()) {
+		if (auto conf = call->getConferenceCore()) {
+			qDebug() << "call is conference, me admin :" << conf->getMe()
+			         << (conf->getMe() && conf->getMe()->isAdmin() ? "true" : "false");
+			if (call->getConferenceCore()->getMe() && !call->getConferenceCore()->getMe()->isAdmin())
+				haveNonAdminMeeting = true;
+		}
+	}
+	setHaveNonAdminMeeting(haveNonAdminMeeting);
+}
+
+bool CallList::getHaveNonAdminMeeting() const {
+	return mHaveNonAdminMeeting;
+}
+
+void CallList::setHaveNonAdminMeeting(bool haveNonAdminMeeting) {
+	if (mHaveNonAdminMeeting != haveNonAdminMeeting) {
+		mHaveNonAdminMeeting = haveNonAdminMeeting;
+		emit haveNonAdminMeetingChanged();
 	}
 }
 

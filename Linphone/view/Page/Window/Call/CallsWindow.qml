@@ -1061,7 +1061,7 @@ AbstractWindow {
                     Component {
                         id: mergeCallPopupButton
                         PopupButton {
-                            visible: callsModel.count >= 2
+                            visible: callsModel.count >= 2 && !callsModel.haveNonAdminMeeting
                             id: popupbutton
                             popup.contentItem: IconLabelButton {
                                 icon.source: AppIcons.arrowsMerge
