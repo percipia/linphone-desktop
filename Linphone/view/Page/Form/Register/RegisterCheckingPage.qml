@@ -77,9 +77,10 @@ LoginLayout {
                     weight: Typography.h3.weight
 				}
 				color: DefaultStyle.main2_700
+				textFormat: Text.RichText
                 text: {
-                    var completeString = mainItem.registerWithEmail ? ("email") : ("phone_number")
-                    //: Nous vous avons envoyé un code de vérification sur votre %1 %2<br> Merci de le saisir ci-dessous
+                    var completeString = mainItem.registerWithEmail ? qsTr("email") : qsTr("phone_number")
+                    //: Nous vous avons envoyé un code de vérification sur votre %1 %2 <br>Merci de le saisir ci-dessous
                     text = qsTr("assistant_account_creation_confirmation_explanation").arg(completeString).arg(address)
 				}
 			}
