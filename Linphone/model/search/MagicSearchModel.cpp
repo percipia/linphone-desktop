@@ -44,6 +44,7 @@ void MagicSearchModel::search(QString filter,
                               int sourceFlags,
                               LinphoneEnums::MagicSearchAggregation aggregation,
                               int maxResults) {
+	filter = filter.toLower();
 	mLastSearch = filter;
 	setMaxResults(maxResults);
 	if (filter == "" || filter == "*") {
