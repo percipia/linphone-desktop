@@ -262,22 +262,29 @@ void ChatModel::toggleParticipantAdminStatus(const QString &sipAddress) const {
 }
 
 void ChatModel::setParticipantAddresses(const QStringList &addresses) {
-	QSet<QString> s{addresses.cbegin(), addresses.cend()};
+	QSet<QString> newAddresses{addresses.cbegin(), addresses.cend()};
 	bool soFarSoGood = true;
+	bool participantsChanged = false;
 	for (auto p : mMonitor->getParticipants()) {
 		auto address = Utils::coreStringToAppString(p->getAddress()->asStringUriOnly());
-		if (s.contains(address)) s.remove(address);
+		if (newAddresses.contains(address)) newAddresses.remove(address);
 		else {
+			participantsChanged = true;
 			mMonitor->removeParticipants({p});
 		}
 	}
-	for (const auto &a : s) {
+	auto me = Utils::coreStringToAppString(mMonitor->getMe()->getAddress()->asStringUriOnly());
+	if (newAddresses.contains(me)) newAddresses.remove(me);
+	for (const auto &a : newAddresses) {
 		auto address = linphone::Factory::get()->createAddress(Utils::appStringToCoreString(a));
 		if (address) {
+			participantsChanged = true;
 			soFarSoGood &= mMonitor->addParticipants({address});
 		}
 	}
-	emit participantAddressesChanged(mMonitor, soFarSoGood);
+	if (participantsChanged) {
+		emit participantAddressesChanged(mMonitor, soFarSoGood);
+	}
 }
 
 //---------------------------------------------------------------//

@@ -14,7 +14,7 @@ ColumnLayout {
 	id: mainItem
 	property ChatGui chatGui
 	property var contactObj: chatGui ? UtilsCpp.findFriendByAddress(mainItem.chatGui.core.peerAddress) : null
-	property FriendGui contact: contactObj ? contactObj.value : null
+	property var contact: contactObj ? contactObj.value : null
 	property bool isAppFriend: contact && contact.core.isAppFriend
 	property bool isGroup: chatGui && chatGui.core.isGroupChat
 	spacing: 0

@@ -433,15 +433,11 @@ void ChatCore::setSelf(const QSharedPointer<ChatCore> &me) {
 			                                         setMeAdmin(meAdmin);
 		                                         });
 	                                         });
-	mChatModelConnection->makeConnectToModel(
-	    &ChatModel::participantAddressesChanged,
-	    [this](const std::shared_ptr<linphone::ChatRoom> &chatRoom, bool success) {
-		    if (!success) {
-			    auto participants = buildParticipants(chatRoom);
-			    mChatModelConnection->invokeToCore([this, participants] { setParticipants(participants); });
-		    }
-		    mChatModelConnection->invokeToCore([this, success] { emit participantAddressesChanged(success); });
-	    });
+	mChatModelConnection->makeConnectToModel(&ChatModel::participantAddressesChanged,
+	                                         [this](const std::shared_ptr<linphone::ChatRoom> &chatRoom, bool success) {
+		                                         mChatModelConnection->invokeToCore(
+		                                             [this, success] { emit participantAddressesChanged(success); });
+	                                         });
 	mChatModelConnection->makeConnectToCore(&ChatCore::lRemoveParticipant, [this](QString sipAddress) {
 		mChatModelConnection->invokeToModel([this, sipAddress]() { mChatModel->removeParticipant(sipAddress); });
 	});

@@ -21,6 +21,7 @@ Rectangle {
 	color: DefaultStyle.grey_0
 	height: participantAddColumn.implicitHeight
 	signal done()
+	property bool isDone: false
 
 	Connections {
 		enabled: chatGui !== null
@@ -30,11 +31,14 @@ Rectangle {
 			//: Error while setting participants !
 			qsTr("info_popup_manage_participant_error_message"), false)
 			else {
-				mainItem.done()
-				UtilsCpp.showInformationPopup(qsTr("info_popup_success_title"), 
-				//: Participants updated
-				qsTr("info_popup_manage_participant_updated_message"), true)
+				//: Updating participants ...
+				if (!isDone) mainWindow.showLoadingPopup(qsTr("manage_participant_waiting_popup"))
 			}
+		}
+		function onParticipantsChanged(success) {
+			mainWindow.closeLoadingPopup()
+			isDone = true
+			mainItem.done()
 		}
 	}
 
