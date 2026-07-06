@@ -2164,13 +2164,13 @@
 <context>
     <name>ChatCore</name>
     <message>
-        <location filename="../../core/chat/ChatCore.cpp" line="146"/>
+        <location filename="../../core/chat/ChatCore.cpp" line="145"/>
         <source>info_toast_deleted_title</source>
         <extracomment>Deleted</extracomment>
         <translation>Gelöscht</translation>
     </message>
     <message>
-        <location filename="../../core/chat/ChatCore.cpp" line="148"/>
+        <location filename="../../core/chat/ChatCore.cpp" line="147"/>
         <source>info_toast_deleted_message_history</source>
         <extracomment>Message history has been deleted</extracomment>
         <translation>Der Nachrichtenverlauf wurde gelöscht</translation>
@@ -2577,44 +2577,44 @@ Error</extracomment>
 <context>
     <name>ChatMessagesListView</name>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="142"/>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="153"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="143"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="154"/>
         <source>popup_info_find_message_title</source>
         <extracomment>Find message</extracomment>
         <translation>Nachricht suchen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="145"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="146"/>
         <source>info_popup_last_result_message</source>
         <extracomment>Last result reached</extracomment>
         <translation>Letztes Ergebnis erreicht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="147"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="148"/>
         <source>info_popup_first_result_message</source>
         <extracomment>First result reached</extracomment>
         <translation>Erstes Ergebnis erreicht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="155"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="156"/>
         <source>info_popup_no_result_message</source>
         <extracomment>No result found</extracomment>
         <translation>Keine Ergebnisse gefunden</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="203"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="204"/>
         <source>chat_message_list_encrypted_header_title</source>
         <extracomment>End to end encrypted chat</extracomment>
         <translation>Ende-zu-Ende-verschlüsselter Chat</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="205"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="206"/>
         <source>unencrypted_conversation_warning</source>
         <extracomment>This conversation is not encrypted !</extracomment>
         <translation>Dieser Chat ist nicht verschlüsselt!</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="216"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="217"/>
         <source>chat_message_list_encrypted_header_message</source>
         <extracomment>Messages in this conversation are e2e encrypted. 
  Only your correspondent can decrypt them.</extracomment>
@@ -2622,7 +2622,7 @@ Error</extracomment>
 Nur Ihr Gesprächspartner kann sie entschlüsseln.</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="218"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="219"/>
         <source>chat_message_list_not_encrypted_header_message</source>
         <extracomment>Messages are not end to end encrypted, 
  make sure you don&apos;t share any sensitive information !</extracomment>
@@ -2630,39 +2630,39 @@ Nur Ihr Gesprächspartner kann sie entschlüsseln.</translation>
 Stellen Sie sicher, dass Sie keine sensiblen Informationen teilen!</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="259"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="260"/>
         <source>chat_message_is_writing_info</source>
         <extracomment>%1 is writing…</extracomment>
         <translation>%1 schreibt…</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="280"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="281"/>
         <source>conversation_dialog_delete_chat_message_title</source>
         <extracomment>&quot;Supprimer le message ?&quot;</extracomment>
         <translation>Nachricht löschen?</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="288"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="289"/>
         <source>conversation_dialog_delete_locally_label</source>
         <translation>Für mich</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="300"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="301"/>
         <source>conversation_dialog_delete_for_everyone_label</source>
         <translation>Für alle</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="311"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="312"/>
         <source>dialog_cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="389"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="390"/>
         <source>info_toast_deleted_title</source>
         <translation>Gelöscht</translation>
     </message>
     <message>
-        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="391"/>
+        <location filename="../../view/Control/Display/Chat/ChatMessagesListView.qml" line="392"/>
         <source>info_toast_deleted_message</source>
         <extracomment>The message has been deleted</extracomment>
         <translation>Die Nachricht wurde gelöscht</translation>
@@ -4867,54 +4867,54 @@ Ablauf: %1</translation>
         <translation>Ihr Gesprächspartner wurde an den ausgewählten Kontakt weitergeleitet</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="129"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="128"/>
         <source>information_popup_success_title</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="131"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="130"/>
         <source>information_popup_changes_saved</source>
         <extracomment>&quot;Les changements ont été sauvegardés&quot;</extracomment>
         <translation>Änderungen wurden gespeichert</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="243"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="242"/>
         <source>oidc_connection_waiting_message</source>
         <extracomment>&quot;Trying to connect to single sign on on web page ...&quot;</extracomment>
         <translation>Auf Single Sign-On Website anmelden ...</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="256"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="255"/>
         <source>cancel</source>
         <extracomment>Cancel</extracomment>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="293"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="292"/>
         <source>captcha_validation_loading_message</source>
         <extracomment>&quot;Veuillez valider le captcha sur la page web&quot;</extracomment>
         <translation>Bitte das Captcha auf der Webseite bestätigen</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="301"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="300"/>
         <source>assistant_register_error_title</source>
         <extracomment>&quot;Erreur lors de la création&quot;</extracomment>
         <translation>Fehler bei der Erstellung</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="321"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="320"/>
         <source>assistant_register_success_title</source>
         <extracomment>&quot;Compte créé&quot;</extracomment>
         <translation>Konto erstellt</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="323"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="322"/>
         <source>assistant_register_success_message</source>
         <extracomment>&quot;Le compte a été créé. Vous pouvez maintenant vous connecter&quot;</extracomment>
         <translation>Das Konto wurde erstellt. Sie können sich jetzt anmelden.</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="328"/>
+        <location filename="../../view/Page/Window/Main/MainWindow.qml" line="327"/>
         <source>assistant_register_error_code</source>
         <extracomment>&quot;Erreur dans le code de validation&quot;</extracomment>
         <translation>Fehler im Bestätigungscode</translation>
@@ -4927,34 +4927,38 @@ Ablauf: %1</translation>
 <context>
     <name>ManageParticipants</name>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="29"/>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="30"/>
         <source>info_popup_error_title</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="31"/>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="32"/>
         <source>info_popup_manage_participant_error_message</source>
         <extracomment>Error while setting participants !</extracomment>
         <translation>Fehler beim Festlegen der Teilnehmer!</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="34"/>
-        <source>info_popup_success_title</source>
-        <translation>Erfolg</translation>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="35"/>
+        <source>manage_participant_waiting_popup</source>
+        <extracomment>Updating participants ...</extracomment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="36"/>
+        <source>info_popup_success_title</source>
+        <translation type="vanished">Erfolg</translation>
+    </message>
+    <message>
         <source>info_popup_manage_participant_updated_message</source>
         <extracomment>Participants updated</extracomment>
-        <translation>Teilnehmer aktualisiert</translation>
+        <translation type="vanished">Teilnehmer aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="59"/>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="63"/>
         <source>group_infos_manage_participants</source>
         <translation>Teilnehmer</translation>
     </message>
     <message>
-        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="68"/>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="72"/>
         <source>apply_button_text</source>
         <extracomment>Apply</extracomment>
         <translation>Anwenden</translation>
