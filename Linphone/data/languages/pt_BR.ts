@@ -4527,6 +4527,16 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <source>apply_button_text</source>
         <translation>Aplicar</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="31"/>
+        <source>info_popup_manage_participant_error_message</source>
+        <translation>Erro ao definir os participantes!</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Chat/ManageParticipants.qml" line="36"/>
+        <source>info_popup_manage_participant_updated_message</source>
+        <translation>Participantes atualizados</translation>
+    </message>
 </context>
 <context>
     <name>MeetingForm</name>
@@ -4570,6 +4580,21 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <location filename="../../view/Page/Form/Meeting/MeetingForm.qml" line="210"/>
         <source>timezone_accessible_name</source>
         <translation>Fuso horário</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Meeting/MeetingForm.qml" line="155"/>
+        <source>start_time_accessible_name</source>
+        <translation>Horário de início</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Meeting/MeetingForm.qml" line="126"/>
+        <source>day_accessible_name</source>
+        <translation>Dia</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Meeting/MeetingForm.qml" line="170"/>
+        <source>end_time_accessible_name</source>
+        <translation>Horário de término</translation>
     </message>
 </context>
 <context>
@@ -4807,6 +4832,11 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <source>new_meeting_acccessibility_label</source>
         <translation>Nova reunião</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Main/Meeting/MeetingPage.qml" line="694"/>
+        <source>export_conference_info_ics_tooltip</source>
+        <translation>Exportar para ICS</translation>
+    </message>
 </context>
 <context>
     <name>MeetingsSettingsLayout</name>
@@ -4827,6 +4857,16 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <source>settings_meetings_default_layout_subtitle</source>
         <extracomment>&quot;Le mode d’affichage des participants en réunions&quot;</extracomment>
         <translation>Como os participantes são exibidos nas reuniões</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/MeetingsSettingsLayout.qml" line="63"/>
+        <source>settings_meetings_show_past_meetings_title</source>
+        <translation>Exibir reuniões anteriores</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Layout/Settings/MeetingsSettingsLayout.qml" line="65"/>
+        <source>settings_meetings_show_past_meetings_subtitle</source>
+        <translation>Exibir reuniões anteriores na lista de reuniões</translation>
     </message>
 </context>
 <context>
@@ -5008,6 +5048,11 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <extracomment>New message on chatroom %1</extracomment>
         <translation>Nova mensagem na sala de conversa %1</translation>
     </message>
+    <message>
+        <location filename="../../core/notifier/Notifier.cpp" line="441"/>
+        <source>new_chat_room_message</source>
+        <translation>Nova mensagem recebida!</translation>
+    </message>
 </context>
 <context>
     <name>OIDCModel</name>
@@ -5122,6 +5167,11 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <source>oidc_authentication_no_token_found_in_config_error</source>
         <extracomment>No token endpoint found in OpenID configuration</extracomment>
         <translation>Nenhum endpoint de token encontrado na configuração do OpenID</translation>
+    </message>
+    <message>
+        <location filename="../../model/auth/OIDCModel.cpp" line="319"/>
+        <source>oidc_authentication_empty_reply_error</source>
+        <translation>Resposta OIDC está vazia!</translation>
     </message>
 </context>
 <context>
@@ -5331,6 +5381,11 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <extracomment>&quot;Audio uniquement&quot;</extracomment>
         <translation>Apenas áudio</translation>
     </message>
+    <message>
+        <location filename="../../tool/LinphoneEnums.cpp" line="126"/>
+        <source>message_state_idle</source>
+        <translation>ocupado</translation>
+    </message>
 </context>
 <context>
     <name>RegisterCheckingPage</name>
@@ -5507,6 +5562,21 @@ Apenas seu correspondente pode descriptografá-las.</translation>
         <extracomment>&quot;Veuillez entrer un email&quot;</extracomment>
         <translation>Por favor, insira um email</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="25"/>
+        <source>register_with_email_button</source>
+        <translation>Registre com um e-mail</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="21"/>
+        <source>phone_number_validation_not_available_title</source>
+        <translation>Validação de número telefônico indisponível</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Register/RegisterPage.qml" line="23"/>
+        <source>phone_number_validation_not_available_text</source>
+        <translation>Não é possível validar o número de telefone. Crie a conta usando um endereço de e-mail.</translation>
+    </message>
 </context>
 <context>
     <name>SIPLoginPage</name>
@@ -5646,7 +5716,7 @@ Para habilitá-las em um projeto comercial, por favor, entre em contato conosco.
         <location filename="../../view/Page/Form/Login/SIPLoginPage.qml" line="410"/>
         <source>login_registrar_uri</source>
         <extracomment>&quot;Registrar URI&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>URI do registrador</translation>
     </message>
     <message>
         <location filename="../../view/Page/Form/Login/SIPLoginPage.qml" line="418"/>
@@ -5654,6 +5724,11 @@ Para habilitá-las em um projeto comercial, por favor, entre em contato conosco.
         <source>login_id</source>
         <extracomment>&quot;Authentication ID (if different)&quot;</extracomment>
         <translation>ID de autenticação (caso diferente)</translation>
+    </message>
+    <message>
+        <location filename="../../view/Page/Form/Login/SIPLoginPage.qml" line="224"/>
+        <source>sip_address_domain_tooltip</source>
+        <translation>Domínio da identidade SIP (ex.: sip.example.com)</translation>
     </message>
 </context>
 <context>
@@ -7042,22 +7117,22 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1057"/>
         <source>Myanmar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mianmar</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1060"/>
         <source>Namibia</source>
-        <translation type="unfinished"></translation>
+        <translation>Namibia</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1063"/>
         <source>NauruCountry</source>
-        <translation type="unfinished"></translation>
+        <translation>Nauru</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1067"/>
         <source>Nepal</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepal</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1070"/>
@@ -7067,7 +7142,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1074"/>
         <source>NewCaledonia</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova Caledônia</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1078"/>
@@ -7092,17 +7167,17 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1090"/>
         <source>Niue</source>
-        <translation type="unfinished"></translation>
+        <translation>Niue</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1093"/>
         <source>NorfolkIsland</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilha Norfolk</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1097"/>
         <source>NorthernMarianaIslands</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilhas Marianas do Norte</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1102"/>
@@ -7112,7 +7187,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1105"/>
         <source>Oman</source>
-        <translation type="unfinished"></translation>
+        <translation>Omã</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1108"/>
@@ -7122,12 +7197,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1111"/>
         <source>Palau</source>
-        <translation type="unfinished"></translation>
+        <translation>Palau</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1114"/>
         <source>PalestinianTerritories</source>
-        <translation type="unfinished"></translation>
+        <translation>Territórios palestinianos</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1119"/>
@@ -7137,7 +7212,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1122"/>
         <source>PapuaNewGuinea</source>
-        <translation type="unfinished"></translation>
+        <translation>Papua-Nova Guiné</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1126"/>
@@ -7192,12 +7267,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1158"/>
         <source>Rwanda</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruanda</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1161"/>
         <source>SaintHelena</source>
-        <translation type="unfinished"></translation>
+        <translation>Santa Helena</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1165"/>
@@ -7337,12 +7412,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1257"/>
         <source>Tajikistan</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajiquistão</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1260"/>
         <source>Tanzania</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanzânia</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1263"/>
@@ -7352,27 +7427,27 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1266"/>
         <source>Togo</source>
-        <translation type="unfinished"></translation>
+        <translation>Togo</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1269"/>
         <source>Tokelau</source>
-        <translation type="unfinished"></translation>
+        <translation>Toquelau</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1272"/>
         <source>Tonga</source>
-        <translation type="unfinished"></translation>
+        <translation>Tonga</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1275"/>
         <source>TrinidadAndTobago</source>
-        <translation type="unfinished"></translation>
+        <translation>Trindade e Tobago</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1279"/>
         <source>Tunisia</source>
-        <translation type="unfinished"></translation>
+        <translation>Tunisia</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1282"/>
@@ -7382,17 +7457,17 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1285"/>
         <source>Turkmenistan</source>
-        <translation type="unfinished"></translation>
+        <translation>Turcomenistão</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1289"/>
         <source>TurksAndCaicosIslands</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilhas Turks e Caicos</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1294"/>
         <source>Tuvalu</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvalu</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1297"/>
@@ -7427,12 +7502,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1318"/>
         <source>Uzbekistan</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzbekistan</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1321"/>
         <source>Vanuatu</source>
-        <translation type="unfinished"></translation>
+        <translation>Vanuatu</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1324"/>
@@ -7447,7 +7522,7 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1330"/>
         <source>WallisAndFutunaIslands</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilhas Wallis e Futuna</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1335"/>
@@ -7457,12 +7532,12 @@ Failed to create 1-1 conversation with %1 !</extracomment>
     <message>
         <location filename="../../tool/Utils.cpp" line="1338"/>
         <source>Zambia</source>
-        <translation type="unfinished"></translation>
+        <translation>Zâmbia</translation>
     </message>
     <message>
         <location filename="../../tool/Utils.cpp" line="1341"/>
         <source>Zimbabwe</source>
-        <translation type="unfinished"></translation>
+        <translation>Zimbábue</translation>
     </message>
 </context>
 <context>
@@ -7613,6 +7688,16 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../view/Control/Input/NumericPad.qml" line="223"/>
         <source>call_accessible_name</source>
         <translation>Chamar</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Input/NumericPad.qml" line="177"/>
+        <source>numpad_longpress_accessible_name</source>
+        <translation>%1 toque longo %2</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Input/NumericPad.qml" line="245"/>
+        <source>erase_accessible_name</source>
+        <translation>Apagar</translation>
     </message>
 </context>
 <context>
@@ -7768,6 +7853,11 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <source>information_popup_error_title</source>
         <translation>Erro</translation>
     </message>
+    <message>
+        <location filename="../../view/Page/Main/Record/RecordPage.qml" line="18"/>
+        <source>record_list_empty</source>
+        <translation>Sem registro</translation>
+    </message>
 </context>
 <context>
     <name>Voicemail</name>
@@ -7822,6 +7912,19 @@ Failed to create 1-1 conversation with %1 !</extracomment>
         <location filename="../../view/Page/Form/Settings/AbstractSettingsMenu.qml" line="76"/>
         <source>settings_page_selection_accessible_name</source>
         <translation>Seleção da página de configurações</translation>
+    </message>
+</context>
+<context>
+    <name>NumericPadPopup</name>
+    <message>
+        <location filename="../../view/Control/Popup/NumericPadPopup.qml" line="60"/>
+        <source>numeric_pad_accessible_name</source>
+        <translation>Teclado numérico</translation>
+    </message>
+    <message>
+        <location filename="../../view/Control/Popup/NumericPadPopup.qml" line="71"/>
+        <source>close_numeric_pad_accessible_name</source>
+        <translation>Fechar teclado numérico</translation>
     </message>
 </context>
 </TS>
