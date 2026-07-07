@@ -36,15 +36,6 @@ DEFINE_ABSTRACT_OBJECT(CliModel)
 
 std::shared_ptr<CliModel> CliModel::gCliModel;
 
-QByteArray decodeBase64Url(QString input) {
-	QUrl url(input);
-	// if url is not encoded return it as it is
-	if (url.isValid() && !url.scheme().isEmpty()) {
-		return QUrl::fromPercentEncoding(input.toUtf8()).toUtf8();
-	}
-	return QByteArray::fromBase64(input.toUtf8());
-}
-
 const QString deprecatedConfigURI = QString(EXECUTABLE_NAME).toLower() + "-config";
 QStringList validSchemes = {QString("sip"),
                             "sip-" + QString(EXECUTABLE_NAME).toLower(),
@@ -78,6 +69,16 @@ QMap<QString, CliModel::Command> CliModel::mCommands{
     }),*/
 
 };
+
+QByteArray decodeBase64Url(QString input) {
+	if (CliModel::mCommands.find(input) != CliModel::mCommands.end()) return input.toLocal8Bit();
+	QUrl url(input);
+	// if url is not encoded return it as it is
+	if (url.isValid() && !url.scheme().isEmpty()) {
+		return QUrl::fromPercentEncoding(input.toUtf8()).toUtf8();
+	}
+	return QByteArray::fromBase64(input.toUtf8());
+}
 
 std::pair<QString, CliModel::Command> CliModel::createCommand(const QString &functionName,
                                                               const char *functionDescription,
