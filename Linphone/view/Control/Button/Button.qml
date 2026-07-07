@@ -56,7 +56,7 @@ Control.Button {
 	property var checkedImageColor: style && style.image && style.image.checked ? style.image.checked : Qt.darker(contentImageColor, 1.1)
 	property var pressedImageColor: style && style.image && style.image.pressed ? style.image.pressed : Qt.darker(contentImageColor, 1.1)
 	icon.source: style?.iconSource || ""
-	property color colorizationColor:  checkable && checked 
+	property var colorizationColor:  checkable && checked 
 		? checkedImageColor
 		: pressed 
 			? pressedImageColor
