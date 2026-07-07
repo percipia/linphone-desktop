@@ -23,12 +23,11 @@ Item {
 	property var callState: call && call.core.state || undefined
 	property AccountGui account: null
 	property ParticipantDeviceGui participantDevice: null
-	property bool displayBorder : participantDevice && participantDevice.core.isSpeaking && !mePaused
+	property bool displayBorder : participantDevice && participantDevice.core.isSpeaking
 	property alias displayPresence: avatar.displayPresence
 	property alias secured: avatar.secured
 	property color color: DefaultStyle.grey_600
     property real radius: Utils.getSizeWithScreenRatio(15)
-	property bool mePaused: previewEnabled && callState === LinphoneEnums.CallState.Paused || participantDevice.core.isMe && participantDevice.core.isPaused
 	property var securityLevel: avatar.securityLevel
 	property bool remoteIsPaused: participantDevice
 		? participantDevice.core.isPaused
@@ -149,7 +148,7 @@ Item {
 			ColumnLayout {
 				anchors.centerIn: parent
                 spacing: Utils.getSizeWithScreenRatio(12)
-				visible: mainItem.remoteIsPaused || mainItem.mePaused
+				visible: mainItem.remoteIsPaused
 				EffectImage {
 					imageSource: AppIcons.pause
 					colorizationColor: DefaultStyle.grey_0
@@ -210,12 +209,11 @@ Item {
 				triggeredOnStart: true
 				onTriggered: {cameraLoader.reset = !cameraLoader.reset}
 			}
-			visible: active && status != Loader.Ready && !item.isReady
-            active: mainItem.visible && !mainItem.remoteIsPaused && !mainItem.mePaused
+            active: mainItem.visible && !mainItem.remoteIsPaused
             && mainItem.videoEnabled
             && mainItem.callState !== LinphoneEnums.CallState.End
             && mainItem.callState !== LinphoneEnums.CallState.Released
-            && !reset
+            && !cameraLoader.reset
             onActiveChanged: console.log("("+mainItem.qmlName+") Camera active " + active +", visible="+mainItem.visible +", videoEnabled="+mainItem.videoEnabled +", reset="+cameraLoader.reset)
 			sourceComponent: cameraComponent
 		}
