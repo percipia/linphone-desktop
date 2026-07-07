@@ -293,6 +293,7 @@ void Utils::smartShowWindow(QQuickWindow *window) {
 	else if (window->visibility() == QWindow::FullScreen) // Avoid to change visibility mode
 		window->showFullScreen();
 	window->show();
+	window->raise();
 	App::getInstance()->setLastActiveWindow(window);
 	lInfo() << "[Utils] : raise window" << window;
 	window->raise(); // Raise ensure to get focus on Mac
