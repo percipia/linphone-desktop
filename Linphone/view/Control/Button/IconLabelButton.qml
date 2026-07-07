@@ -25,7 +25,7 @@ Button {
 			imageWidth: mainItem.icon.width
 			imageHeight: mainItem.icon.height
 			colorizationColor: mainItem.pressed 
-				? mainItem.pressedImageColor 
+				? mainItem.pressedImageColor
 				: mainItem.hovered
 					? mainItem.hoveredImageColor
 					: mainItem.contentImageColor

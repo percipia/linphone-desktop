@@ -1892,24 +1892,50 @@ QString Utils::getIconAsPng(const QString &imagePath, const QSize &size) {
 	return outPath;
 }
 
+QColor Utils::getPresenceBackgroundColor(LinphoneEnums::Presence presence) {
+	mustBeInMainThread(sLog().arg(Q_FUNC_INFO));
+	QColor presenceColor = QColorConstants::Transparent;
+	switch (presence) {
+		case LinphoneEnums::Presence::Online:
+			presenceColor = Utils::getDefaultStyleColor("account_status_background_green");
+			break;
+		case LinphoneEnums::Presence::Away:
+			presenceColor = Utils::getDefaultStyleColor("account_status_background_yellow");
+			break;
+		case LinphoneEnums::Presence::Busy:
+			presenceColor = Utils::getDefaultStyleColor("account_status_background_red");
+			break;
+		case LinphoneEnums::Presence::DoNotDisturb:
+			presenceColor = Utils::getDefaultStyleColor("account_status_background_red");
+			break;
+		case LinphoneEnums::Presence::Offline:
+			presenceColor = Utils::getDefaultStyleColor("account_status_background_grey");
+			break;
+		case LinphoneEnums::Presence::Undefined:
+			presenceColor = Utils::getDefaultStyleColor("transparent");
+			break;
+	}
+	return presenceColor;
+}
+
 QColor Utils::getPresenceColor(LinphoneEnums::Presence presence) {
 	mustBeInMainThread(sLog().arg(Q_FUNC_INFO));
 	QColor presenceColor = QColorConstants::Transparent;
 	switch (presence) {
 		case LinphoneEnums::Presence::Online:
-			presenceColor = Utils::getDefaultStyleColor("success_500_main");
+			presenceColor = Utils::getDefaultStyleColor("account_status_green");
 			break;
 		case LinphoneEnums::Presence::Away:
-			presenceColor = Utils::getDefaultStyleColor("warning_500_main");
+			presenceColor = Utils::getDefaultStyleColor("account_status_yellow");
 			break;
 		case LinphoneEnums::Presence::Busy:
-			presenceColor = Utils::getDefaultStyleColor("danger_500_main");
+			presenceColor = Utils::getDefaultStyleColor("account_status_red");
 			break;
 		case LinphoneEnums::Presence::DoNotDisturb:
-			presenceColor = Utils::getDefaultStyleColor("danger_500_main");
+			presenceColor = Utils::getDefaultStyleColor("account_status_red");
 			break;
 		case LinphoneEnums::Presence::Offline:
-			presenceColor = Utils::getDefaultStyleColor("main2_600");
+			presenceColor = Utils::getDefaultStyleColor("account_status_grey");
 			break;
 		case LinphoneEnums::Presence::Undefined:
 			presenceColor = Utils::getDefaultStyleColor("transparent");

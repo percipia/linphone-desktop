@@ -18,11 +18,17 @@ PopupButton {
     enabled: mainItem.account && mainItem.account.core.registrationState === LinphoneEnums.RegistrationState.Ok
     onEnabledChanged: if(!enabled) close()
     property bool editCustomStatus : false
-    contentItem: Rectangle {
+    contentItem: Control.Control {
         id: presenceBar
         property bool isRegistered: mainItem.account?.core.registrationState === LinphoneEnums.RegistrationState.Ok
-        color: DefaultStyle.main2_200
-        radius: Utils.getSizeWithScreenRatio(15)
+	    property bool keyboardFocus: FocusHelper.keyboardFocus
+        background: Rectangle {
+            color: UtilsCpp.getPresenceBackgroundColor(mainItem.account.core.presence)
+            border.color: DefaultStyle.main2_900
+            border.width: keyboardFocus ? Utils.getSizeWithScreenRatio(3) : 0
+            radius: Utils.getSizeWithScreenRatio(15)
+        }
+
         RowLayout {
             anchors.fill: parent
             Image {
@@ -65,32 +71,36 @@ PopupButton {
             }
         }
     }
-    popup.contentItem: Rectangle {
+    popup.onOpened: popup.forceActiveFocus()
+    popup.contentItem: FocusScope {
         implicitWidth: Utils.getSizeWithScreenRatio(280)
         implicitHeight: Utils.getSizeWithScreenRatio(20) + (setCustomStatus.visible ? Utils.getSizeWithScreenRatio(240) : setPresence.implicitHeight)
-        Presence {
-            id: setPresence
-            visible: !presenceAndRegistrationItem.editCustomStatus
+        Rectangle {
             anchors.fill: parent
-            anchors.margins: Utils.getSizeWithScreenRatio(20)
-            accountGui: mainItem.account
-            onSetCustomStatusClicked: {
-                presenceAndRegistrationItem.editCustomStatus = true
-            }
-            onIsSet: presenceAndRegistrationItem.popup.close()
-        }
-        PresenceSetCustomStatus {
-            id: setCustomStatus
-            visible: presenceAndRegistrationItem.editCustomStatus
-            anchors.fill: parent
-            anchors.margins: Utils.getSizeWithScreenRatio(20)
-            accountGui: mainItem.account
-            onVisibleChanged: {
-                if (!visible) {
-                    presenceAndRegistrationItem.editCustomStatus = false
+            Presence {
+                id: setPresence
+                visible: !presenceAndRegistrationItem.editCustomStatus
+                anchors.fill: parent
+                anchors.margins: Utils.getSizeWithScreenRatio(20)
+                accountGui: mainItem.account
+                onSetCustomStatusClicked: {
+                    presenceAndRegistrationItem.editCustomStatus = true
                 }
+                onIsSet: presenceAndRegistrationItem.popup.close()
             }
-            onIsSet: presenceAndRegistrationItem.popup.close()
+            PresenceSetCustomStatus {
+                id: setCustomStatus
+                visible: presenceAndRegistrationItem.editCustomStatus
+                anchors.fill: parent
+                anchors.margins: Utils.getSizeWithScreenRatio(20)
+                accountGui: mainItem.account
+                onVisibleChanged: {
+                    if (!visible) {
+                        presenceAndRegistrationItem.editCustomStatus = false
+                    }
+                }
+                onIsSet: presenceAndRegistrationItem.popup.close()
+            }
         }
     }
 }

@@ -52,6 +52,15 @@ QtObject {
     property var vue_meter_light_green: "#6FF88D"
     property var vue_meter_dark_green: "#00D916"
 
+    property var account_status_green: "#2A7050"
+    property var account_status_background_green: "#E4F4EC"
+    property var account_status_yellow: "#776208"
+    property var account_status_background_yellow: "#F8F1D4"
+    property var account_status_red: "#B03A3A"
+    property var account_status_background_red: "#FBE9E9"
+    property var account_status_grey: "#37475A"
+    property var account_status_background_grey: "#E9EDF1"
+    
     property real defaultHeight: 1007.0
     property real defaultWidth: 1512.0
     property real maxDp: 0.98

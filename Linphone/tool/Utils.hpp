@@ -151,6 +151,7 @@ public:
 	Q_INVOKABLE static QList<QVariant> append(const QList<QVariant> a, const QList<QVariant> b);
 	Q_INVOKABLE static QString getAddressToDisplay(QVariantList addressList, QString filter, QString defaultAddress);
 	Q_INVOKABLE static QColor getPresenceColor(LinphoneEnums::Presence presence);
+	Q_INVOKABLE static QColor getPresenceBackgroundColor(LinphoneEnums::Presence presence);
 	Q_INVOKABLE static QUrl getPresenceIcon(LinphoneEnums::Presence presence);
 	Q_INVOKABLE static QString getPresenceStatus(LinphoneEnums::Presence presence);
 
