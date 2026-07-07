@@ -24,6 +24,9 @@ Control.Control {
 	// disable record button if call ongoing
 	property bool callOngoing: false
 	property bool isEditing: false
+	// Do not auto resize text area automatically if 
+	// the user set the height explicitly
+	property bool textAreaHeightSetByUser: false
 
     property ChatGui chat
 
@@ -144,6 +147,10 @@ Control.Control {
 								&& sendingTextArea.contentHeight < Utils.getSizeWithScreenRatio(100)) {
 									mainItem.height = sendingTextArea.contentHeight + mainItem.topPadding + mainItem.bottomPadding + sendingControl.topPadding + sendingControl.bottomPadding
 								}
+								if (mainItem.textAreaHeightSetByUser) return
+								if (sendingTextArea.contentHeight < mainItem.height - (mainItem.topPadding + mainItem.bottomPadding + sendingControl.topPadding + sendingControl.bottomPadding)) {
+									mainItem.height = sendingTextArea.contentHeight + mainItem.topPadding + mainItem.bottomPadding + sendingControl.topPadding + sendingControl.bottomPadding
+								}
 							}
 
 							function ensureVisible(r) {
@@ -194,6 +201,7 @@ Control.Control {
 										sendingTextArea.text = mainItem.text
 									}
 									function onSendMessage() {
+										mainItem.textAreaHeightSetByUser = false
 										sendingTextArea.clear()
 									}
 									function onFocusTextArea() {

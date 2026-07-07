@@ -313,6 +313,9 @@ FocusScope {
 
             content: Control.SplitView {
                 orientation: Qt.Vertical
+                onResizingChanged: if (resizing) {
+                    messageSender.textAreaHeightSetByUser = true
+                }
                 handle: Rectangle {
                     id: splitViewHandle
                     visible: !mainItem.chat?.core.isReadOnly || false
