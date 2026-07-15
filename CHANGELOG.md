@@ -10,7 +10,7 @@ Group changes to describe their impact on the project, as follows:
     Fixed for any bug fixes.
     Security to invite users to upgrade in case of vulnerabilities.
 
-## [6.2.0] - 2026-02-25
+## [6.2.0] - 2026-07-15
 
 ### Added
 - Edition and deletion of an existing message
@@ -37,6 +37,11 @@ Group changes to describe their impact on the project, as follows:
 - Unification of URI handling with a unique scheme
 - Remote provisioning does not require to restart the app anymore
 - SDK version is now 5.5.0
+
+### Known issues
+- CardDAV by remote provisioning : address book may not be displayed in the contact list and in the contacts settings
+- Chat messages are still received even when the account is disconnected, only the notification will be hidden and the sound will not be played
+- Wayland does not support screen sharing for full screen (black screen displayed), only a window can be shared
 
 ## [6.1.2] - 2026-04-03
 
